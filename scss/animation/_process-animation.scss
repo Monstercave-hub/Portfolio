@@ -1,0 +1,1021 @@
+.title-img-area {
+  // 입금대기
+  .bank-process {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 7px 0 0;
+
+    i {
+      font-size: 24px;
+
+      &:nth-child(3) {
+        font-size: 34px;
+        margin: -6px 0 0 0;
+      }
+    }
+
+    .load-process {
+      .loading span {
+        display: inline-block;
+        vertical-align: middle;
+        width: 4px;
+        height: 4px;
+        margin: 0 4px 0 0;
+        background: $gray-bg;
+        border-radius: 20px;
+        animation: loading 1s infinite alternate;
+      
+        &:nth-of-type(2) {
+          animation-delay: 0.2s;
+        }
+      
+        &:nth-of-type(3) {
+          animation-delay: 0.4s;
+        }
+      
+        &:nth-of-type(4) {
+          animation-delay: 0.6s;
+        }
+      
+        &:nth-of-type(5) {
+          animation-delay: 0.8s;
+        }
+      
+        &:nth-of-type(6) {
+          animation-delay: 1.0s;
+        }
+      }
+    }
+  }
+
+  // 작업대기
+  .checkmark {
+    position: relative;
+    margin: auto;
+    animation: checkmark 5.6s cubic-bezier(0.42, 0, 0.275, 1.155) both;
+
+    .confetti {
+      position: absolute;
+      animation: checkmark-grow 1.4s cubic-bezier(0.42, 0, 0.275, 1.155) both infinite;
+    
+      &:nth-child(1) {
+        width: 12px;
+        height: 12px;
+        left: -20px;
+        top: 40px;
+        animation-delay: 0.7s;
+      }
+    
+      &:nth-child(2) {
+        width: 12px;
+        height: 12px;
+        left: 80px;
+        top: 26px;
+        animation-delay: 1.4s;
+      }
+    
+      &:nth-child(3) {
+        width: 6px;
+        height: 6px;
+        left: -38px;
+        top: 21px;
+        animation-delay: 2.1s;
+      }
+    
+      &:nth-child(4) {
+        width: 14px;
+        height: 14px;
+        right: -18px;
+        top: -6px;
+        animation-delay: 2.2s;
+      }
+    
+      &:nth-child(5) {
+        width: 10px;
+        height: 10px;
+        left: 60px;
+        top: 54px;
+        animation-delay: 1.8s;
+      }
+    
+      &:nth-child(6) {
+        width: 10px;
+        height: 10px;
+        left: -14px;
+        top: 2px;
+        animation-delay: 4.2s;
+      }
+    }
+
+    .checkmark__check {
+      position: absolute;
+      width: 22px;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      transform: translate3d(-50%, -54%, 0);
+
+      path {
+        fill: #fff;
+      }
+    }
+    
+    .checkmark__back {
+      width: 47px;
+      animation: checkmark-rotate 35s linear both infinite;
+    }
+
+    path {
+      fill: $brand-dark-text;
+    }
+  }
+
+  // 제작중
+  .production-animation-area {
+    position: relative;
+    width: 100%;
+
+    .hammer {
+      position: absolute;
+      background: #444444;
+      border-radius: 50% 0 0 0;
+      height: 25px;
+      right: 50%;
+      transform: rotate(0deg) translateX(-50%);
+      top: -3px;
+      width: 19px;
+      margin: 0 -20px 0 0;
+      transform-origin: 100% 50%; /* 오른쪽 중앙을 회전축으로 변경 */
+      animation: arm-anima 1.5s infinite cubic-bezier(0.59, 0.01, 0.99, 0.22);
+    
+      &:after {
+        content: "";
+        position: absolute;
+        background: #666666;
+        border-radius: 10px;
+        height: 6px;
+        left: -2px;
+        top: 24px;
+        width: 24px;
+      }
+    
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #666666;
+        border-radius: 0 10px 10px 0;
+        height: 6px;
+        left: 100%;
+        width: 15px;
+      }
+    }
+
+    .sword {
+      position: absolute;
+      top: 25px;
+      height: 7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+    
+      &:after {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(19, 36, 44, 0.15);
+        border-radius: 5px;
+        content: "";
+        height: 3px;
+        left: 50%;
+        width: 80%;
+      }
+    
+      .handle {
+        position: absolute;
+        width: 100%;
+
+        &:after {
+          position: absolute;
+          background: rgba(255, 86, 86, 0.9);
+          border-radius: 10px;
+          content: "";
+          height: 7px;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    .anvil {
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      background: #444444;
+      bottom: 3px;
+      height: 16px;
+      width: 45px;
+    
+      &:after {
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        content: "";
+        border-color: transparent transparent #444 transparent;
+        border-style: solid;
+        border-width: 0 15px 10px 15px;
+        bottom: -7px;
+        height: 0;
+        width: 0;
+      }
+    
+      &:before {
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        background: #666666;
+        content: "";
+        border-radius: 10px;
+        height: 6px;
+        width: 50px;
+      }
+    }
+
+    .fire-box {
+      position: absolute;
+      height: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      overflow: hidden;
+      top: -25px;
+      width: 45px;
+      z-index: 1;
+    
+      .fire {
+        position: absolute;
+        background: #ff5656;
+        border-radius: 20px;
+        box-shadow: 0 -5px 30px #ffb256;
+        height: 100px;
+        width: 12px;
+        animation: fire-anima 1.5s infinite cubic-bezier(0.59, 0.01, 0.99, 0.22);
+
+
+        &:after {
+          content: "";
+          left: 50%;
+          position: absolute;
+          transform: translateX(-50%);
+          background: #ffb256;
+          border-radius: 10px 10px 0 0;
+          height: 70px;
+          top: 10px;
+          width: 6px;
+        }
+    
+        &:nth-child(1) {
+          left: 0;
+        }
+    
+        &:nth-child(2) {
+          left: 10px;
+          animation-delay: 0.05s;
+        }
+    
+        &:nth-child(3) {
+          left: 21px;
+          animation-delay: 0.08s;
+        }
+    
+        &:nth-child(4) {
+          left: 32px;
+        }
+      }
+    }
+  }
+
+  // 작업완료
+  .promo-gift-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .promo-gift {
+      width: 55px;
+      height: 100px;
+      position: absolute;
+      bottom: 0;
+      animation: promo-gift-wiggle 2.5s ease-in-out infinite forwards;
+
+      svg, div {
+        position: absolute;
+      }
+
+      .promo-gift-box {
+        bottom: 0;
+        left: 2px;
+      }
+
+      .promo-gift-top {
+        width: 100px;
+        bottom: 31px;
+        left: 0;
+        animation: promo-gift-top-wiggle 2.5s ease-in-out infinite forwards;
+
+        .promo-gift-ribbon {
+          bottom: 12px;
+          left: 22px;
+          transform-origin: 50% 100%;
+          transition: all 0.25s ease;
+      
+          &.ribbon-1 {
+            animation: promo-gift-ribbon-1-wiggle 1.25s ease-in-out infinite forwards;
+          }
+      
+          &.ribbon-2 {
+            animation: promo-gift-ribbon-2-wiggle 1.25s ease-in-out infinite forwards;
+          }
+        }
+
+        .promo-gift-lid {
+          width: 57px;
+          height: 14px;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  // 배송중
+  .truck-wrapper {
+    position: relative;
+    width: 100%;
+
+    .truck {
+      width: 85px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+    
+      > {
+        .truck-container {
+          background: linear-gradient(135deg, rgba(175, 189, 195, 1) 0%, rgba(175, 189, 195, 1) 50%, rgba(143, 163, 173, 1) 51%, rgba(143, 163, 173, 1) 100%);
+          height: 21px;
+          width: 37px;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: 0;
+          left: 10px;
+          text-align: center;
+          animation: truck-container 0.4s linear infinite;
+
+          img {
+            width: 32px !important;
+          }
+        }
+    
+        .glases {
+          background: linear-gradient(135deg, rgba(40, 181, 245, 1) 0%, rgba(40, 181, 245, 1) 50%, rgba(2, 153, 227, 1) 52%, rgba(2, 153, 227, 1) 100%);
+          position: absolute;
+          height: 20px;
+          width: 26px;
+          border: 4px solid #fff;
+          border-bottom: none;
+          top: 5px;
+          left: 49px;
+          border-top-right-radius: 6px;
+          animation: updown-half 0.4s linear infinite;
+    
+          &:after {
+            content: '';
+            display: block;
+            background: #fff;
+            height: 13px;
+            width: 10px;
+            position: absolute;
+            right: -10px;
+            bottom: 0px;
+            border-radius: 10px / 15px;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-top-left-radius: 0px;
+          }
+    
+          &:before {
+            content: '';
+            display: block;
+            background: #fff;
+            height: 8px;
+            width: 12px;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            border-top-right-radius: 4px;
+          }
+        }
+    
+        .bonet {
+          background: #fff;
+          position: absolute;
+          width: 71px;
+          height: 10px;
+          top: 24px;
+          left: 10px;
+          z-index: 1;
+          animation: updown 0.4s linear infinite;
+    
+          &:after {
+            content: '';
+            display: block;
+            background: #e54a19;
+            height: 8px;
+            width: 6px;
+            position: absolute;
+            right: 0px;
+            bottom: 0;
+            border-top-left-radius: 2px;
+          }
+        }
+    
+        .base {
+          position: absolute;
+          background: #445A64;
+          width: 53px;
+          height: 4px;
+          border-top-right-radius: 10px;
+          top: 32px;
+          left: 14px;
+          animation: updown 0.4s linear infinite;
+          z-index: 1;
+    
+          &:before {
+            content: '';
+            display: block;
+            background: #E54A18;
+            height: 4px;
+            width: 5px;
+            position: absolute;
+            left: -4px;
+            bottom: 0px;
+            border-bottom-left-radius: 4px;
+          }
+    
+          &:after {
+            content: '';
+            display: block;
+            background: RGB(84, 110, 122);
+            height: 4px;
+            width: 20px;
+            position: absolute;
+            right: -14px;
+            bottom: 0px;
+            border-bottom-right-radius: 4px;
+          }
+        }
+
+        .wheel-back {
+          left: 20px;
+        }
+    
+        .wheel-front {
+          left: 60px;
+        }
+    
+        .wheel-back, .wheel-front {
+          border-radius: 100%;
+          position: absolute;
+          background: linear-gradient(135deg, rgba(84, 110, 122, 1) 0%, rgba(84, 110, 122, 1) 49%, rgba(68, 90, 100, 1) 52%, rgba(68, 90, 100, 1) 100%);
+          top: 32px;
+          height: 12px;
+          width: 12px;
+          animation: wheel-spin 0.6s linear infinite;
+          z-index: 3;
+        }
+    
+        .wheel-back:before, .wheel-front:before {
+          content: '';
+          border-radius: 100%;
+          left: 2px;
+          top: 2px;
+          position: absolute;
+          background: linear-gradient(135deg, rgba(175, 189, 195, 1) 0%, rgba(175, 189, 195, 1) 50%, rgba(143, 163, 173, 1) 51%, rgba(143, 163, 173, 1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afbdc3', endColorstr='#8fa3ad',GradientType=1 );
+          height: 8px;
+          width: 8px;
+        }
+    
+        .smoke {
+          position: absolute;
+          background: #AFBDC3;
+          border-radius: 100%;
+          width: 8px;
+          height: 8px;
+          top: 37px;
+          left: 6px;
+          animation: smoke-fade 0.4s linear infinite;
+          opacity: 0;
+    
+          &:after {
+            content: '';
+            position: absolute;
+            background: RGB(143, 163, 173);
+            border-radius: 100%;
+            width: 6px;
+            height: 6px;
+            top: -4px;
+            left: 4px;
+          }
+    
+          &:before {
+            content: '';
+            position: absolute;
+            background: RGB(143, 163, 173);
+            border-radius: 100%;
+            width: 4px;
+            height: 4px;
+            top: -2px;
+            left: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  // 결제취소
+  .calculator {
+    position: relative;
+    margin: auto;
+
+    .frame {
+      position: relative;
+      width: 90px;
+      height: 50px;
+      display: flex;
+      padding: 6px;
+      border-radius: 6px;
+      background: $dark-box;
+      z-index: 1;
+
+      .screen {
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 4px;
+        margin: 0 4px 0 0;
+
+        .screen_inner {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          background: $dark-box;
+
+          i {
+            color: $red;
+            font-size: 20px;
+            animation: 3s linear colorChange infinite;
+          }
+        }
+      }
+    
+      .button_grid {
+        display: grid;
+        width: 100%;
+        grid-template-rows: 10px 10px 10px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 4px;
+    
+        div {
+          width: 100%;
+          height: 100%;
+          background: #fff;
+        }
+    
+        .span-2-rows {
+          grid-row: 1/3;
+          grid-column: 4;
+        }
+      }
+    }
+    
+    .card {
+      position: absolute;
+      width: 45px;
+      height: 25px;
+      top: 13px;
+      right: -20px;
+      border-radius: 4px;
+      background: #5f5f5f;
+      animation: 3s linear cardIn infinite;
+
+      &:before, &:after {
+        content: "";
+        position: absolute;
+      }
+    
+      &:before {
+        width: 6px;
+        height: 6px;
+        right: 4px;
+        bottom: 5px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+    
+      &:after {
+        width: 20px;
+        height: 3px;
+        top: 5px;
+        left: 5px;
+        border-radius: 3px;
+        background: rgba(243, 166, 50, 0.5);
+      }
+    }
+    
+  }
+
+  // 환불
+  .piggy {
+    position: relative;
+    width: 150px;
+    height: 100%;
+    margin: -10px auto 0;
+    transform: scale(0.7);
+
+    .dolar {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 1px solid #e9b109;
+      background: #FFC311;
+      top: 0;
+      left: 40%;
+      animation: coin-jump 2s forwards infinite;
+    
+      &:after {
+        content: "₩";
+        left: 5px;
+        top: 2px;
+        font-size: 10px;
+      }
+    }
+
+    .hole {
+      position: absolute;
+      width: 18px;
+      height: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 7px 0 0 -7px;
+      border-top: 1px solid #e45f91;
+      background: #FF7BAC;
+      z-index: 2;
+    }
+
+    .piggy-body {
+      position: absolute;
+      width: 82px;
+      height: 64px;
+      border-radius: 35px;
+      border: 1px solid #e45f91;
+      background: #FF7BAC;
+      top: 0;
+      left: 30px;
+    
+      .nose {
+        position: absolute;
+        width: 18px;
+        height: 15px;
+        border: 1px solid #e45f91;
+        bottom: 13px;
+        right: -5px;
+        border-radius: 20px;
+        font-size: 8px;
+        background: #FF7BAC;
+        font-weight: bold;
+        animation: pig-nose 2s forwards infinite;
+
+        &:before, &:after {
+          content: "l";
+          position: absolute;
+          top: 2px;
+        }
+    
+        &:before {
+          left: 5px;
+        }
+    
+        &:after {
+          right: 4px;
+        }
+      }
+
+      .left-ear {
+        height: 20px;
+        width: 10px;
+        background: #FF7BAC;
+        border: 1px solid #e45f91;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px;
+        position: absolute;
+        top: 7px;
+        right: 30px;
+        transform: rotate(30deg) skewY(20deg);
+        z-index: 2;
+      }
+    
+      .right-ear {
+        width: 10px;
+        height: 20px;
+        border: 1px solid #e45f91;
+        background: #FF7BAC;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        position: absolute;
+        top: -14px;
+        right: 20px;
+        transform: rotate(40deg);
+        animation: pig-ear 3s forwards infinite;
+        z-index: -1;
+      }
+    
+      .eye {
+        position: absolute;
+        width: 20px;
+        height: 10px;
+        top: 20px;
+        right: 0px;
+        font-size: 20px;
+        animation: pig-nose 2s forwards infinite;
+
+        &:before, &:after {
+          content: ".";
+          position: absolute;
+          top: -10px;
+        }
+    
+        &:after {
+          left: 3px;
+        }
+    
+        &:before {
+          right: 4px;
+        }
+      }
+    
+      .tail::after {
+        content: "➰";
+        position: absolute;
+        top: 7px;
+        left: -12px;
+        transform: rotate(20deg);
+        animation: pig-tail 1s forwards infinite;
+      }
+    
+      .leg, .mid-leg {
+        position: absolute;
+        width: 10px;
+        border: none;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 15px solid #FF7BAC;
+      }
+    
+      .back-leg {
+        position: absolute;
+        width: 10px;
+        border: none;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 15px solid #FF7BAC;
+        bottom: -8px;
+        left: 15px;
+      }
+    
+      .mid-leg {
+        bottom: -11px;
+        left: 50px;
+      }
+    }
+  }
+}
+
+// 버튼
+.payment-animation-area {
+  margin: auto;
+  text-align: center;
+
+  button {
+    position: relative;
+    padding: 16px 32px 15px;
+    border-radius: 50px;
+    line-height: 1px;
+    overflow: hidden;
+
+    &:hover .liquid{
+      top: -100px;
+    }
+
+    span {
+      position: relative;
+      color: #fff;
+      z-index: 1;
+    }
+
+    .liquid {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(123deg, #b103d3 0%, #05e8fb 100%);
+      transition: .5s;
+
+      &:before, &:after {
+        content: '';
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: -15%;
+        left: 50%;
+        transform: translate(-50%, -75%);
+        background: #fff;
+      }
+
+      &:before {
+        border-radius: 45%;
+        background: $make4u-brand-dark;
+        animation: btn-animate 5s linear infinite;
+      }
+
+      &:after {
+        border-radius: 40%;
+        background: rgb(221 100 255 / 50%);
+        animation: btn-animate 10s linear infinite;
+      }
+    }
+  }
+}
+
+// 입금대기
+@keyframes loading {
+  0% {background: $gray-bg; opacity: 0;}
+  100% {background: $brand-dark-text; opacity: 1;}
+}
+
+// 제작중
+@keyframes arm-anima {
+  0% {transform: rotate(120deg);}
+  50% {transform: rotate(0deg);}
+  60% {transform: rotate(0deg);}
+  80% {transform: rotate(0deg);}
+  100% {transform: rotate(120deg);}
+}
+
+@keyframes fire-anima {
+  0% {top: 60px;}
+  50% {top: 60px;}
+  52% {top: 20px;}
+  70% {top: 20px;}
+  90% {top: 60px;}
+  100% {top: 60px;}
+}
+
+// 작업완료
+@keyframes promo-gift-top-wiggle {
+  0% {transform: rotate(0deg); transform-origin: 100% 100%;}
+  10% {transform: rotate(5deg);}
+  14% {transform-origin: 100% 100%; transform: rotate(0deg);}
+  50% {transform-origin: 0% 100%; transform: rotate(0deg);}
+  60% {transform: rotate(-5deg);}
+  64% {transform-origin: 0% 100%; transform: rotate(0deg);}
+  100% {transform-origin: 100% 100%; transform: rotate(0deg);}
+}
+
+@keyframes promo-gift-wiggle {
+  0% {transform: rotate(0deg) scaleX(1); transform-origin: 100% 100%;}
+  8% {transform: rotate(2deg) scaleX(0.99);}
+  12% {transform: rotate(0deg) scaleX(1);}
+  16% {transform: rotate(1deg) scaleX(1);}
+  20% {transform: rotate(0deg) scaleX(1); transform-origin: 100% 100%;}
+  50% {transform: rotate(0deg) scaleX(1); transform-origin: 0% 100%;}
+  58% {transform: rotate(-2deg) scaleX(0.99);}
+  62% {transform: rotate(0deg) scaleX(1);}
+  66% {transform: rotate(-1deg) scaleX(1);}
+  70% {transform: rotate(0deg) scaleX(1); transform-origin: 0% 100%;}
+  100% {transform: rotate(0deg) scaleX(1); transform-origin: 100% 100%;}
+}
+
+@keyframes promo-gift-ribbon-1-wiggle {
+  0% {transform: rotate(45deg);}
+  6% {transform: rotate(40deg);}
+  22% {transform: rotate(65deg);}
+  38% {transform: rotate(30deg);}
+  44% {transform: rotate(45deg);}
+  100% {transform: rotate(45deg);}
+}
+
+@keyframes promo-gift-ribbon-2-wiggle {
+  0% {transform: rotate(-45deg);}
+  6% {transform: rotate(-40deg);}
+  22% {transform: rotate(-65deg);}
+  38% {transform: rotate(-30deg);}
+  44% {transform: rotate(-45deg);}
+  100% {transform: rotate(-45deg);}
+}
+
+@keyframes promo-gift-floating {
+  0% {transform: rotate(-1deg); transform-origin: 50% 100%;}
+  50% {transform: rotate(1deg); transform-origin: 50% 100%;}
+  100% {transform: rotate(-1deg); transform-origin: 50% 100%;}
+}
+
+// 배송중
+@keyframes wheel-spin {
+  50% {top: 33px;}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes truck-container {
+  30% {transform: rotate(1deg);}
+  50% {top: 1px;}
+  70% {top: 0; transform: rotate(-1deg);}
+}
+
+@keyframes smoke-fade {
+  30% {opacity: 0.3; left: 7px;}
+  50% {opacity: 0.5; left: 6px;}
+  70% {opacity: 0.1; left: 4px;}
+  90% {opacity: 0.4; left: 2px;}
+}
+
+@keyframes updown {
+  50% {transform: translateY(-20%);}
+  70% {transform: translateY(-10%);}
+}
+
+@keyframes updown-half {
+  50% {transform: translateY(-10%);}
+  70% {transform: translateY(-5%);}
+}
+
+// 배송완료
+@keyframes btn-animate {
+  0% {transform: translate(-50%, -75%) rotate(0deg);}
+  100% {transform: translate(-50%, -75%) rotate(360deg);}
+}
+
+// 결제취소
+@keyframes cardIn {
+  0% {transform: translateX(-10%);}
+  22% {transform: translateX(20%);}
+  44% {transform: translateX(20%);}
+  66% {transform: translateX(-10%);}
+  100% {transform: translateX(-10%);}
+}
+
+@keyframes colorChange {
+  0% {opacity: 1;}
+  22% {opacity: 1;}
+  44% {opacity: 0;}
+  55% {opacity: 1;}
+  66% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+// 환불
+@keyframes coin-jump {
+  0% {transform: translateY(-25px) rotate(90deg);}
+  50% {transform: translateY(15px) rotate(230deg);}
+  100% {transform: translateY(15px);}
+}
+
+@keyframes pig-ear {
+  0% {transform: rotate(40deg);}
+  75% {transform: rotate(70deg);}
+}
+
+@keyframes pig-tail {
+  0% {transform: rotate(20deg);}
+  50% {transform: rotate(0deg);}
+}
+
+@keyframes pig-nose {
+  0% {transform: translateX(0px);}
+  50% {transform: translateX(4px);}
+}

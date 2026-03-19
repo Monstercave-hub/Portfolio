@@ -1,0 +1,1096 @@
+#featured-detail-wrap {
+  .featured-shipgo-wrap {
+    .design-content {
+      .design-content-inner {
+        section {
+          &#shipgo-intro-top {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 660px;
+            padding: 95px 0 0;
+            background: #1885fa;
+            background: -moz-linear-gradient(45deg,  #0e77e8 0%, #0e77e8 15%, #1885fa 15%, #1885fa 100%);
+            background: -webkit-linear-gradient(45deg,  #0e77e8 0%,#0e77e8 15%,#1885fa 15%,#1885fa 100%);
+            background: linear-gradient(45deg,  #0e77e8 0%,#0e77e8 15%,#1885fa 15%,#1885fa 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e77e8', endColorstr='#1885fa',GradientType=1 );
+            overflow: hidden;
+
+            @include respond-to (full) {
+              height: 580px;
+              padding: 60px 60px 0;
+            }
+
+            &:before {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              background: transparent;
+              background: -moz-linear-gradient(-45deg,  transparent 0%, transparent 46%, #2a8ffb 46%, #2a8ffb 63%, #2a8ffb 63%, #0e77e8 63%, #0e77e8 100%);
+              background: -webkit-linear-gradient(-45deg,  transparent 0%,transparent 46%,#2a8ffb 46%,#2a8ffb 63%,#2a8ffb 63%,#0e77e8 63%,#0e77e8 100%);
+              background: linear-gradient(135deg,  transparent 0%,transparent 46%,#2a8ffb 46%,#2a8ffb 63%,#2a8ffb 63%,#0e77e8 63%,#0e77e8 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='transparent', endColorstr='#0e77e8',GradientType=1 );
+
+              @include respond-to (wide) {
+                height: 650px;
+              }
+    
+              @include respond-to (lg) {
+                height: 100%;
+              }
+            }
+    
+            .service-top-content {
+              position: relative;
+              display: flex;
+              width: 1200px;
+              margin: auto;
+
+              @include respond-to (full) {
+                width: 100%;
+              }
+    
+              .title-area {
+                position: relative;
+                z-index: 1;
+    
+                @include respond-to (lg) {
+                  flex-basis: 100%;
+                }
+    
+                @include respond-to (mobilelg) {
+                  padding: 0 10px;
+                }
+        
+                h1 {
+                  text-align: left;
+                  margin: 40px 40px 0 0;
+
+                  @include respond-to (lg) {
+                    text-align: center;
+                    margin: auto;
+                  }
+    
+                  .shipgo-title {
+                    font-size: 46px;
+                    color: #fff;
+    
+                    @media only screen and (max-width: 1700px) {
+                      font-size: 42px;
+                    }
+
+                    @include respond-to (wide) {
+                      font-size: 34px;
+                    }
+
+                    @include respond-to (pad) {
+                      font-size: 30px;
+                    }
+    
+                    @include respond-to (mobileW) {
+                      font-size: 24px;
+                    }
+
+                    img {
+                      @include respond-to (wide) {
+                        width: 195px;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .work-info {
+                text-align: left;
+
+                @include respond-to (lg) {
+                  text-align: center;
+                }
+              }
+
+              .tools {
+                justify-content: normal;
+
+                @include respond-to (lg) {
+                  justify-content: center;
+                }
+
+                span {
+                  background: rgba(23, 133, 250, 0.3);
+
+                  @include respond-to (wide) {
+                    width: 50px;
+                    height: 50px;
+                  }
+
+                  i {
+                    color: #fff;
+                  }
+                }
+              }
+
+              .earth {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin: 0 0 0 -40px;
+              }
+            }
+
+            .wave {
+              position: absolute;
+              width: 100%;
+              left: 0;
+              bottom: 0;
+
+              .wave-area {
+                position:relative;
+                width: 100%;
+                height:15vh;
+                margin-bottom:-7px; 
+                min-height:100px;
+                max-height:150px;
+              }
+              
+              .parallax > use {
+                animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+              }
+              .parallax > use:nth-child(1) {
+                animation-delay: -2s;
+                animation-duration: 7s;
+              }
+              .parallax > use:nth-child(2) {
+                animation-delay: -3s;
+                animation-duration: 10s;
+              }
+              .parallax > use:nth-child(3) {
+                animation-delay: -4s;
+                animation-duration: 13s;
+              }
+              .parallax > use:nth-child(4) {
+                animation-delay: -5s;
+                animation-duration: 20s;
+              }
+              @keyframes move-forever {
+                0% {
+                transform: translate3d(-90px,0,0);
+                }
+                100% { 
+                  transform: translate3d(85px,0,0);
+                }
+              }
+
+              @media (max-width: 768px) {
+                .waves {
+                  height:40px;
+                  min-height:40px;
+                }
+                .content {
+                  height:30vh;
+                }
+                h1 {
+                  font-size:24px;
+                }
+              }
+            }
+          }
+
+          &#summary-area {
+            .progress-area {
+              position: relative;
+              margin: 140px auto 0;
+
+              .inner {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .port {
+                  margin: 0 8px;
+
+                  @include respond-to (mobileM) {
+                    font-size: 11px;
+                  }
+                }
+
+                .progress {
+                  position: relative;
+                  width: 240px;
+                  height: 6px;
+                  border-radius: 10px;
+                  background: $gray-line;
+
+                  @include respond-to (mobileM) {
+                    width: 200px;
+                  }
+              
+                  .progress-bar {
+                    width: 0;
+                    height: 100%;
+                    border-radius: 10px;
+                    background-image: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+                    background-size: 37em 0.25em;
+              
+                    span {
+                      top: -30px;
+                      margin-left: -22px;
+                      left: 0;
+                      position: absolute;
+                      border-radius: 2px;
+                      padding: 4px 10px;
+                      font-size: 24px;
+
+                      &:before {
+                        content: "도착예정 : 2019-01-13 13:00";
+                        position: absolute;
+                        display: block;
+                        min-width: 90px;
+                        bottom: 100%;
+                        margin-bottom: 7px;
+                        color: #fff;
+                        left: -37px;
+                        font-size: 12px;
+                        border-radius: 8px;
+                        text-align: center;
+                        padding: 10px;
+                        -webkit-font-smoothing: auto;
+                        background: #000;
+                      }
+
+                      &:after {
+                        border-left: solid transparent 10px;
+                        border-right: solid transparent 10px;
+                        border-top: solid #000 10px;
+                        bottom: 40px;
+                        content: " ";
+                        height: 0;
+                        left: 50%;
+                        margin-left: -11px;
+                        position: absolute;
+                        width: 0;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &#flow-area {
+            color: #222;
+            background: $gray-bg;
+          }
+
+          &#no-result-area {
+            padding: 120px 20px;
+            margin: auto;
+
+            @include respond-to (md) {
+              padding: 60px 20px;
+            }
+          }
+
+          &#icon-font-area {
+            background: $gray-bg;
+
+            .icon-font-area-inner {
+              .icon-list {
+                ul {
+                  li {
+                    i {
+                      font-family: "icon-font";
+                      font-size: 24px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &#page-view-area {
+            padding: 100px 0;
+            overflow: hidden;
+
+            @include respond-to (md) {
+              padding: 40px 0;
+            }
+
+            .page-view-area-inner {
+              .text-area {
+                .title {
+                  font-size: 22px;
+                  font-weight: bold;
+                  padding: 30px 0 0;
+
+                  span {
+                    color: $blue;
+                  }
+                }
+
+                .sub-text {
+                  margin: 10px 0 0;
+                }
+              }
+
+              .dashboard-area {
+                margin: auto;
+                text-align: center;
+                padding: 0 20px;
+
+                .text-area {
+                  .title {
+                    padding: 0;
+                  }
+                }
+
+                .img-area {
+                  position: relative;
+                  width: 920px;
+                  margin: 40px auto 0;
+
+                  @include respond-to (lg) {
+                    width: 800px;
+                    margin: 20px auto 0;
+                  }
+
+                  @include respond-to (sm) {
+                    width: 100%;
+                  }
+
+                  .hidden-box {
+                    position: absolute;
+                    display: flex;
+                    width: 200px;
+                    height: 58px;
+                    top: 66px;
+                    left: 38px;
+                    align-items: center;
+                    justify-content: end;
+                    background: rgb(166 177 226 / 10%);
+    
+                    @include respond-to (wide) {
+                      left: 50%;
+                      margin: 0 0 0 -411px;
+                    }
+    
+                    @include respond-to (sm) {
+                      display: none;
+                    }
+    
+                    i {
+                      padding: 0 10px 0 0;
+                      color: $blue;
+                    }
+                  }
+    
+                  img {
+                    width: 920px;
+                    border-radius: 25px;
+                    box-shadow: 0 24px 30px 0 rgba(0, 32, 102, 0.3);
+    
+                    @include respond-to (wide) {
+                      width: 100%;
+                      max-width: 900px;
+                    }
+    
+                    @include respond-to (mobileW) {
+                      border-radius: 10px;
+                    }
+    
+                    &.detail {
+                      position: absolute;
+                      width: 389px;
+                      top: 0;
+                      left: 50%;
+                      margin: 0 0 0 -222px;
+                      border-radius: 0;
+                      border-left: 1px solid $gray-line;
+                      box-shadow: 8px 0 10px 0 rgba(0,0,0,0.1);
+    
+                      @include respond-to (wide) {
+                        width: 380px;
+                      }
+
+                      @include respond-to (lg) {
+                        width: 337px;
+                        margin: 0 0 0 -211px;
+                      }
+    
+                      @include respond-to (sm) {
+                        width: 42.3%;
+                        margin: 0 0 0 -24.2%;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .right-img-height-area {
+                position: relative;
+                height: 360px;
+                margin: 160px 0 0;
+                z-index: 2;
+
+                @include respond-to (lg) {
+                  height: 100%;
+                  margin: 80px 0 0;
+                }
+
+                @include respond-to (md) {
+                  margin: 40px 0 0;
+                }
+
+                .inner {
+                  display: flex;
+                  width: 1200px;
+                  margin: auto;
+
+                  @include respond-to (full) {
+                    width: 100%;
+                  }
+
+                  @include respond-to (lg) {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    text-align: center;
+                  }
+
+                  @include respond-to (sm) {
+                    padding: 20px;
+                  }
+
+                  .text-area {
+                    @include respond-to (lg) {
+                      position: relative;
+                      flex-basis: 100%;
+                      left: 0;
+                      margin: 0 0 20px;
+                    }
+                  }
+    
+                  .img-area {
+                    position: absolute;
+                    left: 50%;
+                    right: -160px;
+
+                    @media only screen and (max-width: 1680px) {
+                      right: -80px;
+                    }
+
+                    @media only screen and (max-width: 1570px) {
+                      right: -160px;
+                    }
+
+                    @include respond-to (lg) {
+                      position: relative;
+                      right: auto;
+                    }
+
+                    img {
+                      width: 920px;
+                      border-radius: 16px;
+                      box-shadow: 0 32px 30px -12px rgba(0, 0, 0, 0.1);
+
+                      @include respond-to (wide) {
+                        width: 800px;
+                      }
+
+                      @include respond-to (sm) {
+                        width: 100%;
+                      }
+
+                      &.vessel-add, &.vessel-card {
+                        position: absolute;
+                        width: 320px;
+                        left: 0;
+
+                        @include respond-to (lg) {
+                          display: none;
+                        }
+                      }
+
+                      &.vessel-card {
+                        margin: 0 0 0 -380px;
+                        bottom: -20px;
+                      }
+
+                      &.vessel-add {
+                        margin: 0 0 0 -310px;
+                        bottom: 150px;
+
+                        @include respond-to (wide) {
+                          bottom: 100px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              .right-img-area {
+                position: relative;
+                margin: 180px 0 0;
+                padding: 0 20px;
+                z-index: 2;
+
+                @include respond-to (lg) {
+                  margin: 80px 0 0;
+                }
+
+                @include respond-to (md) {
+                  margin: 40px 0 0;
+                }
+
+                .inner {
+                  display: flex;
+                  width: 1200px;
+                  gap: 40px;
+                  margin: auto;
+
+                  @include respond-to (full) {
+                    width: 100%;
+                  }
+
+                  @include respond-to (lg) {
+                    display: block;
+                    text-align: center;
+                  }
+
+                  .text-area {
+                    position: relative;
+
+                    .requirements {
+                      position: absolute;
+                      bottom: 0;
+
+                      @include respond-to (lg) {
+                        display: none;
+                      }
+
+                      ul {
+                        li {
+                          display: flex;
+                          margin: 0 0 15px;
+
+                          &:first-child {
+                            .tooltip-box {
+                              color: #fff;
+                              background: $blue;
+
+                              &:after {
+                                border-right-color: $blue;
+                              }
+                            }
+                          }
+
+                          &:last-child {
+                            margin: 0;
+                          }
+
+                          .tooltip-box {
+                            position: relative;
+                            display: block;
+                            min-width: 90px;
+                            color: #fff;
+                            font-size: 12px;
+                            margin: 0 0 0 10px;
+                            border-radius: 10px;
+                            text-align: center;
+                            padding: 10px;
+                            background: #000;
+
+                            &:after {
+                              border-left: solid transparent 6px;
+                              border-right: solid #000 6px;
+                              border-bottom: solid transparent 6px;
+                              border-top: solid transparent 6px;
+                              bottom: -2px;
+                              top: 0;
+                              content: " ";
+                              height: 0;
+                              left: -12px;
+                              margin: auto;
+                              position: absolute;
+                              width: 0;
+                            }
+
+                            .typing {
+                              display: inline-block;
+                              width: 10px;
+                              height: 10px;
+                              background: rgba(255, 255, 255, 0.4);
+                              border-radius: 50%;
+                              
+                              &.typing-1 { animation: typing 2s infinite }
+                              &.typing-2 { animation: typing 2s 250ms infinite }
+                              &.typing-3 { animation: typing 2s 500ms infinite }
+                            }
+
+                            @keyframes typing {
+                              0%, 75%, 100% {
+                                transform: translate(0, 0.25rem) scale(0.9);
+                                opacity: 0.5;
+                              }
+                              
+                              25% {
+                                transform: translate(0, -0.25rem) scale(1);
+                                opacity: 1;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+    
+                  .img-area {
+                    position: relative;
+                    margin: 0 -240px 0 0;
+
+                    @include respond-to (lg) {
+                      position: relative;
+                      right: 0;
+                      margin: 20px 0 0;
+                    }
+
+                    img {
+                      width: 921px;
+                      border-radius: 16px;
+                      box-shadow: 0 32px 30px -12px rgba(0, 0, 0, 0.1);
+
+                      @include respond-to (wide) {
+                        width: 800px;
+                      }
+
+                      @include respond-to (sm) {
+                        width: 100%;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .left-img-height-area {
+                position: relative;
+                height: 960px;
+                padding: 340px 0 0;
+                background: $gray-bg;
+                z-index: 1;
+
+                @include respond-to (wide) {
+                  height: 770px;
+                  padding: 260px 0 0;
+                }
+
+                @include respond-to (lg) {
+                  height: 100%;
+                  padding: 60px 0;
+                  margin: 80px 0 0;
+                }
+
+                @include respond-to (md) {
+                  margin: 40px 0 0;
+                }
+
+                .inner {
+                  display: flex;
+                  width: 1080px;
+                  margin: auto;
+                  justify-content: end;
+
+                  @include respond-to (wide) {
+                    width: 100%;
+                  }
+
+                  @include respond-to (lg) {
+                    display: block;
+                    text-align: center;
+                  }
+
+                  .text-area {
+                    @include respond-to (wide) {
+                      position: absolute;
+                      left: 50%;
+                    }
+
+                    @include respond-to (lg) {
+                      position: relative;
+                      left: auto;
+                      margin: 0 0 20px;
+                    }
+                  }
+    
+                  .img-area {
+                    position: absolute;
+                    left: 50%;
+                    margin: 0 0 0 -900px;
+
+                    @include respond-to (lg) {
+                      position: relative;
+                      left: auto;
+                      padding: 0 20px;
+                    }
+
+                    img {
+                      width: 900px;
+                      border-radius: 16px;
+                      box-shadow: 0 32px 30px -12px rgba(0, 0, 0, 0.1);
+
+                      @include respond-to (wide) {
+                        width: 800px;
+                      }
+
+                      @include respond-to (md) {
+                        width: 100%;
+                      }
+
+                      &.grid-list {
+                        position: absolute;
+                        left: 143px;
+                        bottom: 51px;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .center-img-area {
+                position: relative;
+                margin: 80px 0 0;
+                padding: 0 20px;
+
+                @include respond-to (lg) {
+                  margin: 60px 0 0;
+                }
+
+                @include respond-to (md) {
+                  margin: 40px 0 0;
+                }
+
+                .inner {
+                  position: relative;
+                  width: 920px;
+                  margin: auto;
+
+                  @include respond-to (lg) {
+                    width: 100%;
+                    text-align: center;
+                  }
+
+                  .img-area {
+                    position: relative;
+                    margin: 40px 0 0;
+
+                    @include respond-to (lg) {
+                      margin: 20px 0 0;
+                    }
+
+                    img {
+                      width: 920px;
+                      border-radius: 16px;
+                      box-shadow: 0 32px 30px -12px rgba(0, 0, 0, 0.1);
+
+                      @include respond-to (wide) {
+                        width: 800px;
+                      }
+
+                      @include respond-to (md) {
+                        width: 100%;
+                      }
+
+                      &.vessel-info-pop {
+                        position: absolute;
+                        width: 300px;
+                        top: -10px;
+                        right: -40px;
+                        border-radius: 0;
+
+                        @include respond-to (wide) {
+                          right: 40px;
+                        }
+
+                        @include respond-to (lg) {
+                          display: none;
+                        }
+                      }
+                    }
+
+                    .timeline {
+                      position: absolute;
+                      width: 320px;
+                      left: -50px;
+                      bottom: -50px;
+                      border-radius: 10px;
+                      margin: 0 60px 0 0;
+                      background: #fff;
+                      overflow: hidden;
+                      box-shadow: 0 12px 20px 0 rgba(0,0,0,0.1);
+
+                      @include respond-to (lg) {
+                        display: none;
+                      }
+        
+                      .schedule-list {
+                        position: relative;
+                        display: inline-block;
+                        width: 100%;
+                        font-size: 12px;
+                  
+                        .table-top {
+                          position: relative;
+                          float: left;
+                          width: 100%;
+                          padding: 10px;
+                          background: $gray-bg;
+                          border-bottom: 1px solid $gray-line;
+                          z-index: 1;
+                  
+                          .map-marker {
+                            position: absolute;
+                            font-size: 13px;
+                            top: 11px;
+                            left: 16px;
+                            color: $gray-text;
+                          }
+                  
+                          .schedule-title {
+                            position: relative;
+                            width: 100%;
+                            padding-left: 22px;
+                  
+                            span {
+                              float: left;
+                              width: 27%;
+                              color: $gray-text;
+                  
+                              &:nth-child(1) {
+                                width: 46%;
+                                text-align: left;
+                              }
+                            }
+                          }
+                        }
+                  
+                        .shipment-log-list {
+                          float: left;
+                          width: 100%;
+                  
+                          .vessel-accordian {
+                            float: left;
+                            width: 100%;
+                            padding: 10px 10px 10px 13px;
+                            line-height: 17px;
+                            font-size: 13px;
+                            position: relative;
+                            color: $gray-strong;
+                            position: relative;
+                            border-bottom: 1px solid $gray-line;
+                            background: $gray-bg;
+                            cursor: pointer;
+                            @include transition(all .3s); 
+                  
+                            &:hover {
+                              color: #000;
+                              @include transition(all .4s); 
+                            }
+                  
+                            &.selected {
+                              background: $blue;
+                              color: #fff;
+                              @include transition(all .3s); 
+                  
+                              &:hover {
+                                color: #fff;
+                                transition: none;
+                              }
+                            }
+                  
+                            i {
+                              &.ion-android-boat {
+                                font-size: 17px;
+                                vertical-align: middle;
+                                margin-right:3px;
+                              }
+                  
+                              &.ion-android-arrow-dropdown {
+                                position: absolute;
+                                right: 10px;
+                                font-size: 17px;
+                                top: 10px;
+                              }
+                            }
+                          }
+                        }
+                  
+                        .port-list {
+                          float: left;
+                          width: 100%;
+                          padding: 0 10px;
+                          z-index: 1;
+        
+                          .port-box {
+                            float: left;
+                            width: 100%;
+                  
+                            &:last-child {
+                              #timeline {
+                                .timeline-block {
+                                  .timeline-content {
+                                    padding: 15px 0 13px 22px;
+                                  }
+                                }
+                              }
+                            }
+                        
+                            #timeline {
+                              position: relative;
+                              width: 100%;
+                  
+                              &::before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 9px;
+                                height: 100%;
+                                width: 2px;
+                              }
+                    
+                              .timeline-block {
+                                position: relative;
+                  
+                                &:after {
+                                  content: "";
+                                  display: table;
+                                  clear: both;
+                                }
+                  
+                                &:nth-child(even) .timeline-content {
+                                  float: left;
+                                }
+                      
+                                .timeline-date {
+                                  position: absolute;
+                                  top: 21px;
+                                  left: 8px;
+                                  width: 4px;
+                                  height: 4px;
+                                  border-radius: 50%;
+                                  line-height: 22px;
+                                  text-align: center;
+                                  background: #fff;
+                                }
+                            
+                                .timeline-content {
+                                  position: relative;
+                                  display: inline-block;
+                                  width: 100%;
+                                  padding: 15px 0 0 22px;
+                  
+                                  .country-title {
+                                    float: left;
+                                    width: 46%;
+                                    color: #000;
+                                  }
+                  
+                                  .time-layer {
+                                    float: left;
+                                    width: 27%;
+                                    min-height:27px;
+                  
+                                    p {
+                                      font-size: 11px;
+                                    }
+                                  }
+                                }
+                              }
+                            } 
+                  
+                            .old-schedule {
+                              .timeline-block {
+                                .timeline-date {
+                                  box-shadow: 0 0 0 2px $gray-text;
+                                }
+                  
+                                .timeline-content {
+                                  .time-layer {
+                                    color: $gray-text;
+                                  }
+                                }
+                              }
+                  
+                              &::before {
+                                background: $gray-text;
+                              }
+                            }
+                  
+                            .now-schedule {
+                              .timeline-block {
+                                .timeline-date {
+                                  box-shadow: 0 0 0 2px $blue;
+                                }
+                  
+                                .timeline-content {
+                                  .time-layer {
+                                    color: $blue;
+                                  }
+                                }
+                              }
+                  
+                              &::before {
+                                background: $blue;
+                              }
+                            }
+                  
+                            .ing-schedule {
+                              .timeline-block {
+                                .timeline-date {
+                                  box-shadow: 0 0 0 2px $orange;
+                                }
+                  
+                                .timeline-content {
+                                  .time-layer {
+                                    color: $orange;
+                                  }
+                                }
+                              }
+                  
+                              &::before {
+                                background: $orange;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &#illust-area {
+            margin: 0 auto 120px;
+
+            .illust-area-inner {
+              text-align: center;
+              padding: 0 60px;
+
+              @include respond-to (mobileW) {
+                padding: 0 40px;
+              }
+
+              img {
+                @include respond-to (sm) {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

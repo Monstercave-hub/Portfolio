@@ -1,0 +1,605 @@
+.mCustomScrollBox {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  max-width: 100%;
+  outline: none;
+  direction: ltr;
+}
+
+.mCSB_container {
+  overflow: hidden;
+  width: auto;
+  height: auto;
+}
+
+/* 
+------------------------------------------------------------------------------------------------------------------------
+2. VERTICAL SCROLLBAR 
+y-axis
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+.mCSB_inside > .mCSB_container {
+  margin-right: 30px;
+}
+
+.mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden {
+  margin-right: 0;
+}
+
+/* non-visible scrollbar */
+
+.mCS-dir-rtl > .mCSB_inside > .mCSB_container {
+  /* RTL direction/left-side scrollbar */
+  margin-right: 0;
+  margin-left: 30px;
+
+  &.mCS_no_scrollbar_y.mCS_y_hidden {
+    margin-left: 0;
+  }
+}
+
+/* RTL direction/left-side scrollbar */
+
+.mCSB_scrollTools {
+  /* contains scrollbar markup (draggable element, dragger rail, buttons etc.) */
+  position: absolute;
+  width: 16px;
+  height: auto;
+  left: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.mCSB_outside + .mCSB_scrollTools {
+  right: -26px;
+}
+
+/* scrollbar position: outside */
+
+.mCS-dir-rtl > {
+  .mCSB_inside > .mCSB_scrollTools {
+    /* RTL direction/left-side scrollbar */
+    right: auto;
+    left: 0;
+  }
+
+  .mCSB_outside + .mCSB_scrollTools {
+    /* RTL direction/left-side scrollbar */
+    right: auto;
+    left: 0;
+    left: -26px;
+  }
+}
+
+/* RTL direction/left-side scrollbar (scrollbar position: outside) */
+
+.mCSB_scrollTools {
+  .mCSB_draggerContainer {
+    /* contains the draggable element and dragger rail markup */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: auto;
+  }
+
+  a + .mCSB_draggerContainer {
+    margin: 20px 0;
+  }
+
+  .mCSB_draggerRail {
+    width: 2px;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+  }
+
+  .mCSB_dragger {
+    cursor: pointer;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+
+    .mCSB_dragger_bar {
+      position: relative;
+      width: 4px;
+      height: 100%;
+      margin: 0 auto;
+      -webkit-border-radius: 16px;
+      -moz-border-radius: 16px;
+      border-radius: 16px;
+      text-align: center;
+    }
+  }
+}
+
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand {
+  .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar {
+    width: 12px;
+  }
+
+  .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, .mCSB_draggerContainer:hover .mCSB_draggerRail {
+    width: 8px;
+  }
+}
+
+/* 
+------------------------------------------------------------------------------------------------------------------------
+3. HORIZONTAL SCROLLBAR 
+x-axis
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+.mCSB_horizontal {
+  &.mCSB_inside > .mCSB_container {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  &.mCSB_outside > .mCSB_container {
+    min-height: 100%;
+  }
+
+  > .mCSB_container.mCS_no_scrollbar_x.mCS_x_hidden {
+    margin-bottom: 0;
+  }
+}
+
+/* non-visible scrollbar */
+
+.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+  width: auto;
+  height: 16px;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.mCustomScrollBox + .mCSB_scrollTools {
+  &.mCSB_scrollTools_horizontal, + .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+    bottom: -26px;
+  }
+}
+
+/* scrollbar position: outside */
+
+.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+  a + .mCSB_draggerContainer {
+    margin: 0 20px;
+  }
+
+  .mCSB_draggerRail {
+    width: 100%;
+    height: 2px;
+    margin: 7px 0;
+  }
+
+  .mCSB_dragger {
+    width: 30px;
+
+    /* minimum dragger width */
+    height: 100%;
+    left: 0;
+
+    .mCSB_dragger_bar {
+      width: 100%;
+      height: 4px;
+      margin: 6px auto;
+    }
+  }
+}
+
+.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand {
+  .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar {
+    height: 12px;
+
+    /* auto-expanded scrollbar */
+    margin: 2px auto;
+  }
+
+  .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, .mCSB_draggerContainer:hover .mCSB_draggerRail {
+    height: 8px;
+
+    /* auto-expanded scrollbar */
+    margin: 4px 0;
+  }
+}
+
+.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+  .mCSB_buttonLeft, .mCSB_buttonRight {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .mCSB_buttonLeft {
+    left: 0;
+  }
+
+  .mCSB_buttonRight {
+    right: 0;
+  }
+}
+
+/* 
+------------------------------------------------------------------------------------------------------------------------
+4. VERTICAL AND HORIZONTAL SCROLLBARS 
+yx-axis 
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+.mCSB_container_wrapper {
+  position: absolute;
+  height: auto;
+  width: auto;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-right: 30px;
+  margin-bottom: 30px;
+
+  > .mCSB_container {
+    padding-right: 30px;
+    padding-bottom: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+.mCSB_vertical_horizontal > .mCSB_scrollTools {
+  &.mCSB_scrollTools_vertical {
+    bottom: 20px;
+  }
+
+  &.mCSB_scrollTools_horizontal {
+    right: 20px;
+  }
+}
+
+/* non-visible horizontal scrollbar */
+
+.mCSB_container_wrapper {
+  &.mCS_no_scrollbar_x.mCS_x_hidden + .mCSB_scrollTools.mCSB_scrollTools_vertical {
+    bottom: 0;
+  }
+
+  &.mCS_no_scrollbar_y.mCS_y_hidden + .mCSB_scrollTools ~ .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+    right: 0;
+  }
+}
+
+/* non-visible vertical scrollbar/RTL direction/left-side scrollbar */
+
+.mCS-dir-rtl > {
+  .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > {
+    .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+      right: 0;
+      left: 20px;
+    }
+
+    .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden + .mCSB_scrollTools ~ .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+      left: 0;
+    }
+  }
+
+  .mCSB_inside > .mCSB_container_wrapper {
+    /* RTL direction/left-side scrollbar */
+    margin-right: 0;
+    margin-left: 30px;
+  }
+}
+
+/* RTL direction/left-side scrollbar */
+
+/* non-visible scrollbar/RTL direction/left-side scrollbar */
+
+.mCSB_container_wrapper {
+  &.mCS_no_scrollbar_y.mCS_y_hidden > .mCSB_container {
+    padding-right: 0;
+  }
+
+  &.mCS_no_scrollbar_x.mCS_x_hidden > .mCSB_container {
+    padding-bottom: 0;
+  }
+}
+
+.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper {
+  &.mCS_no_scrollbar_y.mCS_y_hidden {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &.mCS_no_scrollbar_x.mCS_x_hidden {
+    margin-bottom: 0;
+  }
+}
+
+/* 
+------------------------------------------------------------------------------------------------------------------------
+5. TRANSITIONS  
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+.mCSB_scrollTools {
+  transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+
+  .mCSB_dragger .mCSB_dragger_bar {
+    transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+  }
+}
+
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand, .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand {
+  .mCSB_dragger_bar, .mCSB_draggerRail {
+    transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,  margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out;
+  }
+}
+
+/* default theme ("light") */
+.mCSB_scrollTools {
+  opacity: 0.75;
+  filter: "alpha(opacity=75)";
+  -ms-filter: "alpha(opacity=75)";
+}
+
+.mCS-autoHide > .mCustomScrollBox {
+  > .mCSB_scrollTools, ~ .mCSB_scrollTools {
+    opacity: 0;
+    filter: "alpha(opacity=0)";
+    -ms-filter: "alpha(opacity=0)";
+  }
+}
+
+.mCustomScrollbar > .mCustomScrollBox {
+  > .mCSB_scrollTools.mCSB_scrollTools_onDrag, ~ .mCSB_scrollTools.mCSB_scrollTools_onDrag {
+    opacity: 1;
+    filter: "alpha(opacity=100)";
+    -ms-filter: "alpha(opacity=100)";
+  }
+}
+
+.mCustomScrollBox:hover {
+  > .mCSB_scrollTools, ~ .mCSB_scrollTools {
+    opacity: 1;
+    filter: "alpha(opacity=100)";
+    -ms-filter: "alpha(opacity=100)";
+  }
+}
+
+.mCS-autoHide:hover > .mCustomScrollBox {
+  > .mCSB_scrollTools, ~ .mCSB_scrollTools {
+    opacity: 1;
+    filter: "alpha(opacity=100)";
+    -ms-filter: "alpha(opacity=100)";
+  }
+}
+
+.mCSB_scrollTools {
+  .mCSB_draggerRail {
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.4);
+    filter: "alpha(opacity=40)";
+    -ms-filter: "alpha(opacity=40)";
+  }
+
+  .mCSB_dragger {
+    .mCSB_dragger_bar {
+      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.75);
+      filter: "alpha(opacity=75)";
+      -ms-filter: "alpha(opacity=75)";
+    }
+
+    &:hover .mCSB_dragger_bar {
+      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.85);
+      filter: "alpha(opacity=85)";
+      -ms-filter: "alpha(opacity=85)";
+    }
+
+    &:active .mCSB_dragger_bar, &.mCSB_dragger_onDrag .mCSB_dragger_bar {
+      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.9);
+      filter: "alpha(opacity=90)";
+      -ms-filter: "alpha(opacity=90)";
+    }
+  }
+}
+
+
+/* theme: "minimal", "minimal-dark" */
+.mCSB_outside + {
+  .mCS-minimal.mCSB_scrollTools_vertical, .mCS-minimal-dark.mCSB_scrollTools_vertical {
+    right: 0;
+    margin: 12px 0;
+  }
+}
+
+.mCustomScrollBox {
+  &.mCS-minimal + .mCSB_scrollTools {
+    &.mCSB_scrollTools_horizontal, + .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+      bottom: 0;
+      margin: 0 12px;
+    }
+  }
+
+  &.mCS-minimal-dark + .mCSB_scrollTools {
+    &.mCSB_scrollTools_horizontal, + .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+      bottom: 0;
+      margin: 0 12px;
+    }
+  }
+}
+
+/* RTL direction/left-side scrollbar */
+
+.mCS-dir-rtl > .mCSB_outside + {
+  .mCS-minimal.mCSB_scrollTools_vertical, .mCS-minimal-dark.mCSB_scrollTools_vertical {
+    left: 0;
+    right: auto;
+  }
+}
+
+.mCS-minimal.mCSB_scrollTools .mCSB_draggerRail, .mCS-minimal-dark.mCSB_scrollTools .mCSB_draggerRail {
+  background-color: transparent;
+}
+
+.mCS-minimal.mCSB_scrollTools_vertical .mCSB_dragger, .mCS-minimal-dark.mCSB_scrollTools_vertical .mCSB_dragger {
+  height: 50px;
+}
+
+.mCS-minimal.mCSB_scrollTools_horizontal .mCSB_dragger, .mCS-minimal-dark.mCSB_scrollTools_horizontal .mCSB_dragger {
+  width: 50px;
+}
+
+.mCS-minimal.mCSB_scrollTools .mCSB_dragger {
+  .mCSB_dragger_bar {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    filter: "alpha(opacity=20)";
+    -ms-filter: "alpha(opacity=20)";
+  }
+
+  &:active .mCSB_dragger_bar, &.mCSB_dragger_onDrag .mCSB_dragger_bar {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+    filter: "alpha(opacity=50)";
+    -ms-filter: "alpha(opacity=50)";
+  }
+}
+
+/* theme: "minimal-dark" */
+.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger {
+  .mCSB_dragger_bar {
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.2);
+    filter: "alpha(opacity=20)";
+    -ms-filter: "alpha(opacity=20)";
+  }
+
+  &:active .mCSB_dragger_bar, &.mCSB_dragger_onDrag .mCSB_dragger_bar {
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: "alpha(opacity=50)";
+    -ms-filter: "alpha(opacity=50)";
+  }
+}
+
+
+/**
+ * TrackpadScrollEmulator
+ * Author: Jonathan Nicol @f6design
+ * https://github.com/jnicol/trackpad-scroll-emulator
+ */
+
+ .tse-scrollable {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .tse-scroll-content {
+    overflow: hidden;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+/* No longer using ::scrollbar too, since it breaks Chrome 25 */
+
+.tse-scrollbar {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 11px;
+
+  .drag-handle {
+    position: absolute;
+    right: 2px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    min-height: 10px;
+    width: 7px;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    -ms-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+    background: #6c6e71;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+  }
+
+  &:hover .drag-handle {
+    /* When hovered, remove all transitions from drag handle */
+    opacity: 0.7;
+    -webkit-transition: opacity 0 linear;
+    -moz-transition: opacity 0 linear;
+    -o-transition: opacity 0 linear;
+    -ms-transition: opacity 0 linear;
+    transition: opacity 0 linear;
+  }
+
+  .drag-handle.visible {
+    opacity: 0.7;
+  }
+}
+
+/* Used when testing the scrollbar width */
+/* No longer using ::scrollbar too, since it breaks Chrome 25 */
+
+.scrollbar-width-tester::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Horizontal scroller */
+
+.tse-scrollable.horizontal {
+  .tse-scroll-content {
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar, &::scrollbar {
+      width: auto;
+      height: 0;
+    }
+  }
+
+  .tse-scrollbar {
+    top: auto;
+    left: 0;
+    width: auto;
+    height: 11px;
+
+    .drag-handle {
+      right: auto;
+      top: 2px;
+      height: 7px;
+      min-height: 0;
+      min-width: 10px;
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,354 @@
+#quotes-request-animate {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: -10px auto 0;
+  transform: scale(0.6);
+
+  .triangle {
+    position: absolute;
+    width: 180px;
+    height: 130px;
+    left: 0;
+    overflow: hidden;
+    z-index: 2;
+  
+    &:after {
+      position: absolute;
+      content: "";
+      top: -53px;
+      left: -54px;
+      width: 247px;
+      height: 240px;
+      border: 54px solid #fff; 
+      border-radius: 185px;
+    }
+  }
+
+  .animate-inner {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    .bg {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: $gray-bg;
+      overflow: hidden;
+
+      .zimgo-quotes-list-img {
+        position: absolute;
+        width: 170px;
+        right: 15px;
+        padding: 10px 10px 5px;
+        border-radius: 6px;
+        background: #fff;
+        box-shadow: 0 1px 1px 0px rgba(0,0,0,0.1);
+
+        .info-box {
+          display: flex;
+          width: 100%;
+          padding: 5px;
+          background: #fff5f9;
+
+          span {
+            flex: 1;
+            height: 3px;
+            border-radius: 10px;
+            margin: 0 5px 0 0;
+            background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+            background-size: 200% 100%;
+            animation: 1.5s shine linear infinite;
+          }
+        }
+
+        .tab {
+          display: inline-block;
+          width: 100%;
+
+          span {
+            position: relative;
+            float: left;
+            width: 30%;
+            padding: 5px 10px;
+            border-radius: 0 3px 0 0;
+            background: $gray-bg;
+
+            &:before {
+              content: "";
+              position: absolute;
+              width: 50%;
+              height: 2px;
+              top: 50%;
+              left: 0;
+              right: 0;
+              margin: auto;
+              transform: translateY(-50%);
+              background: $gray-text;
+            }
+
+            &:first-child {
+              border-radius: 3px 0 0 0;
+              background: #ed287b;
+
+              &:before {
+                background: #fff;
+              }
+            }
+          }
+        }
+
+        .list-img {
+          border: 1px solid $gray-line;
+          border-radius: 4px;
+
+          .top {
+            display: flex;
+            padding: 5px;
+
+            span {
+              flex: 1;
+              height: 3px;
+              border-radius: 10px;
+              margin: 0 5px 0 0;
+              background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+              background-size: 200% 100%;
+              animation: 1.5s shine linear infinite;
+            }
+          }
+
+          .progress-img {
+            padding: 10px;
+            background: $gray-bg;
+
+            .progress {
+              position: relative;
+              display: flex;
+            
+              .steps {
+                position: absolute;
+                display: flex;
+                width: 100%;
+                top: 50%;
+                transform: translateY(-70%);
+            
+                .progress-step {
+                  position: relative;
+                  width: 100%;
+            
+                  &:last-child {
+                    width: auto;
+                  }
+            
+                  &:before, &:after {
+                    content: "";
+                    position: absolute;
+                    width: 50%;
+                    height: 2px;
+                    top: 50%;
+                    background: #d9e1e9;
+                    transform: translateY(-50%);
+                  }
+            
+                  &:before {
+                    left: 0;
+                  }
+            
+                  &:after {
+                    right: 0;
+                  }
+
+                  .dot {
+                    position: absolute;
+                    margin-bottom: 10px;
+                    width: 6px;
+                    height: 6px;
+                    top: 50%;
+                    background: #fff;
+                    border: 2px solid #d9e1e9;
+                    border-radius: 100%;
+                    color: $gray-text;
+                    padding: 1px 0 0;
+                    z-index: 2;
+                    transform: translateY(-50%);
+                    @include transition(all .2s);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .page-btn {
+          position: relative;
+          display: inline-block;
+          margin: 10px auto 0;
+          padding: 4px 12px;
+          border-radius: 50px;
+          background: #ed287b;
+
+          &:before {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 1px;
+            left: 0;
+            right: 0;
+            top: 50%;
+            margin: auto;
+            transform: translateY(-50%);
+            background: #fff;
+          }
+        }
+      }
+
+      .human {
+        position: absolute;
+        right: 5px;
+        bottom: -10px;
+        z-index: 2;
+
+        .hand {
+          position: absolute;
+          top: -8px;
+          left: 0;
+          margin: 0 0 0 -48px;
+          animation: hand 2s ease infinite;
+          transform-origin: bottom;
+        }
+
+        @-webkit-keyframes hand {
+          0% {transform: rotate(0deg)};
+          50% {transform: rotate(10deg)};
+          100% {transform: rotate(0deg)};
+        }
+
+        @keyframes hand {
+          0% {transform: rotate(0deg)};
+          50% {transform: rotate(10deg)};
+          100% {transform: rotate(0deg)};
+        }
+
+        .face {
+          position: absolute;
+          top: -43px;
+          right: 54px;
+          animation: face 2s ease infinite;
+        }
+
+        @-webkit-keyframes face {
+          0% {transform: rotate(0deg)};
+          50% {transform: rotate(-5deg)};
+          100% {transform: rotate(0deg)};
+        }
+
+        @keyframes face {
+          0% {transform: rotate(0deg)};
+          50% {transform: rotate(-5deg)};
+          100% {transform: rotate(0deg)};
+        }
+      }
+    }
+
+    .quotes-list {
+      ul {
+        position: absolute;
+        left: 20px;
+        animation: quotes-list-up 10s linear infinite;
+
+        &:last-child {
+          animation: quotes-list-up 10s linear 6.7s infinite;
+        }
+
+        li {
+          display: block;
+          width: 120px;
+          height: 60px;
+          border-radius: 10px;
+          padding: 10px;
+          margin: 0 0 5px;
+          background: #fff;
+          box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
+
+          &:last-child {
+            margin: 0;
+          }
+
+          .quotes-list-inner {
+            i {
+              float: left;
+              width: 16px;
+              height: 16px;
+              font-size: 12px;
+              padding: 2px 0 0;
+              color: #ed287b;
+              border-radius: 20px;
+              background: #ed287b;
+              background-size: 200% 100%;
+              animation: 1.5s shine linear infinite;
+            }
+
+            .text-line {
+              float: left;
+              width: calc(100% - 16px);
+              padding: 0 0 0 10px;
+              
+              span {
+                float: left;
+                width: 100%;
+                height: 5px;
+                border-radius: 10px;
+                margin: 0 0 5px;
+                background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+                background-size: 200% 100%;
+                animation: 1.5s shine linear infinite;
+
+                &:last-child {
+                  width: 60%;
+                }
+              }
+
+              &:last-child {
+                width: 100%;
+                margin: 3px 0 0;
+                padding: 0;
+
+                span {
+                  width: 100%;
+
+                  &:last-child {
+                    width: 70%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @-webkit-keyframes quotes-list-up {
+    0% {top: 100%;};
+    100% {top: -130%};
+  }
+
+  @keyframes quotes-list-up {
+    0% {top: 100%;};
+    100% {top: -130%};
+  }
+
+  @-webkit-keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
+  }
+
+  @keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
+  }
+}

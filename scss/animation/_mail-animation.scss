@@ -1,0 +1,451 @@
+.mailing-guidelines-content {
+  .mailing-guidelines-body {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 50px auto 0;
+
+    .guide-top {
+      display: inline-block;
+      width: 100%;
+
+      .letter {
+        position: relative;
+        width: 84px;
+        height: 51px;
+        margin: 0 auto 32px auto;
+        background-color: #404660;
+        -webkit-animation: letter 2s ease infinite;
+    
+        &:before {
+          position: absolute;
+          content: "";
+          left: 0px;
+          bottom: 0px;
+          height: 24px;
+          width: 84px;
+          background-color: #404660;
+          z-index: 2;
+        }
+    
+        .flap {
+          position: absolute;
+          width: 0;
+          height: 0;
+          top: -30px;
+          border-top: 0px solid transparent;
+          border-right: 42px solid transparent;
+          border-left: 42px solid transparent;
+          border-bottom: 30px solid #404660;
+          transition: transform 300ms linear, border-bottom 3s;
+        }
+    
+        .shadow {
+          background: black;
+          width: 85px;
+          height: 4px;
+          border-radius: 50%;
+          position: absolute;
+          bottom: -13px;
+          left: 0;
+          background: #D1D6EE;
+          -webkit-animation: shadow 2s ease infinite;
+          animation: shadow 2s ease infinite;
+        }
+    
+        .letter-body {
+          position: absolute;
+          width: 100%;
+          height: 48px;
+          bottom: 0;
+          left: 0;
+          border-radius: 1px;
+
+          &:before {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            left: 0;
+            border-right: 0px solid transparent;
+            border-top: 24px solid transparent;
+            border-bottom: 24px solid transparent;
+            border-left: 42px solid #555B77;
+            z-index: 2;
+          }
+        
+          &:after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            right: 0;
+            border-left: 0px solid transparent;
+            border-top: 24px solid transparent;
+            border-bottom: 24px solid transparent;
+            border-right: 42px solid #555B77;
+            z-index: 2;
+          }
+
+          .letter-list {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: #fff;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: auto;
+            border: 1px solid $gray-line;
+            border-radius: 4px 4px 0px 0px;
+            animation: newmail 4s infinite forwards;
+            overflow: hidden;
+          
+            &:before {
+              content: '';
+              position: absolute;
+              width: 30px;
+              height: 30px;
+              top: 0;
+              left: 5px;
+              background: linear-gradient(to bottom, #FFF, #FFF 50%, $gray-text 50%, $gray-text);
+              background-size: 100% 8px;
+              animation: newmail-headertext 4s infinite forwards;
+            }
+          
+            &:after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 20px;
+              left: 0;
+              background-color: $gray-bg;
+            }
+    
+            &.new {              
+              + .number-icon {
+                opacity: 0;
+                animation: number 4s infinite forwards;
+              }
+            }
+
+            .list-bg {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 20px;
+              left: 0;
+              border: 5px solid $gray-bg;
+              border-top-width: 3px;
+              background-color: $gray-bg;
+              background: linear-gradient(to bottom, $gray-bg 50%, $gray-text 50%, $gray-text);
+              background-size: 100% 10px;
+              animation: newmail-bodytext 4s infinite forwards;
+              z-index: 1;
+            }
+          }
+    
+          .number-icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: -45px;
+            right: -5px;
+            background: $red;
+            color: #fff;
+            text-align: center;
+            padding: 3px 0 0;
+            font-size: 11px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 10px 0px rgba(230, 27, 27, 0.5);
+            z-index: 10;
+          }
+        }
+      }
+    }
+
+    .info-message {
+      display: inline-block;
+      width: 100%;
+      margin: 10px auto;
+
+      @include respond-to (mobilelg) {
+        padding: 0 10px;
+      }
+
+      .main-message {
+        .title {
+          font-size: 20px;
+          font-weight: bold;
+          margin: 0 0 8px;
+
+          @include respond-to (mobilelg) {
+            font-size: 16px;
+          }
+        }
+
+        ul {
+          li {
+            margin: 4px 0;
+            font-size: 14px;
+
+            @include respond-to (mobilelg) {
+              font-size: 13px;
+            }
+
+            span {
+              color: $blue;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .precautions {
+        position: relative;
+        width: 400px;
+        text-align: left;
+        margin: 40px auto;
+        padding: 15px 20px 16px;
+        border-radius: 10px;
+        background: $gray-bg;
+
+        @include respond-to (mobilelg) {
+          width: 100%;
+        }
+
+        .title {
+          font-size: 13px;
+          font-weight: bold;
+          border-bottom: 1px solid $gray-line;
+          padding: 0 0 8px;
+          margin: 0 0 10px;
+        }
+
+        ul {
+          li {
+            position: relative;
+            padding: 0 0 0 15px;
+            margin: 0 0 7px;
+            color: $gray-text;
+
+            &:last-child {
+              margin: 0;
+            }
+
+            i {
+              position: absolute;
+              font-size: 11px;
+              padding: 2px 0 0;
+              left: 0;
+            }
+
+            p {
+              margin: 2px 0 0;
+              color: $red;
+            }
+          }
+        }
+      }
+    }
+
+    .btn-check-area {
+      button {
+        display: inline-block;
+        width: 110px;
+        text-align: center;
+        margin: 0 1px;
+        padding: 10px 5px;
+        box-shadow: 0 16px 20px -7px rgba(0, 0, 0, 0.3);
+  
+        &:hover, &:focus {
+          border: 1px solid #03a9f4;
+          background: #01A8F4;
+          -moz-box-shadow: 0px 7px 14px -4px rgba(80, 169, 245, 0.6);
+          -webkit-box-shadow: 0px 7px 14px -4px rgba(80, 169, 245, 0.6);
+          box-shadow: 0px 7px 14px -4px rgba(80, 169, 245, 0.6);
+        }
+
+        &.btn-default {
+          box-shadow: 0 14px 20px -10px rgba(0, 0, 0, 0.16);
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes letter {
+	50% {
+		transform: translateY(-4px);
+	}
+}
+
+@keyframes letter {
+	50% {
+		transform: translateY(-4px);
+	}
+}
+
+@-webkit-keyframes shadow {
+	50% {
+		opacity: 0.5;
+		transform: translateY(4px) scale(0.6);
+	}
+}
+
+@keyframes shadow {
+	50% {
+		opacity: 0.5;
+		transform: translateY(4px) scale(0.6);
+	}
+}
+
+@-webkit-keyframes newmail {
+	0% {
+		top: -18px;
+	}
+
+	25% {
+		top: -32px;
+	}
+
+	100% {
+		top: -32px;
+	}
+}
+
+@keyframes newmail {
+	0% {
+		top: -18px;
+	}
+
+	25% {
+		top: -32px;
+	}
+
+	100% {
+		top: -32px;
+	}
+}
+
+@-webkit-keyframes newmail-headertext {
+	0% {
+		width: 0;
+	}
+
+	5% {
+		width: 0;
+	}
+
+	25% {
+		width: 40px;
+	}
+
+	100% {
+		width: 40px;
+	}
+}
+
+@keyframes newmail-headertext {
+	0% {
+		width: 0;
+	}
+
+	5% {
+		width: 0;
+	}
+
+	25% {
+		width: 40px;
+	}
+
+	100% {
+		width: 40px;
+	}
+}
+
+@-webkit-keyframes newmail-bodytext {
+	0% {
+		width: 0;
+	}
+
+	5% {
+		width: 0;
+	}
+
+	60% {
+		width: 100%;
+	}
+
+	100% {
+		width: 100%;
+	}
+}
+
+@keyframes newmail-bodytext {
+	0% {
+		width: 0;
+	}
+
+	5% {
+		width: 0;
+	}
+
+	60% {
+		width: 100%;
+	}
+
+	100% {
+		width: 100%;
+	}
+}
+
+@-webkit-keyframes number {
+	0% {
+		opacity: 0;
+	}
+
+	20% {
+		opacity: 0;
+		transform: rotate(-180deg);
+		box-shadow: 0;
+	}
+
+	21% {
+		opacity: 1;
+	}
+
+	35% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes number {
+	0% {
+		opacity: 0;
+	}
+
+	20% {
+		opacity: 0;
+		transform: rotate(-180deg);
+		box-shadow: 0;
+	}
+
+	21% {
+		opacity: 1;
+	}
+
+	35% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

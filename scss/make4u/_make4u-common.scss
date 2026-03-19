@@ -1,0 +1,308 @@
+#make4u-page {
+  h2 {font-size: 22px; text-align: left;}
+  hr {width:30px; border-style:hidden; border-bottom:1px solid $gray-text; margin:0; text-align:center; margin:10px auto; @include transition(all .3s);}
+  .line-design {
+    line-height: 1;
+    
+    ul {
+      li {
+        display: inline-block;
+        width: 0;
+        height: 10px;
+        font-size: 10px;
+        font-weight: normal;
+  
+        &:nth-child(2){
+          color: $yellow;
+        }
+        &:nth-child(4) {
+          color: $mint;
+        }
+        &:nth-child(5) {
+          color: $green;
+        }
+        &:nth-child(6) {
+          color: $orange;
+        }
+        &:nth-child(8) {
+          color: $lavender;
+        }
+      }
+    }
+  }
+
+  input,
+  textarea,
+  label {
+    font-family: 'Pretendard', 'sans-serif'; 
+    outline: none;
+    border: none;
+    font-size: 13px;
+
+    @include respond-to(sm) {
+      font-size: 12px;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 160px;
+    padding: 10px; 
+    line-height: 1.45; 
+    border-radius: 10px;
+    background: #fff; 
+    border: 1px solid $input-line; 
+    overflow: auto;
+    @include transition(all .2s);
+
+    &:hover {
+      border: 1px solid $make4u-brand;
+    }
+
+    &:focus {
+      border: 1px solid $make4u-brand;
+      background: $make4u-brand-light;
+    }
+
+    &:disabled {
+      border: 1px solid $input-line;
+      background: $gray-bg;
+      opacity: 1;
+      cursor: not-allowed;
+    }
+  }
+
+  input[type="number"],
+  input[type="text"], 
+  input[type="email"],
+  input[type="search"], 
+  input[type="tel"], 
+  input[type="password"], 
+  input[type="name"], 
+  input[type="file"] {
+    position: relative;
+    width: 100%;
+    color: #333;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1;
+    -webkit-appearance: none;
+    border: 1px solid $gray-bg;
+    caret-color: #333;
+    background: $gray-bg;
+    @include transition(all .2s);
+
+    &:hover, &:focus {
+      border: 1px solid $make4u-brand;
+      background: #fff;
+      @include transition(all .2s);
+    }
+
+    &:focus {
+      background: $make4u-brand-light;
+    }
+
+    &:disabled {
+      border: 1px solid $input-line;
+      background: $input-line;
+      opacity: 1;
+      cursor: not-allowed;
+    }
+
+    &.error {
+      border: 1px solid $red !important;
+      background: $red-light !important;
+    }
+
+    &:valid:not(:placeholder-shown) {
+      border-color: $gray-line;
+      background: #fff;
+    }
+
+    &:valid {
+      &:hover, &:focus {
+        border: 1px solid $make4u-brand;
+        background: #fff;
+        @include transition(all .2s);
+      }
+
+      &:focus {
+        background: $make4u-brand-light;
+      }
+    }
+  }
+
+  .btn {
+    position: relative;
+    display: inline-block;
+    padding: 16px 12px;
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    line-height: 1px;
+    border-radius: 40px;
+    @include transition(all .3s); 
+
+    &:hover {
+      @include transition(all .3s); 
+    }
+    
+    &:disabled {
+      color: $gray-text;
+      border: 1px solid $gray-bg;
+      background: $gray-bg;
+      box-shadow: none;
+      cursor: not-allowed;
+
+      &:hover {
+        color: $gray-text;
+        border: 1px solid $gray-bg;
+        background: $gray-bg;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .btn-brand {
+    color: #fff;
+    border: 1px solid $make4u-brand;
+    background: $make4u-brand;
+
+    &:hover {
+      border: 1px solid $make4u-brand-dark-line;
+      background: $make4u-brand-dark;
+      box-shadow: 0px 13px 20px -3px rgba(140, 8, 165, 0.5);
+    }
+  }
+
+  .btn-brand-shadow {
+    color: #fff;
+    border: 1px solid $make4u-brand;
+    background: $make4u-brand;
+    box-shadow: 0px 12px 20px -3px rgba(129, 66, 231, 0.5);
+
+    &:hover {
+      border: 1px solid $make4u-brand-dark-line;
+      background: $make4u-brand-dark;
+      box-shadow: 0px 6px 20px -4px rgba(140, 8, 165, 0.5);
+    }
+  }
+
+  .btn-default {
+    color: #333;
+    border: 1px solid $gray-line;
+    background: #fff;
+
+    &:hover {
+      color: #fff;
+      border: 1px solid $make4u-brand;
+      background: $make4u-brand;
+      box-shadow: 0px 8px 20px -3px rgba(67, 16, 152, 0.5);
+    }
+  }
+
+  .btn-border-white {
+    color: #fff;
+    border: 1px solid #fff;
+    background: transparent;
+
+    &:hover {
+      border: 1px solid $make4u-brand-dark-line;
+      background: $make4u-brand-dark;
+      box-shadow: 0px 13px 20px -3px rgba(140, 8, 165, 0.5);
+    }
+  }
+
+  .btn-brand-light {
+    color: #fff;
+    border: 1px solid $make4u-brand-dark-line;
+    background: $make4u-brand-dark;
+
+    &:hover {
+      border: 1px solid #9712af;
+      background: #6c0480;
+    }
+  }
+
+  .btn-green-light {
+    color: #fff;
+    border: 1px solid #3ffb1f;
+    background: #1cc300;
+
+    &:hover {
+      border: 1px solid #1bbd00;
+      background: #159200;
+    }
+  }
+
+  .btn-cancel {
+    border: 1px solid $gray-line;
+    background: #fff;
+
+    &:hover {
+      color: #fff;
+      border: 1px solid $red;
+      background: $red;
+      box-shadow: 0px 8px 20px -3px rgba(225, 6, 6, 0.5);
+    }
+  }
+
+  .btn-cancel-shadow {
+    border: 1px solid transparent;
+    background: #fff;
+    box-shadow: 0px 14px 20px -3px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      color: #fff;
+      border: 1px solid $red;
+      background: $red;
+      box-shadow: 0px 6px 20px -4px rgba(225, 6, 6, 0.5);
+    }
+  }
+
+  .btn-orange-light {
+    color: #fff;
+    border: 1px solid #ffc567;
+    background: #e99e07;
+
+    &:hover {
+      border: 1px solid #efa123;
+      background: #ce8900;
+    }
+  }
+
+  .btn-ssm {
+    font-size: 10px;
+    padding: 7px 6px;
+  }
+
+  .btn-md {
+    padding: 18px 30px;
+  }
+
+  .btn-lg {
+    font-size: clamp(13px,2vw,14px);
+    padding: 22px 32px;
+
+    @include respond-to (pad) {
+      padding: 20px 28px;
+    }
+
+    @include respond-to (mobileL) {
+      padding: 18px 20px;
+    }
+  }
+}

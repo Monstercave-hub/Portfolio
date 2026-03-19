@@ -1,0 +1,307 @@
+#work {
+  #work-main {
+    position: relative;
+    height: 420px;
+    background: #f6f9ff;
+    overflow: hidden;
+
+    @include respond-to (lg) {
+      height: 100%;
+    }
+
+    .work-inner {
+      display: flex;
+      width: 1200px;
+      height: 100%;
+      padding: 120px 0 0;
+      margin: auto;
+
+      @include respond-to (lg) {
+        width: 100%;
+        padding: 100px 20px;
+      }
+
+      @include respond-to (mobileW) {
+        padding: 100px 20px 160px;
+      }
+
+      .work-title-area {
+        .title {
+          p {
+            font-size: 12px;
+
+            &:last-child {
+              font-size: clamp(24px,3vw,40px);
+              font-weight: bold;
+            }
+          }
+
+          hr {
+            margin: 10px 0;
+          }
+        }
+
+        .text-line {
+          text-align: left;
+        }
+
+        .sub-text {
+          font-size: 14px;
+          color: $gray-text;
+          margin: 10px 0 0;
+
+          p {
+            margin: 0 0 3px;
+
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      .heart-ani-area {
+        position: absolute;
+        display: block;
+        width: 400px;
+        right: 110px;
+        bottom: 0;
+        margin: auto;
+
+        @include respond-to (md) {
+          right: 30px;
+          bottom: -30px;
+         transform: scale(0.8); 
+        }
+
+        @include respond-to (pad) {
+          right: -20px;
+          bottom: -60px;
+          transform: scale(0.6);
+        }
+
+        .card {
+          height: 280px;
+        }
+      }
+    }
+  }
+
+  #work-portfolio-area {
+    position: relative;
+    z-index: 1;
+
+    .portfolio-area {
+      display: flex;
+      width: 1200px;
+      height: 100%;
+      margin: auto;
+
+      @include respond-to (lg) {
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      @include respond-to (md) {
+        display: block;
+        padding: 0;
+      }
+  
+      #filter {
+        position: sticky;
+        align-self: flex-start;
+        flex-basis: 230px;
+        top: 0;
+        text-align: left;
+        padding: 100px 40px 0 0;
+        z-index: 1000;
+  
+        @include respond-to (md) {
+          display: flex;
+          padding: 0;
+          top: 48px;
+          background: #fff;
+          box-shadow: 0 15px 12px -4px rgba(0,0,0,.06);
+        }
+
+        @include respond-to (mobileW) {
+          top: 44px;
+          white-space: nowrap;
+          overflow-x: auto;
+
+          &::-webkit-scrollbar {display: none;}
+        }
+
+        .filter-title {
+          font-size: 14px;
+          font-weight: bold;
+          padding: 0 0 10px;
+          margin: 0 0 10px;
+          border-bottom: 1px solid $gray-line;
+
+          @include respond-to (md) {
+            display: none;
+          }
+        }
+  
+        p { 
+          display: block;
+          width: 190px;
+          padding: 7px 0; 
+          margin: 0 0 15px;
+          font-weight: bold;
+          letter-spacing: .5px;
+          cursor: pointer; 
+          @include transition(all .2s); 
+
+          @include respond-to (md) {
+            width: auto;
+            flex: 1;
+            min-width: 100px;
+            margin: 0;
+            text-align: center;
+          }
+      
+          &:hover, &.on { 
+            padding: 7px 0 7px 10px;
+            background: $blue; 
+            color: #fff; 
+            @include transition(all .2s); 
+          }
+        }
+      }
+
+      #portfolio {
+        position: relative;
+        flex: 1;
+        height: 100%;
+        padding: 100px 0 0;
+
+        @include respond-to (md) {
+          padding: 40px 20px 0;
+        }
+  
+        .portfolio-img {
+          position: relative;
+          width: 100%;
+    
+          ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            grid-gap: 30px;
+
+            @include respond-to (mobileL) {
+              grid-gap: 20px;
+            }
+  
+            li {
+              position: relative;
+              max-width: 160px;
+              border-radius: 3px;
+              margin: 0 0 20px 0;
+
+              @include respond-to (sm) {
+                margin: auto;
+              }
+
+              .hidden-box {
+                position: relative;
+                border-radius: 10px;
+                background: #fff;
+                box-shadow: 0px 19px 26px -12px rgba(36, 33, 69, 0.2);
+                cursor: pointer;
+                overflow: hidden;
+  
+                &:hover {
+                  .portfolio-thumbnail-img {
+                    opacity: 0.3; 
+                    @include transition(all .4s); 
+                  }
+    
+                  .post-content {
+                      opacity:1; 
+                      visibility: inherit;
+                      -webkit-transform: translate3d(0, 0, 0); 
+                      transform: translate3d(0, 0, 0);
+                  }
+                }
+    
+                .portfolio-thumbnail-img {
+                  position: relative;
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                  z-index: 2;
+                  @include transition(all .4s); 
+                }
+    
+                .post-content {
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  font-size: 11px; 
+                  padding: 15px; 
+                  top: 0;
+                  left: 0;
+                  border-right: 1px solid #fff; 
+                  color: #fff; 
+                  text-align: right; 
+                  background: rgba(0, 0, 0, 0.9);
+                  opacity: 0; 
+                  visibility: hidden;
+                  -webkit-transition: opacity 0.35s, 
+                  -webkit-transform 0.35s;
+                  transition: opacity 0.35s, 
+                  transform 0.35s;
+                  -webkit-transform: translate3d(-40px, 0, 0);
+                  transform: translate3d(-40px, 0, 0);
+                  z-index: 1;
+    
+                  span {
+                    display: inline-block;
+                    width: 100%;
+                    margin: 2px 0;
+                  }
+                }
+              }
+    
+              span {
+                &.year {
+                  font-size: 0.85em; 
+                  position: absolute; 
+                  right: 0; 
+                  margin: -1em -1em 0 0; 
+                  padding: 0.3em 0.5em; 
+                  color: #fff; 
+                  border: 2px solid rgba(255,255,255,0.8); 
+                  background: rgba(0,0,0,0.2);
+                  box-shadow: 0 4px 12px 0 rgba(0,0,0,0.1);
+                  z-index: 9;
+                }
+              }
+    
+              .img-title {
+                display: inline-block; 
+                width: 100%; 
+                text-align: center; 
+                margin: 20px auto 0;
+    
+                h4 {
+                  font-size: 12px;
+                  padding: 0; 
+                  margin: 0;
+                } 
+    
+                p {
+                  font-size: 11px;
+                  color: $gray-text;
+                  margin: 3px 0 0;
+                }
+              } 
+            }
+          }
+        }
+      }
+    }
+  }
+}

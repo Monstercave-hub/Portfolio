@@ -1,0 +1,36 @@
+footer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 40px 20px;
+  margin: auto;
+  text-align: center;
+  color: $gray-text;
+  font-size: 12px;
+
+  .footer-inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    @include respond-to (mobileW) {
+      display: block;
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      line-height: 1;
+
+      @include respond-to (mobileW) {
+        margin: 3px 0 0;
+      }
+  
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+}

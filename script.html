@@ -1,0 +1,173 @@
+<script type="text/javascript" src="/js/common.js"></script>
+
+<!-- Scroll -->
+<script type="text/javascript" src="/js/wow.js"></script>
+<script type="text/javascript">
+  wow = new WOW(
+    {
+      animateClass: 'animated',
+      offset:       100,
+      scrollContainer: true,
+      // callback:     function(box) {
+      //   console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+      // }
+    }
+  );
+  wow.init();
+</script>
+
+<script type="text/javascript" src="/js/guide-slider.js"></script>
+<script type="text/javascript" src="/js/comparison-slider.js"></script>
+<script language="javascript" src='/js/make4u/splide.min.js'></script>
+
+<script language="javascript" src='/js/tab.js'></script>
+
+<!-- Scrollbar Style -->
+<!-- <script type="text/javascript" src="/js/mCustomScrollbar.js"></script>
+<script>
+  (function($){
+    $(window).on("load",function(){
+      
+      $("body").mCustomScrollbar({
+        theme:"minimal-dark",
+      });
+      
+    });
+  })(jQuery);
+</script> -->
+
+<!-- <script src="/js/jquery.trackpad-scroll-emulator.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.demo-fullscreen').TrackpadScrollEmulator();
+  });
+</script> -->
+
+<script>
+   (function () {
+  const links = Array.from(document.querySelectorAll('[data-spy-link]'));
+  const sections = Array.from(document.querySelectorAll('[data-spy-section]'));
+  if (!links.length || !sections.length) return;
+
+  const gnbH = 48;   // 고정 GNB 높이
+  const extra = 0;  // 여유 오프셋(원하면 조절)
+  const offset = gnbH + extra;
+
+  // 섹션 순서가 DOM 순서가 아닐 수도 있으면 안전하게 정렬
+  sections.sort((a, b) => (a.offsetTop || 0) - (b.offsetTop || 0));
+
+  const linkById = new Map(
+    links.map(a => [decodeURIComponent((a.getAttribute('href') || '').replace('#', '')), a])
+  );
+
+  function setActiveById(id) {
+    links.forEach(a => a.classList.remove('is-active'));
+    const target = linkById.get(id);
+    if (target) target.classList.add('is-active');
+  }
+
+  // ✅ 스크롤 위치로 "현재 섹션" 계산 (가장 안정적)
+  function getCurrentSectionId() {
+    const y = window.pageYOffset;
+    let currentId = sections[0].id;
+
+    for (const sec of sections) {
+      const top = sec.getBoundingClientRect().top + y;
+      if (y + offset >= top) {
+        currentId = sec.id;
+      } else {
+        // DOM 순서대로면 여기서 끊어도 됨
+        break;
+      }
+    }
+    return currentId;
+  }
+
+  function updateActiveFromScroll() {
+    const id = getCurrentSectionId();
+    if (id) setActiveById(id);
+  }
+
+  // 초기 활성 (hash 우선)
+  const initialId =
+    decodeURIComponent((location.hash || '').replace('#', '')) || sections[0].id;
+  if (initialId) setActiveById(initialId);
+
+  // 클릭 시: GNB 높이만큼 보정해서 스무스 스크롤
+  links.forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href') || '';
+      if (!href.startsWith('#')) return;
+
+      const id = decodeURIComponent(href.slice(1));
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      e.preventDefault();
+
+      const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+      });
+
+      setActiveById(id);
+      history.pushState(null, '', '#' + encodeURIComponent(id));
+    });
+  });
+
+  // 스크롤 이벤트는 rAF로 가볍게(버벅임 방지)
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      updateActiveFromScroll();
+      ticking = false;
+    });
+  }, { passive: true });
+
+  // 레이아웃 바뀌면 다시 맞추기
+  window.addEventListener('resize', () => {
+    updateActiveFromScroll();
+  });
+
+  // 뒤로가기/해시 이동 대응
+  window.addEventListener('hashchange', () => {
+    updateActiveFromScroll();
+  });
+
+  // 첫 프레임에서 한 번 더(이미지 로딩 등으로 레이아웃 바뀌는 경우)
+  requestAnimationFrame(updateActiveFromScroll);
+})();
+
+</script>
+
+<script>
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.tdnn');
+    if (!btn) return;
+
+    document.querySelector('#mobile-area')?.classList.toggle('dark');
+    document.querySelector('.sun')?.classList.toggle('moon');
+    btn.classList.toggle('day');
+  });
+</script>
+
+<!-- Back to Top -->
+<div class="progress-wrap">
+  <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+  </svg>
+</div>
+
+<!-- Mouse -->
+<div class="cursor">
+  <div class="cursor__inner cursor__inner--circle"></div>
+  <div class="cursor__inner cursor__inner--dot"></div>
+</div>
+<script src='/js/TweenMax.min.js'></script>
+<script type="text/javascript" src="/js/mouse.js"></script>
+
+

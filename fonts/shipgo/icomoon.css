@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('icomoon.eot?gky3k5');
+  src:  url('icomoon.eot?gky3k5#iefix') format('embedded-opentype'),
+    url('icomoon.ttf?gky3k5') format('truetype'),
+    url('icomoon.woff?gky3k5') format('woff'),
+    url('icomoon.svg?gky3k5#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+}
+
+.icon-manual:before {
+  content: "\e900";
+}
+.icon-air:before {
+  content: "\e901";
+}
+.icon-door:before {
+  content: "\e902";
+}
+.icon-blog:before {
+  content: "\e903";
+}
+.icon-cargo-ship:before {
+  content: "\e904";
+}
+.icon-logistics:before {
+  content: "\e905";
+}
+.icon-order:before {
+  content: "\e906";
+}
+.icon-ship:before {
+  content: "\e907";
+}
+.icon-truck:before {
+  content: "\e908";
+}
+.icon-train:before {
+  content: "\e909";
+}
+.icon-stored:before {
+  content: "\e90a";
+}
+.icon-ship2:before {
+  content: "\e90b";
+}
+.icon-crane:before {
+  content: "\e90c";
+}
+.icon-airport-tower:before {
+  content: "\e90d";
+}
+.icon-airplane-front:before {
+  content: "\e90e";
+}
+.icon-delivery-truck:before {
+  content: "\e90f";
+}
+.icon-lcl-train:before {
+  content: "\e910";
+}
+.icon-container:before {
+  content: "\e911";
+}
+.icon-earth:before {
+  content: "\e912";
+}
+.icon-cargo-truck:before {
+  content: "\e913";
+}
+.icon-lcl-ship:before {
+  content: "\e914";
+}
+.icon-air-line:before {
+  content: "\e915";
+}
+.icon-truck-line:before {
+  content: "\e916";
+}
+.icon-box-money:before {
+  content: "\e917";
+}
+.icon-lingo:before {
+  content: "\e918";
+}
+.icon-cargo-shipment:before {
+  content: "\e919";
+}
+.icon-excel:before {
+  content: "\e91a";
+}

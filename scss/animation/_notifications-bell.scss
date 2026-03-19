@@ -1,0 +1,87 @@
+.notifications {
+  position: absolute;
+  display: flex;
+  width: 26px;
+  height: 26px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: $red;
+  box-shadow: 0px 7px 12px -2px rgba(230, 26, 26, 0.6);
+  z-index: 2;
+
+  .inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid $red;
+    animation-name: bord-pop;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  .bell-container {
+    position: relative;
+
+    .bell-shape {
+      position: relative;
+      transform: perspective(5px);
+      transform-style: preserve-3d;
+
+      > * {
+        background-color: #fff;
+      }
+
+      .bell-top {
+        border-radius: 50%;
+        height: 4px;
+        width: 4px;
+        z-index: 1;
+        transform: translateZ(-2px);
+        margin: 0 auto;
+      }
+
+      .bell-body {
+        height: 9px;
+        width: 8px;
+        border-radius: 40px 40px 0 0;
+        position: relative;
+        transform: translateZ(0);
+        -webkit-animation: swing 3s 0.1s infinite
+          ease-in-out;
+        animation: swing 3s 0.1s infinite ease-in-out;
+
+        &::after {
+          content: "";
+          width: 11px;
+          height: 3px;
+          position: absolute;
+          background-color: #fff;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          border-radius: 15px 15px 2px 2px;
+        }
+      }
+
+      .bell-ball {
+        border-radius: 0 0 50% 50%;
+        height: 4px;
+        width: 4px;
+        margin: 0 auto;
+        transform: translateZ(-2px);
+        -webkit-animation: bellswing 3s 0.2s infinite
+          ease-in-out;
+        animation: bellswing 3s 0.2s infinite
+          ease-in-out;
+      }
+    }
+  }
+}

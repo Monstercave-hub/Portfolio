@@ -1,0 +1,137 @@
+.carousel-slider {
+  position: relative;
+
+  .splide__arrows {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    z-index: 1;
+
+    .splide__arrow {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      border: 1px solid $gray-line;
+      margin: 0;
+      background: #fff;
+      cursor: pointer;
+      z-index: 1;
+      @include transition(all .2s);
+    
+      svg {
+        width: 1.2em;
+        height: 1.2em;
+      }
+    
+      &:hover {
+        border-color: $make4u-brand;
+        background: $make4u-brand;
+        @include transition(all .2s);
+        
+        svg {
+          fill: #fff;
+        }
+      }
+    
+      &:focus {
+        outline: none;
+      }
+
+      &.splide__arrow--prev {
+        left: -20px;
+
+        @include respond-to (lg) {
+          left: 20px;
+        }
+      
+        svg {
+          transform: scaleX(-1);
+        }
+      }
+      
+      &.splide__arrow--next {
+        right: -20px;
+
+        @include respond-to (lg) {
+          right: 20px;
+        }
+      }
+    }
+  }
+
+  .splide__progress {
+    position: absolute;
+    width: 80px;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin: auto;
+    background: $gray-line;
+    z-index: 1;
+
+    @include respond-to (mobileW) {
+      width: 50px;
+    }
+
+    .splide__progress__bar {
+      width: 0;
+      height: 3px;
+      background: $make4u-brand;
+    }
+  }
+
+  .splide__track {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    .splide__list {
+      display: flex;
+      flex-wrap: wrap;
+
+      .splide__slide {
+        position: relative;
+        margin: 0;
+        user-select: none;
+        cursor: grab;
+      }
+    }
+  }
+
+  .splide__pagination {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 15px;
+    z-index: 1;
+
+    li {
+      margin: 0 3px;
+
+      .splide__pagination__page {
+        width: 6px;
+        height: 6px;
+        border-radius: 10px;
+        background: $gray-line;
+
+        &.is-active {
+          background: $make4u-brand;
+        }
+      }
+    }
+  }
+}
