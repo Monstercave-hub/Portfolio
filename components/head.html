@@ -1,8 +1,28 @@
 
   <head>
+    <!-- Google tag (gtag.js) -->
+     <script>
+      if (localStorage.getItem('exclude_me') === 'true') {
+        window['ga-disable-G-1YPPC3E88M'] = true;
+      }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1YPPC3E88M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // 2초 뒤에만 GA4에 데이터를 전송 (0초 봇 방지)
+      setTimeout(function() {
+        gtag('config', 'G-1YPPC3E88M');
+      }, 2000); 
+    </script>
+     
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow">
     
     <title>joong</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />

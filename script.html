@@ -1,19 +1,21 @@
 <script type="text/javascript" src="/js/common.js"></script>
 
-<!-- Scroll -->
-<script type="text/javascript" src="/js/wow.js"></script>
 <script type="text/javascript">
-  wow = new WOW(
-    {
-      animateClass: 'animated',
-      offset:       100,
-      scrollContainer: true,
-      // callback:     function(box) {
-      //   console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-      // }
-    }
-  );
-  wow.init();
+  document.addEventListener('click', function (e) {
+    const target = e.target.closest('a, button');
+    if (!target) return;
+
+    const label =
+      target.dataset.analytics ||
+      target.innerText.trim() ||
+      target.getAttribute('href') ||
+      'unknown';
+
+    gtag('event', 'click', {
+      event_category: 'ui',
+      event_label: label
+    });
+  });
 </script>
 
 <script type="text/javascript" src="/js/guide-slider.js"></script>
@@ -21,27 +23,6 @@
 <script language="javascript" src='/js/make4u/splide.min.js'></script>
 
 <script language="javascript" src='/js/tab.js'></script>
-
-<!-- Scrollbar Style -->
-<!-- <script type="text/javascript" src="/js/mCustomScrollbar.js"></script>
-<script>
-  (function($){
-    $(window).on("load",function(){
-      
-      $("body").mCustomScrollbar({
-        theme:"minimal-dark",
-      });
-      
-    });
-  })(jQuery);
-</script> -->
-
-<!-- <script src="/js/jquery.trackpad-scroll-emulator.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $('.demo-fullscreen').TrackpadScrollEmulator();
-  });
-</script> -->
 
 <script>
    (function () {
@@ -167,7 +148,6 @@
   <div class="cursor__inner cursor__inner--circle"></div>
   <div class="cursor__inner cursor__inner--dot"></div>
 </div>
-<script src='/js/TweenMax.min.js'></script>
 <script type="text/javascript" src="/js/mouse.js"></script>
 
 

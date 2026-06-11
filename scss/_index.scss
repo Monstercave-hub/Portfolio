@@ -41,7 +41,7 @@
                 a {
                   color: #222;
 
-                  @include respond-to (mobileW) {
+                  @include respond-to(mobileW) {
                     color: #fff;
                   }
                 }
@@ -55,9 +55,23 @@
 
   .content {
     #intro {
+      position: relative;
       padding: 140px 0 100px;
       overflow: hidden;
       background: $dark-bg;
+
+      .video-bg {
+        position: absolute;
+        width: 100%;
+        bottom: -10px;
+
+        video {
+          width: 100%;
+          height: 100%;
+          -o-object-fit: cover;
+          object-fit: cover;
+        }
+      }
 
       .intro-title {
         position: relative;
@@ -81,7 +95,7 @@
           font-size: 40px;
           margin: 6px 0 20px;
 
-          @include respond-to (mobileW) {
+          @include respond-to(mobileW) {
             font-size: 26px;
             height: 30px;
             margin: 6px 0 12px;
@@ -94,7 +108,7 @@
             gap: 10px;
             margin-left: -87px;
 
-            @include respond-to (mobileW) {
+            @include respond-to(mobileW) {
               margin-left: -57px;
             }
 
@@ -113,7 +127,8 @@
 
                   &.out {
                     transform: rotateX(90deg);
-                    transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                    transition: transform 0.32s
+                      cubic-bezier(0.55, 0.055, 0.675, 0.19);
                   }
 
                   &.behind {
@@ -122,7 +137,8 @@
 
                   &.in {
                     transform: rotateX(0deg);
-                    transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    transition: transform 0.38s
+                      cubic-bezier(0.175, 0.885, 0.32, 1.275);
                   }
                 }
               }
@@ -151,11 +167,11 @@
 
             &:last-child {
               margin: 11px 0 0;
-    
+
               a {
                 text-decoration: underline;
                 color: $gray-text;
-    
+
                 &:hover {
                   color: $blue;
                 }
@@ -172,14 +188,19 @@
         #basicSlider {
           position: relative;
 
-          &:before, &:after {
+          &:before,
+          &:after {
             content: "";
             position: absolute;
             width: 200px;
             height: 100%;
             top: 50%;
             transform: translateY(-50%);
-            background: linear-gradient(to right, #fff 0%, rgba(0, 0, 0, 0) 100%);
+            background: linear-gradient(
+              to right,
+              #fff 0%,
+              rgba(0, 0, 0, 0) 100%
+            );
             z-index: 2;
           }
 
@@ -191,11 +212,11 @@
             right: 0;
             transform: translateY(-50%) rotateZ(180deg);
           }
-  
+
           .MS-content {
             white-space: nowrap;
             overflow: hidden;
-  
+
             .item {
               position: relative;
               display: inline-block;
@@ -203,19 +224,19 @@
               height: 60px;
               text-align: center;
               vertical-align: middle;
-              @include respond-to (sm) {
+              @include respond-to(sm) {
                 width: 20%;
               }
-              @include respond-to (pad) {
+              @include respond-to(pad) {
                 width: 25%;
               }
-              @include respond-to (mobileM) {
+              @include respond-to(mobileM) {
                 width: 30%;
               }
-  
+
               img {
                 max-height: 60px;
-                @include respond-to (mobileW) {
+                @include respond-to(mobileW) {
                   max-height: 40px;
                 }
               }
@@ -229,95 +250,99 @@
       display: inline-block;
       width: 100%;
       padding: 100px 0;
-  
+
       hr {
         margin: 10px auto;
       }
-  
+
       &:hover {
         hr {
           width: 40px;
           border-bottom: 1px solid $blue;
-          @include transition(all .3s);
+          @include transition(all 0.3s);
         }
       }
-  
+
       .skill-area {
         width: 1000px;
         margin: auto;
-  
-        @include respond-to (md) {
+
+        @include respond-to(md) {
           width: 100%;
           padding: 0 20px;
         }
-  
+
         .title-box {
           display: block;
           text-align: center;
-  
+
           .title {
             font-size: 30px;
             font-weight: bold;
-  
-            @include respond-to (mobileW) {
+
+            @include respond-to(mobileW) {
               font-size: 24px;
             }
-  
+
             span {
               color: $blue;
             }
           }
         }
-  
+
         .box-layer {
           display: block;
           width: 100%;
           text-align: center;
           margin: 20px auto;
-  
-          @include respond-to (mobileL) {
+
+          @include respond-to(mobileL) {
             margin: 0 auto;
           }
-  
+
           .mobile-box {
             display: flex;
             justify-content: center;
-  
-            @include respond-to (md) {
+
+            @include respond-to(md) {
               display: block;
               width: 100%;
               margin: auto;
             }
-  
+
             .card {
               float: left;
               width: 25%;
               padding: 0 15px;
               margin: 30px 0;
-  
-              @include respond-to (md) {
+
+              @include respond-to(md) {
                 float: none;
                 display: inline-block;
                 width: 250px;
                 margin: 30px 0 10px;
               }
-  
+
               .wrapper {
                 position: relative;
                 border-radius: 12px;
                 height: 240px;
                 overflow: hidden;
                 background-color: #fff;
-                box-shadow: 0 19px 38px rgba(0,0,0, 0.15), 0 15px 12px rgba(0,0,0, 0.1);
-  
+                box-shadow:
+                  0 19px 38px rgba(0, 0, 0, 0.15),
+                  0 15px 12px rgba(0, 0, 0, 0.1);
+
                 &:hover {
                   .data {
                     transform: translateY(0);
-                    box-shadow: 0 19px 38px rgba(0,0,0, 0.3), 0 15px 12px rgba(0,0,0, 0.2);
+                    box-shadow:
+                      0 19px 38px rgba(0, 0, 0, 0.3),
+                      0 15px 12px rgba(0, 0, 0, 0.2);
                   }
                 }
               }
-  
+
               .data {
                 position: absolute;
                 bottom: 0;
@@ -326,29 +351,29 @@
                 transform: translateY(80px);
                 transition: transform 0.3s;
                 z-index: 3;
-  
+
                 .content {
                   padding: 10px 20px;
                   position: relative;
                   z-index: 1;
                   background-color: #fff;
-  
+
                   .author {
                     font-size: 12px;
                     color: $gray-text;
-  
+
                     i {
                       position: absolute;
                       right: 20px;
                     }
                   }
-  
+
                   .title {
                     font-size: 14px;
                     font-weight: bold;
                     margin: 3px 0 15px;
                   }
-                  
+
                   .text {
                     height: 70px;
                     margin: 0;
@@ -388,15 +413,15 @@
       position: relative;
       width: 100%;
       overflow: hidden;
-  
+
       .parallax-area-inner {
         position: relative;
         background: $black-bg;
-  
+
         .content--spacing {
           margin-bottom: 100vh;
         }
-        
+
         .content__title {
           position: absolute;
           height: 100vh;
@@ -408,64 +433,64 @@
           font-weight: bold;
           font-size: clamp(1.5rem, 15vw, 60px);
           color: #fff;
-  
-          @include respond-to (sm) {
+
+          @include respond-to(sm) {
             margin: -30vh 0 0 -50vw;
             padding: 0 5vw;
             font-size: clamp(1.5rem, 15vw, 40px);
           }
-  
-          @include respond-to (mobileL) {
+
+          @include respond-to(mobileL) {
             margin: -10vh 0 0 -50vw;
             font-size: clamp(1.5rem, 15vw, 20px);
           }
-  
+
           p {
             margin: 0;
             padding: 0;
-            text-shadow: 0 10px 20px rgba(0,0,0,0.9);
+            text-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
           }
         }
-        
+
         .content__title--top {
           align-items: start;
         }
-        
+
         .content__title--bottom {
           align-items: end;
         }
-        
+
         .content__title--left {
           justify-items: start;
           text-align: left;
         }
-        
+
         .content__title--right {
           justify-items: end;
           text-align: right;
         }
-        
+
         .outro {
           display: grid;
           place-items: center;
           margin: 40vh 0;
         }
-  
+
         .grid {
           display: grid;
           place-items: center;
           padding: 2rem;
           width: 100%;
           perspective: 1500px;
-  
+
           .grid-wrap {
             height: auto;
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2vw;
             transform-style: preserve-3d;
-    
+
             .grid__item {
               aspect-ratio: 1.5;
               width: 100%;
@@ -475,7 +500,7 @@
               border-radius: 8px;
               display: grid;
               place-items: center;
-      
+
               .grid__item-inner {
                 position: relative;
                 width: calc(1 / 1 * 100%);
@@ -493,48 +518,48 @@
       position: relative;
       width: 100%;
       height: 100%;
-    
+
       .timeline-area {
         display: block;
         width: 700px;
         margin: auto;
-    
-        @include respond-to (sm) {
+
+        @include respond-to(sm) {
           width: 100%;
           padding: 0 20px 0 70px;
         }
-    
-        @include respond-to (mobileW) {
+
+        @include respond-to(mobileW) {
           padding: 0 20px;
         }
-    
+
         .timeline {
           ul {
             #more {
               display: none;
             }
-  
+
             li {
               &.timeline-item {
                 position: relative;
                 padding-left: 40px;
-    
+
                 &:last-child {
                   padding-bottom: 0;
                 }
-    
+
                 &:not(.period):hover .timeline-marker:before {
                   background: transparent;
                   border: 3px solid $red;
-                }						
-    
+                }
+
                 .timeline-marker {
                   position: absolute;
                   top: 14px;
                   bottom: 0;
                   left: 0;
                   width: 15px;
-                  
+
                   &:before {
                     content: "";
                     position: absolute;
@@ -546,28 +571,30 @@
                     border-radius: 100%;
                     top: 0;
                     left: 2px;
-                    transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+                    transition:
+                      background 0.3s ease-in-out,
+                      border 0.3s ease-in-out;
                   }
-                
+
                   &:after {
                     content: "";
                     position: absolute;
                     display: block;
                     width: 3px;
-                    background: #CCD5DB;
+                    background: #ccd5db;
                     top: 15px;
                     bottom: -10px;
                     left: 6px;
                   }
                 }
-    
+
                 .timeline-content {
                   padding: 9px 0 0;
-    
+
                   section {
                     position: relative;
                     padding-bottom: 1.25em;
-    
+
                     ul {
                       li {
                         position: relative;
@@ -576,7 +603,7 @@
                         align-items: center;
                         margin: 0 0 30px;
                         color: $gray-text;
-    
+
                         h4 {
                           flex: 0 0 100%;
                           font-size: 12px;
@@ -584,59 +611,60 @@
                           padding: 0;
                           margin: 0;
                         }
-            
+
                         .title {
                           font-weight: bold;
                           color: #222;
                           vertical-align: middle;
-    
+
                           &:before {
                             content: ".";
                             position: absolute;
                             left: -10px;
                             top: -3px;
                           }
-    
+
                           span {
                             font-weight: normal;
                             font-size: 12px;
                             margin: 0 0 0 8px;
                           }
                         }
-            
+
                         .icon-area {
                           display: flex;
                           align-items: center;
                           margin: 0 0 0 5px;
-            
+
                           i {
                             margin: 0 0 0 5px;
                             font-size: 16px;
-                            @include transition(all .2s); 
-            
+                            @include transition(all 0.2s);
+
                             &:hover {
                               color: $blue;
-                              @include transition(all .2s); 
+                              @include transition(all 0.2s);
                             }
-            
+
                             &.fa-desktop {
                               font-size: 12px;
                             }
-            
-                            &.xi-xpressengine, &.xi-devices {
+
+                            &.xi-xpressengine,
+                            &.xi-devices {
                               font-size: 15px;
                             }
                           }
                         }
-            
+
                         .content-text {
                           flex: 0 0 100%;
                           margin: 6px 0 3px;
                         }
-    
+
                         .link {
                           margin: 10px 0 0;
-    
+
                           a {
                             position: relative;
                             z-index: 0;
@@ -646,8 +674,8 @@
                             color: #333;
                             font-size: 12px;
                             vertical-align: bottom;
-                            transition: color .3s ease-out;
-    
+                            transition: color 0.3s ease-out;
+
                             &:before {
                               content: "";
                               position: absolute;
@@ -657,27 +685,35 @@
                               transform: translateY(calc(100% - 2px));
                               width: 100%;
                               height: 100%;
-                              background-image: linear-gradient(60deg, #eee 0%, #eee 100%);
-                              transition: transform .25s ease-out;
+                              background-image: linear-gradient(
+                                60deg,
+                                #eee 0%,
+                                #eee 100%
+                              );
+                              transition: transform 0.25s ease-out;
                             }
-                            
-                            &:hover { 
-                              color: #fff; 
+
+                            &:hover {
+                              color: #fff;
                             }
-                            
+
                             &:hover:before {
                               transform: translateY(0);
-                              transition: transform .25s ease-out;
-                              background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
+                              transition: transform 0.25s ease-out;
+                              background-image: linear-gradient(
+                                60deg,
+                                #64b3f4 0%,
+                                #c2e59c 100%
+                              );
                             }
                           }
                         }
-    
+
                         .info-message {
                           flex: 0 0 100%;
                           font-size: 12px;
                           margin: 10px 0 0;
-                          
+
                           i {
                             font-size: 13px;
                             color: $red;
@@ -689,10 +725,10 @@
                   }
                 }
               }
-    
+
               &.period {
                 padding: 0;
-    
+
                 &:first-child {
                   .timeline-marker {
                     &:before {
@@ -700,7 +736,7 @@
                     }
                   }
                 }
-              
+
                 .timeline-marker {
                   &:before {
                     background: transparent;
@@ -713,25 +749,25 @@
                     left: 0;
                     bottom: 5px;
                     position: absolute;
-                    border-top: 3px solid #CCD5DB;
-                    border-bottom: 3px solid #CCD5DB;
+                    border-top: 3px solid #ccd5db;
+                    border-bottom: 3px solid #ccd5db;
                   }
-              
+
                   &:after {
                     content: "";
                     height: 15px;
                     top: auto;
                   }
                 }
-              
+
                 .timeline-content {
                   padding: 35px 0 30px;
-    
-                  @include respond-to (mobileW) {
+
+                  @include respond-to(mobileW) {
                     padding: 35px 0 15px;
                   }
                 }
-              
+
                 .timeline-title {
                   position: absolute;
                   left: -50px;
@@ -739,8 +775,8 @@
                   font-size: 16px;
                   font-weight: bold;
                   margin: 0;
-    
-                  @include respond-to (mobileW) {
+
+                  @include respond-to(mobileW) {
                     position: relative;
                     left: 0;
                     top: 0;
@@ -750,7 +786,7 @@
             }
           }
         }
-  
+
         .read-more {
           margin: 40px auto;
         }
@@ -761,24 +797,24 @@
       position: relative;
       width: 100%;
       padding: 100px 0 120px;
-    
-      @include respond-to (lg) {
+
+      @include respond-to(lg) {
         padding: 60px 0 100px;
       }
-    
+
       .bottom-link-area-inner {
         text-align: center;
-    
+
         a {
           button {
             min-width: 139px;
             margin: 0 4px;
             text-align: center;
-    
-            @include respond-to (mobileM) {
+
+            @include respond-to(mobileM) {
               min-width: 120px;
             }
-    
+
             &.btn-default {
               border: none;
               box-shadow: 0 14px 21px 0 rgba(0, 0, 0, 0.1);
