@@ -3,7 +3,7 @@
   display: inline-block;
   margin: 40px auto 0;
 
-  @include respond-to (lg) {
+  @include respond-to(lg) {
     margin: 20px auto 0;
   }
 
@@ -12,7 +12,7 @@
     margin: 20px auto 60px;
   }
 
-  @include respond-to (sm) {
+  @include respond-to(sm) {
     padding: 0 20px;
   }
 
@@ -28,7 +28,7 @@
       opacity: 0.2;
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -36,17 +36,107 @@
         background-color: #fff;
         width: 4px;
         height: 4px;
-        box-shadow: 
-          0px 0px #fff, 0px 10px #fff, 0px 20px #fff, 0px 30px #fff, 0px 40px #fff, 0px 50px #fff, 0px 60px #fff, 0px 70px #fff, 0px 80px #fff, 0px 90px #fff, 
-          10px 0px #fff, 10px 10px #fff, 10px 20px #fff, 10px 30px #fff, 10px 40px #fff, 10px 50px #fff, 10px 60px #fff, 10px 70px #fff, 10px 80px #fff, 10px 90px #fff, 
-          20px 0px #fff,  20px 10px #fff,  20px 20px #fff,  20px 30px #fff, 20px 40px #fff, 20px 50px #fff, 20px 60px #fff, 20px 70px #fff, 20px 80px #fff, 20px 90px #fff, 
-          30px 0px #fff, 30px 10px #fff, 30px 20px #fff, 30px 30px #fff, 30px 40px #fff, 30px 50px #fff, 30px 60px #fff, 30px 70px #fff, 30px 80px #fff, 30px 90px #fff, 
-          40px 0px #fff, 40px 10px #fff, 40px 20px #fff, 40px 30px #fff, 40px 40px #fff, 40px 50px #fff, 40px 60px #fff, 40px 70px #fff, 40px 80px #fff, 40px 90px #fff, 
-          50px 0px #fff, 50px 10px #fff, 50px 20px #fff, 50px 30px #fff, 50px 40px #fff, 50px 50px #fff, 50px 60px #fff, 50px 70px #fff, 50px 80px #fff, 50px 90px #fff, 
-          60px 0px #fff, 60px 10px #fff, 60px 20px #fff, 60px 30px #fff, 60px 40px #fff, 60px 50px #fff, 60px 60px #fff, 60px 70px #fff, 60px 80px #fff, 60px 90px #fff, 
-          70px 0px #fff, 70px 10px #fff, 70px 20px #fff, 70px 30px #fff, 70px 40px #fff, 70px 50px #fff, 70px 60px #fff, 70px 70px #fff, 70px 80px #fff, 70px 90px #fff, 
-          80px 0px #fff, 80px 10px #fff, 80px 20px #fff, 80px 30px #fff, 80px 40px #fff, 80px 50px #fff, 80px 60px #fff, 80px 70px #fff, 80px 80px #fff, 80px 90px #fff,
-          90px 0px #fff, 90px 10px #fff, 90px 20px #fff, 90px 30px #fff, 90px 40px #fff, 90px 50px #fff, 90px 60px #fff, 90px 70px #fff, 90px 80px #fff, 90px 90px #fff;
+        box-shadow:
+          0px 0px #fff,
+          0px 10px #fff,
+          0px 20px #fff,
+          0px 30px #fff,
+          0px 40px #fff,
+          0px 50px #fff,
+          0px 60px #fff,
+          0px 70px #fff,
+          0px 80px #fff,
+          0px 90px #fff,
+          10px 0px #fff,
+          10px 10px #fff,
+          10px 20px #fff,
+          10px 30px #fff,
+          10px 40px #fff,
+          10px 50px #fff,
+          10px 60px #fff,
+          10px 70px #fff,
+          10px 80px #fff,
+          10px 90px #fff,
+          20px 0px #fff,
+          20px 10px #fff,
+          20px 20px #fff,
+          20px 30px #fff,
+          20px 40px #fff,
+          20px 50px #fff,
+          20px 60px #fff,
+          20px 70px #fff,
+          20px 80px #fff,
+          20px 90px #fff,
+          30px 0px #fff,
+          30px 10px #fff,
+          30px 20px #fff,
+          30px 30px #fff,
+          30px 40px #fff,
+          30px 50px #fff,
+          30px 60px #fff,
+          30px 70px #fff,
+          30px 80px #fff,
+          30px 90px #fff,
+          40px 0px #fff,
+          40px 10px #fff,
+          40px 20px #fff,
+          40px 30px #fff,
+          40px 40px #fff,
+          40px 50px #fff,
+          40px 60px #fff,
+          40px 70px #fff,
+          40px 80px #fff,
+          40px 90px #fff,
+          50px 0px #fff,
+          50px 10px #fff,
+          50px 20px #fff,
+          50px 30px #fff,
+          50px 40px #fff,
+          50px 50px #fff,
+          50px 60px #fff,
+          50px 70px #fff,
+          50px 80px #fff,
+          50px 90px #fff,
+          60px 0px #fff,
+          60px 10px #fff,
+          60px 20px #fff,
+          60px 30px #fff,
+          60px 40px #fff,
+          60px 50px #fff,
+          60px 60px #fff,
+          60px 70px #fff,
+          60px 80px #fff,
+          60px 90px #fff,
+          70px 0px #fff,
+          70px 10px #fff,
+          70px 20px #fff,
+          70px 30px #fff,
+          70px 40px #fff,
+          70px 50px #fff,
+          70px 60px #fff,
+          70px 70px #fff,
+          70px 80px #fff,
+          70px 90px #fff,
+          80px 0px #fff,
+          80px 10px #fff,
+          80px 20px #fff,
+          80px 30px #fff,
+          80px 40px #fff,
+          80px 50px #fff,
+          80px 60px #fff,
+          80px 70px #fff,
+          80px 80px #fff,
+          80px 90px #fff,
+          90px 0px #fff,
+          90px 10px #fff,
+          90px 20px #fff,
+          90px 30px #fff,
+          90px 40px #fff,
+          90px 50px #fff,
+          90px 60px #fff,
+          90px 70px #fff,
+          90px 80px #fff,
+          90px 90px #fff;
         border-radius: 50%;
       }
     }
@@ -54,7 +144,7 @@
     .p1 {
       margin: 450px 0 0 -35px;
 
-      @include respond-to (wide) {
+      @include respond-to(wide) {
         margin: 390px 0 0 -435px;
         left: 50%;
       }
@@ -63,7 +153,7 @@
     .p2 {
       margin: -40px 0 0 857px;
 
-      @include respond-to (wide) {
+      @include respond-to(wide) {
         margin: -40px 0 0 350px;
         left: 50%;
       }
@@ -78,7 +168,7 @@
     box-shadow: 0 24px 30px 0 rgba(0, 0, 0, 0.1);
     overflow: hidden;
 
-    @include respond-to (full) {
+    @include respond-to(full) {
       width: 800px;
     }
 
@@ -86,7 +176,7 @@
       margin: auto;
     }
 
-    @include respond-to (sm) {
+    @include respond-to(sm) {
       width: 100%;
     }
 
@@ -123,7 +213,7 @@
       i {
         position: absolute;
         top: 50%;
-        margin-top: -5px;
+        margin-top: -9px;
         color: #fff;
         font-size: 20px;
 
@@ -168,7 +258,7 @@
         background: #000;
 
         i {
-          margin-top: -7px;
+          margin-top: -11px;
           font-size: 25px;
 
           &.ion-chevron-left {

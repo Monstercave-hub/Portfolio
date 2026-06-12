@@ -25,7 +25,7 @@
     .design-content {
       display: flex;
 
-      @include respond-to (sms) {
+      @include respond-to(sms) {
         display: block;
       }
 
@@ -40,7 +40,7 @@
         background: #fff;
         z-index: 2;
 
-        @include respond-to (lg) {
+        @include respond-to(lg) {
           position: fixed;
           left: -260px;
         }
@@ -92,7 +92,7 @@
           padding: 20px;
           z-index: 10;
 
-          @include respond-to (sm) {
+          @include respond-to(sm) {
             display: none;
           }
 
@@ -114,7 +114,7 @@
                   display: block;
                   height: 60px;
                   overflow: hidden;
-                  
+
                   &:hover {
                     .tooltip {
                       left: 0;
@@ -176,7 +176,7 @@
 
             .title {
               font-weight: bold;
-              font-size: clamp(20px,2vw,28px);
+              font-size: clamp(20px, 2vw, 28px);
             }
 
             hr {
@@ -184,7 +184,7 @@
             }
 
             .sub-text {
-              font-size: clamp(14px,2vw,16px);
+              font-size: clamp(14px, 2vw, 16px);
               margin: 5px 0 0;
               padding: 0 3px;
               color: $gray-text;
@@ -207,7 +207,7 @@
                 letter-spacing: 0.5px;
                 margin: -5px 0 0;
 
-                @include respond-to (sm) {
+                @include respond-to(sm) {
                   font-size: 15px;
                 }
               }
@@ -222,13 +222,13 @@
                 margin: 0 0 18px;
 
                 dt {
-                  font-size: clamp(13px,2vw,14px);
+                  font-size: clamp(13px, 2vw, 14px);
                   color: rgba(255, 255, 255, 0.4);
                   margin: 0 0 3px;
                 }
 
                 dd {
-                  font-size: clamp(14px,2vw,15px);
+                  font-size: clamp(14px, 2vw, 15px);
 
                   &:nth-child(3) {
                     color: rgba(255, 255, 255, 0.4);
@@ -236,7 +236,7 @@
                 }
               }
             }
-            
+
             .tools {
               display: flex;
               flex-wrap: wrap;
@@ -252,13 +252,15 @@
                 margin: 0 10px 10px 0;
                 font-size: 22px;
                 border-radius: 12px;
-                box-shadow: -1px -1px 3px 0px rgba(255,255,255,0.2), 3px 9px 12px 0 rgba(0,0,0,0.1);
+                box-shadow:
+                  -1px -1px 3px 0px rgba(255, 255, 255, 0.2),
+                  3px 9px 12px 0 rgba(0, 0, 0, 0.1);
 
                 &:last-child {
                   margin: 0 0 10px;
                 }
 
-                @include respond-to (mobileW) {
+                @include respond-to(mobileW) {
                   width: 50px;
                   height: 50px;
                   font-size: 18px;
@@ -266,6 +268,10 @@
 
                 i {
                   line-height: 1px;
+                }
+
+                img {
+                  width: 24px;
                 }
               }
             }
@@ -276,14 +282,15 @@
             padding: 120px 20px 0;
             text-align: center;
 
-            @include respond-to (md) {
+            @include respond-to(md) {
               padding: 60px 20px 0;
             }
 
             .title-area {
               .sub-text {
                 p {
-                  &:nth-child(2), &:nth-child(4) {
+                  &:nth-child(2),
+                  &:nth-child(4) {
                     margin: 0 0 8px;
                   }
                 }
@@ -294,7 +301,7 @@
           &#inside-opinion-area {
             padding: 120px 20px 0;
 
-            @include respond-to (md) {
+            @include respond-to(md) {
               padding: 60px 20px 0;
             }
 
@@ -302,7 +309,7 @@
               width: 1200px;
               margin: auto;
 
-              @include respond-to (full) {
+              @include respond-to(full) {
                 width: 100%;
               }
 
@@ -324,17 +331,18 @@
                       border-collapse: collapse;
                       background: #fff;
 
-                      .thead, .tbody {
+                      .thead,
+                      .tbody {
                         width: 100%;
                         display: table-row-group;
-                        
+
                         .row {
                           position: relative;
                           display: table-row;
                           border-top: 1px solid $gray-line;
-                          @include transition(all .2s);
+                          @include transition(all 0.2s);
 
-                          @include respond-to (lg) {
+                          @include respond-to(lg) {
                             display: block;
                             border-radius: 6px;
                             border: 1px solid $gray-line;
@@ -355,12 +363,12 @@
                             &:last-child {
                               width: 50%;
 
-                              @include respond-to (lg) {
+                              @include respond-to(lg) {
                                 width: auto;
                               }
                             }
 
-                            @include respond-to (lg) {
+                            @include respond-to(lg) {
                               display: block;
                               padding: 15px 10px;
                               border-bottom: 1px solid $gray-line;
@@ -372,17 +380,17 @@
                           }
                         }
                       }
-                    
+
                       .thead {
                         position: relative;
                         display: table-header-group;
                         font-weight: bold;
                         margin: 0 0 5px;
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           display: none;
                         }
-                    
+
                         .header {
                           border-bottom: 0;
                           overflow: hidden;
@@ -394,11 +402,11 @@
                           }
                         }
                       }
-                    
+
                       .tbody {
                         .row {
                           .cell {
-                            @include respond-to (lg) {
+                            @include respond-to(lg) {
                               &:before {
                                 content: attr(data-title);
                                 display: inline-block;
@@ -408,7 +416,7 @@
                                 color: $gray-text;
                                 vertical-align: top;
 
-                                @include respond-to (mobileW) {
+                                @include respond-to(mobileW) {
                                   display: block;
                                   margin: 0 0 4px;
                                 }
@@ -419,14 +427,14 @@
                               display: inline-block;
                               vertical-align: top;
                             }
-      
+
                             .text {
                               display: inline-block;
-      
+
                               ul {
                                 li {
                                   color: $gray-text;
-      
+
                                   &:first-child {
                                     color: #222;
                                     margin: 0 0 3px;
@@ -447,7 +455,7 @@
           &#solution-area {
             padding: 120px 20px 0;
 
-            @include respond-to (md) {
+            @include respond-to(md) {
               padding: 60px 20px 0;
             }
 
@@ -455,7 +463,7 @@
               width: 1200px;
               margin: auto;
 
-              @include respond-to (full) {
+              @include respond-to(full) {
                 width: 100%;
               }
 
@@ -474,7 +482,7 @@
                     flex-wrap: wrap;
                     margin: 0 0 10px;
 
-                    @include respond-to (pad) {
+                    @include respond-to(pad) {
                       flex-direction: column;
                       gap: 10px;
                       margin: 0 0 20px;
@@ -496,7 +504,7 @@
                     &:first-child {
                       color: $gray-text;
 
-                      @include respond-to (pad) {
+                      @include respond-to(pad) {
                         display: none;
                       }
 
@@ -520,9 +528,9 @@
                       background: $gray-bg;
 
                       &:nth-child(1) {
-                        @include respond-to (pad) {
+                        @include respond-to(pad) {
                           &:before {
-                            content: '';
+                            content: "";
                             position: absolute;
                             width: 14px;
                             height: 1px;
@@ -533,7 +541,7 @@
                           }
 
                           &:after {
-                            content: '';
+                            content: "";
                             position: absolute;
                             width: 1px;
                             height: 100%;
@@ -552,7 +560,7 @@
                         background: none;
 
                         &:nth-child(2) {
-                          @include respond-to (pad) {
+                          @include respond-to(pad) {
                             display: none;
                           }
                         }
@@ -562,9 +570,10 @@
                         border-color: $blue;
                         background: #f0f8ff;
 
-                        @include respond-to (pad) {
-                          &:before, &:after {
-                            content: '';
+                        @include respond-to(pad) {
+                          &:before,
+                          &:after {
+                            content: "";
                             position: absolute;
                             top: 50%;
                             transform: translateY(-50%);
@@ -578,7 +587,7 @@
                           }
 
                           &:after {
-                            content: '';
+                            content: "";
                             position: absolute;
                             width: 1px;
                             height: 100%;
@@ -614,7 +623,7 @@
             margin: 120px 0 0;
             background: $dark-bg;
 
-            @include respond-to (md) {
+            @include respond-to(md) {
               padding: 60px 20px;
               margin: 60px 0 0;
             }
@@ -629,7 +638,7 @@
                 width: 100%;
                 max-width: 1200px;
 
-                @include respond-to (full-big) {
+                @include respond-to(full-big) {
                   max-width: 100%;
                 }
               }
@@ -639,7 +648,7 @@
           &#icon-font-area {
             padding: 120px 70px;
 
-            @include respond-to (md) {
+            @include respond-to(md) {
               padding: 60px 20px;
             }
 
@@ -647,7 +656,7 @@
               .icon-list {
                 margin: 10px 0 0;
 
-                @include respond-to (mobileW) {
+                @include respond-to(mobileW) {
                   margin: 20px 0 0;
                 }
 
@@ -658,11 +667,11 @@
                   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
                   margin: auto;
 
-                  @include respond-to (full-big) {
+                  @include respond-to(full-big) {
                     width: 100%;
                   }
 
-                  @include respond-to (mobileW) {
+                  @include respond-to(mobileW) {
                     place-items: center;
                     grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
                   }
@@ -672,7 +681,7 @@
                     align-items: center;
                     margin: 10px 0 0;
 
-                    @include respond-to (mobileW) {
+                    @include respond-to(mobileW) {
                       margin: 0;
                     }
 
@@ -693,7 +702,7 @@
                     .text {
                       padding: 0 0 0 12px;
 
-                      @include respond-to (mobileW) {
+                      @include respond-to(mobileW) {
                         display: none;
                       }
 
@@ -716,18 +725,19 @@
             text-align: center;
             background: $gray-bg;
 
-            @include respond-to (md) {
+            @include respond-to(md) {
               padding: 60px 20px;
               margin: 0;
               overflow: hidden;
             }
 
-            .mobile-img, .mobile-img-dark {
+            .mobile-img,
+            .mobile-img-dark {
               position: relative;
               width: 100%;
               margin: 12px 0 0;
 
-              @include respond-to (mobileW) {
+              @include respond-to(mobileW) {
                 margin: -90px 0 0;
                 transform: scale(0.7);
               }
@@ -742,7 +752,7 @@
                 background: #fff;
                 overflow: hidden;
                 z-index: 3;
-      
+
                 &:before {
                   content: "";
                   position: absolute;
@@ -753,7 +763,7 @@
                   border-radius: 30px;
                   background: $gray-light;
                 }
-      
+
                 img {
                   display: block;
                   width: 241px;
@@ -775,7 +785,8 @@
                   overflow: hidden;
                 }
 
-                .right-first, .left-first {
+                .right-first,
+                .left-first {
                   width: 221px;
                   height: 479px;
                   z-index: 2;
@@ -784,21 +795,22 @@
                 .right-first {
                   margin: 0 0 0 105px;
                 }
-        
+
                 .left-first {
                   margin: 0 0 0 -320px;
                 }
 
-                .left-sec, .right-sec {
+                .left-sec,
+                .right-sec {
                   width: 214px;
                   height: 464px;
                   z-index: 1;
                 }
-        
+
                 .left-sec {
                   margin: 8px 0 0 -505px;
                 }
-        
+
                 .right-sec {
                   margin: 8px 0 0 300px;
                 }
@@ -809,7 +821,7 @@
           &#outcome-area {
             padding: 120px 20px 0;
 
-            @include respond-to (md) {
+            @include respond-to(md) {
               padding: 60px 20px 0;
             }
 
@@ -818,7 +830,7 @@
               width: 1000px;
               margin: auto;
 
-              @include respond-to (full) {
+              @include respond-to(full) {
                 width: 100%;
               }
 
@@ -867,11 +879,11 @@
             display: flex;
             justify-content: center;
             gap: 8px;
-            margin: 100px auto 120px; 
+            margin: 100px auto 120px;
             text-align: center;
 
-            @include respond-to (lg) {
-              margin: 80px auto 100px; 
+            @include respond-to(lg) {
+              margin: 80px auto 100px;
             }
 
             button {

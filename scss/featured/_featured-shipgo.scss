@@ -10,92 +10,137 @@
             height: 660px;
             padding: 95px 0 0;
             background: #1885fa;
-            background: -moz-linear-gradient(45deg,  #0e77e8 0%, #0e77e8 15%, #1885fa 15%, #1885fa 100%);
-            background: -webkit-linear-gradient(45deg,  #0e77e8 0%,#0e77e8 15%,#1885fa 15%,#1885fa 100%);
-            background: linear-gradient(45deg,  #0e77e8 0%,#0e77e8 15%,#1885fa 15%,#1885fa 100%);
+            background: -moz-linear-gradient(
+              45deg,
+              #0e77e8 0%,
+              #0e77e8 15%,
+              #1885fa 15%,
+              #1885fa 100%
+            );
+            background: -webkit-linear-gradient(
+              45deg,
+              #0e77e8 0%,
+              #0e77e8 15%,
+              #1885fa 15%,
+              #1885fa 100%
+            );
+            background: linear-gradient(
+              45deg,
+              #0e77e8 0%,
+              #0e77e8 15%,
+              #1885fa 15%,
+              #1885fa 100%
+            );
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e77e8', endColorstr='#1885fa',GradientType=1 );
             overflow: hidden;
 
-            @include respond-to (full) {
+            @include respond-to(full) {
               height: 580px;
               padding: 60px 60px 0;
             }
 
             &:before {
-              content: '';
+              content: "";
               position: absolute;
               width: 100%;
               height: 100%;
               top: 0;
               left: 0;
               background: transparent;
-              background: -moz-linear-gradient(-45deg,  transparent 0%, transparent 46%, #2a8ffb 46%, #2a8ffb 63%, #2a8ffb 63%, #0e77e8 63%, #0e77e8 100%);
-              background: -webkit-linear-gradient(-45deg,  transparent 0%,transparent 46%,#2a8ffb 46%,#2a8ffb 63%,#2a8ffb 63%,#0e77e8 63%,#0e77e8 100%);
-              background: linear-gradient(135deg,  transparent 0%,transparent 46%,#2a8ffb 46%,#2a8ffb 63%,#2a8ffb 63%,#0e77e8 63%,#0e77e8 100%);
+              background: -moz-linear-gradient(
+                -45deg,
+                transparent 0%,
+                transparent 46%,
+                #2a8ffb 46%,
+                #2a8ffb 63%,
+                #2a8ffb 63%,
+                #0e77e8 63%,
+                #0e77e8 100%
+              );
+              background: -webkit-linear-gradient(
+                -45deg,
+                transparent 0%,
+                transparent 46%,
+                #2a8ffb 46%,
+                #2a8ffb 63%,
+                #2a8ffb 63%,
+                #0e77e8 63%,
+                #0e77e8 100%
+              );
+              background: linear-gradient(
+                135deg,
+                transparent 0%,
+                transparent 46%,
+                #2a8ffb 46%,
+                #2a8ffb 63%,
+                #2a8ffb 63%,
+                #0e77e8 63%,
+                #0e77e8 100%
+              );
               filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='transparent', endColorstr='#0e77e8',GradientType=1 );
 
-              @include respond-to (wide) {
+              @include respond-to(wide) {
                 height: 650px;
               }
-    
-              @include respond-to (lg) {
+
+              @include respond-to(lg) {
                 height: 100%;
               }
             }
-    
+
             .service-top-content {
               position: relative;
               display: flex;
               width: 1200px;
               margin: auto;
 
-              @include respond-to (full) {
+              @include respond-to(full) {
                 width: 100%;
               }
-    
+
               .title-area {
                 position: relative;
                 z-index: 1;
-    
-                @include respond-to (lg) {
+
+                @include respond-to(lg) {
                   flex-basis: 100%;
                 }
-    
-                @include respond-to (mobilelg) {
+
+                @include respond-to(mobilelg) {
                   padding: 0 10px;
                 }
-        
+
                 h1 {
                   text-align: left;
                   margin: 40px 40px 0 0;
 
-                  @include respond-to (lg) {
+                  @include respond-to(lg) {
                     text-align: center;
                     margin: auto;
                   }
-    
+
                   .shipgo-title {
                     font-size: 46px;
                     color: #fff;
-    
+
                     @media only screen and (max-width: 1700px) {
                       font-size: 42px;
                     }
 
-                    @include respond-to (wide) {
+                    @include respond-to(wide) {
                       font-size: 34px;
                     }
 
-                    @include respond-to (pad) {
+                    @include respond-to(pad) {
                       font-size: 30px;
                     }
-    
-                    @include respond-to (mobileW) {
+
+                    @include respond-to(mobileW) {
                       font-size: 24px;
                     }
 
                     img {
-                      @include respond-to (wide) {
+                      @include respond-to(wide) {
                         width: 195px;
                       }
                     }
@@ -106,7 +151,7 @@
               .work-info {
                 text-align: left;
 
-                @include respond-to (lg) {
+                @include respond-to(lg) {
                   text-align: center;
                 }
               }
@@ -114,20 +159,24 @@
               .tools {
                 justify-content: normal;
 
-                @include respond-to (lg) {
+                @include respond-to(lg) {
                   justify-content: center;
                 }
 
                 span {
                   background: rgba(23, 133, 250, 0.3);
 
-                  @include respond-to (wide) {
+                  @include respond-to(wide) {
                     width: 50px;
                     height: 50px;
                   }
 
                   i {
                     color: #fff;
+                  }
+
+                  img {
+                    filter: brightness(0) invert(1);
                   }
                 }
               }
@@ -147,16 +196,17 @@
               bottom: 0;
 
               .wave-area {
-                position:relative;
+                position: relative;
                 width: 100%;
-                height:15vh;
-                margin-bottom:-7px; 
-                min-height:100px;
-                max-height:150px;
+                height: 15vh;
+                margin-bottom: -7px;
+                min-height: 100px;
+                max-height: 150px;
               }
-              
+
               .parallax > use {
-                animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+                animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5)
+                  infinite;
               }
               .parallax > use:nth-child(1) {
                 animation-delay: -2s;
@@ -176,23 +226,23 @@
               }
               @keyframes move-forever {
                 0% {
-                transform: translate3d(-90px,0,0);
+                  transform: translate3d(-90px, 0, 0);
                 }
-                100% { 
-                  transform: translate3d(85px,0,0);
+                100% {
+                  transform: translate3d(85px, 0, 0);
                 }
               }
 
               @media (max-width: 768px) {
                 .waves {
-                  height:40px;
-                  min-height:40px;
+                  height: 40px;
+                  min-height: 40px;
                 }
                 .content {
-                  height:30vh;
+                  height: 30vh;
                 }
                 h1 {
-                  font-size:24px;
+                  font-size: 24px;
                 }
               }
             }
@@ -211,7 +261,7 @@
                 .port {
                   margin: 0 8px;
 
-                  @include respond-to (mobileM) {
+                  @include respond-to(mobileM) {
                     font-size: 11px;
                   }
                 }
@@ -223,17 +273,25 @@
                   border-radius: 10px;
                   background: $gray-line;
 
-                  @include respond-to (mobileM) {
+                  @include respond-to(mobileM) {
                     width: 200px;
                   }
-              
+
                   .progress-bar {
                     width: 0;
                     height: 100%;
                     border-radius: 10px;
-                    background-image: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+                    background-image: linear-gradient(
+                      to right,
+                      #4cd964,
+                      #5ac8fa,
+                      #007aff,
+                      #34aadc,
+                      #5856d6,
+                      #ff2d55
+                    );
                     background-size: 37em 0.25em;
-              
+
                     span {
                       top: -30px;
                       margin-left: -22px;
@@ -288,7 +346,7 @@
             padding: 120px 20px;
             margin: auto;
 
-            @include respond-to (md) {
+            @include respond-to(md) {
               padding: 60px 20px;
             }
           }
@@ -314,7 +372,7 @@
             padding: 100px 0;
             overflow: hidden;
 
-            @include respond-to (md) {
+            @include respond-to(md) {
               padding: 40px 0;
             }
 
@@ -351,12 +409,12 @@
                   width: 920px;
                   margin: 40px auto 0;
 
-                  @include respond-to (lg) {
+                  @include respond-to(lg) {
                     width: 800px;
                     margin: 20px auto 0;
                   }
 
-                  @include respond-to (sm) {
+                  @include respond-to(sm) {
                     width: 100%;
                   }
 
@@ -370,36 +428,36 @@
                     align-items: center;
                     justify-content: end;
                     background: rgb(166 177 226 / 10%);
-    
-                    @include respond-to (wide) {
+
+                    @include respond-to(wide) {
                       left: 50%;
                       margin: 0 0 0 -411px;
                     }
-    
-                    @include respond-to (sm) {
+
+                    @include respond-to(sm) {
                       display: none;
                     }
-    
+
                     i {
                       padding: 0 10px 0 0;
                       color: $blue;
                     }
                   }
-    
+
                   img {
                     width: 920px;
                     border-radius: 25px;
                     box-shadow: 0 24px 30px 0 rgba(0, 32, 102, 0.3);
-    
-                    @include respond-to (wide) {
+
+                    @include respond-to(wide) {
                       width: 100%;
                       max-width: 900px;
                     }
-    
-                    @include respond-to (mobileW) {
+
+                    @include respond-to(mobileW) {
                       border-radius: 10px;
                     }
-    
+
                     &.detail {
                       position: absolute;
                       width: 389px;
@@ -408,18 +466,18 @@
                       margin: 0 0 0 -222px;
                       border-radius: 0;
                       border-left: 1px solid $gray-line;
-                      box-shadow: 8px 0 10px 0 rgba(0,0,0,0.1);
-    
-                      @include respond-to (wide) {
+                      box-shadow: 8px 0 10px 0 rgba(0, 0, 0, 0.1);
+
+                      @include respond-to(wide) {
                         width: 380px;
                       }
 
-                      @include respond-to (lg) {
+                      @include respond-to(lg) {
                         width: 337px;
                         margin: 0 0 0 -211px;
                       }
-    
-                      @include respond-to (sm) {
+
+                      @include respond-to(sm) {
                         width: 42.3%;
                         margin: 0 0 0 -24.2%;
                       }
@@ -434,12 +492,12 @@
                 margin: 160px 0 0;
                 z-index: 2;
 
-                @include respond-to (lg) {
+                @include respond-to(lg) {
                   height: 100%;
                   margin: 80px 0 0;
                 }
 
-                @include respond-to (md) {
+                @include respond-to(md) {
                   margin: 40px 0 0;
                 }
 
@@ -448,29 +506,29 @@
                   width: 1200px;
                   margin: auto;
 
-                  @include respond-to (full) {
+                  @include respond-to(full) {
                     width: 100%;
                   }
 
-                  @include respond-to (lg) {
+                  @include respond-to(lg) {
                     flex-wrap: wrap;
                     justify-content: center;
                     text-align: center;
                   }
 
-                  @include respond-to (sm) {
+                  @include respond-to(sm) {
                     padding: 20px;
                   }
 
                   .text-area {
-                    @include respond-to (lg) {
+                    @include respond-to(lg) {
                       position: relative;
                       flex-basis: 100%;
                       left: 0;
                       margin: 0 0 20px;
                     }
                   }
-    
+
                   .img-area {
                     position: absolute;
                     left: 50%;
@@ -484,7 +542,7 @@
                       right: -160px;
                     }
 
-                    @include respond-to (lg) {
+                    @include respond-to(lg) {
                       position: relative;
                       right: auto;
                     }
@@ -494,20 +552,21 @@
                       border-radius: 16px;
                       box-shadow: 0 32px 30px -12px rgba(0, 0, 0, 0.1);
 
-                      @include respond-to (wide) {
+                      @include respond-to(wide) {
                         width: 800px;
                       }
 
-                      @include respond-to (sm) {
+                      @include respond-to(sm) {
                         width: 100%;
                       }
 
-                      &.vessel-add, &.vessel-card {
+                      &.vessel-add,
+                      &.vessel-card {
                         position: absolute;
                         width: 320px;
                         left: 0;
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           display: none;
                         }
                       }
@@ -521,7 +580,7 @@
                         margin: 0 0 0 -310px;
                         bottom: 150px;
 
-                        @include respond-to (wide) {
+                        @include respond-to(wide) {
                           bottom: 100px;
                         }
                       }
@@ -536,11 +595,11 @@
                 padding: 0 20px;
                 z-index: 2;
 
-                @include respond-to (lg) {
+                @include respond-to(lg) {
                   margin: 80px 0 0;
                 }
 
-                @include respond-to (md) {
+                @include respond-to(md) {
                   margin: 40px 0 0;
                 }
 
@@ -550,11 +609,11 @@
                   gap: 40px;
                   margin: auto;
 
-                  @include respond-to (full) {
+                  @include respond-to(full) {
                     width: 100%;
                   }
 
-                  @include respond-to (lg) {
+                  @include respond-to(lg) {
                     display: block;
                     text-align: center;
                   }
@@ -566,7 +625,7 @@
                       position: absolute;
                       bottom: 0;
 
-                      @include respond-to (lg) {
+                      @include respond-to(lg) {
                         display: none;
                       }
 
@@ -623,18 +682,26 @@
                               height: 10px;
                               background: rgba(255, 255, 255, 0.4);
                               border-radius: 50%;
-                              
-                              &.typing-1 { animation: typing 2s infinite }
-                              &.typing-2 { animation: typing 2s 250ms infinite }
-                              &.typing-3 { animation: typing 2s 500ms infinite }
+
+                              &.typing-1 {
+                                animation: typing 2s infinite;
+                              }
+                              &.typing-2 {
+                                animation: typing 2s 250ms infinite;
+                              }
+                              &.typing-3 {
+                                animation: typing 2s 500ms infinite;
+                              }
                             }
 
                             @keyframes typing {
-                              0%, 75%, 100% {
+                              0%,
+                              75%,
+                              100% {
                                 transform: translate(0, 0.25rem) scale(0.9);
                                 opacity: 0.5;
                               }
-                              
+
                               25% {
                                 transform: translate(0, -0.25rem) scale(1);
                                 opacity: 1;
@@ -645,12 +712,12 @@
                       }
                     }
                   }
-    
+
                   .img-area {
                     position: relative;
                     margin: 0 -240px 0 0;
 
-                    @include respond-to (lg) {
+                    @include respond-to(lg) {
                       position: relative;
                       right: 0;
                       margin: 20px 0 0;
@@ -661,11 +728,11 @@
                       border-radius: 16px;
                       box-shadow: 0 32px 30px -12px rgba(0, 0, 0, 0.1);
 
-                      @include respond-to (wide) {
+                      @include respond-to(wide) {
                         width: 800px;
                       }
 
-                      @include respond-to (sm) {
+                      @include respond-to(sm) {
                         width: 100%;
                       }
                     }
@@ -680,18 +747,18 @@
                 background: $gray-bg;
                 z-index: 1;
 
-                @include respond-to (wide) {
+                @include respond-to(wide) {
                   height: 770px;
                   padding: 260px 0 0;
                 }
 
-                @include respond-to (lg) {
+                @include respond-to(lg) {
                   height: 100%;
                   padding: 60px 0;
                   margin: 80px 0 0;
                 }
 
-                @include respond-to (md) {
+                @include respond-to(md) {
                   margin: 40px 0 0;
                 }
 
@@ -701,34 +768,34 @@
                   margin: auto;
                   justify-content: end;
 
-                  @include respond-to (wide) {
+                  @include respond-to(wide) {
                     width: 100%;
                   }
 
-                  @include respond-to (lg) {
+                  @include respond-to(lg) {
                     display: block;
                     text-align: center;
                   }
 
                   .text-area {
-                    @include respond-to (wide) {
+                    @include respond-to(wide) {
                       position: absolute;
                       left: 50%;
                     }
 
-                    @include respond-to (lg) {
+                    @include respond-to(lg) {
                       position: relative;
                       left: auto;
                       margin: 0 0 20px;
                     }
                   }
-    
+
                   .img-area {
                     position: absolute;
                     left: 50%;
                     margin: 0 0 0 -900px;
 
-                    @include respond-to (lg) {
+                    @include respond-to(lg) {
                       position: relative;
                       left: auto;
                       padding: 0 20px;
@@ -739,11 +806,11 @@
                       border-radius: 16px;
                       box-shadow: 0 32px 30px -12px rgba(0, 0, 0, 0.1);
 
-                      @include respond-to (wide) {
+                      @include respond-to(wide) {
                         width: 800px;
                       }
 
-                      @include respond-to (md) {
+                      @include respond-to(md) {
                         width: 100%;
                       }
 
@@ -762,11 +829,11 @@
                 margin: 80px 0 0;
                 padding: 0 20px;
 
-                @include respond-to (lg) {
+                @include respond-to(lg) {
                   margin: 60px 0 0;
                 }
 
-                @include respond-to (md) {
+                @include respond-to(md) {
                   margin: 40px 0 0;
                 }
 
@@ -775,7 +842,7 @@
                   width: 920px;
                   margin: auto;
 
-                  @include respond-to (lg) {
+                  @include respond-to(lg) {
                     width: 100%;
                     text-align: center;
                   }
@@ -784,7 +851,7 @@
                     position: relative;
                     margin: 40px 0 0;
 
-                    @include respond-to (lg) {
+                    @include respond-to(lg) {
                       margin: 20px 0 0;
                     }
 
@@ -793,11 +860,11 @@
                       border-radius: 16px;
                       box-shadow: 0 32px 30px -12px rgba(0, 0, 0, 0.1);
 
-                      @include respond-to (wide) {
+                      @include respond-to(wide) {
                         width: 800px;
                       }
 
-                      @include respond-to (md) {
+                      @include respond-to(md) {
                         width: 100%;
                       }
 
@@ -808,11 +875,11 @@
                         right: -40px;
                         border-radius: 0;
 
-                        @include respond-to (wide) {
+                        @include respond-to(wide) {
                           right: 40px;
                         }
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           display: none;
                         }
                       }
@@ -827,18 +894,18 @@
                       margin: 0 60px 0 0;
                       background: #fff;
                       overflow: hidden;
-                      box-shadow: 0 12px 20px 0 rgba(0,0,0,0.1);
+                      box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.1);
 
-                      @include respond-to (lg) {
+                      @include respond-to(lg) {
                         display: none;
                       }
-        
+
                       .schedule-list {
                         position: relative;
                         display: inline-block;
                         width: 100%;
                         font-size: 12px;
-                  
+
                         .table-top {
                           position: relative;
                           float: left;
@@ -847,7 +914,7 @@
                           background: $gray-bg;
                           border-bottom: 1px solid $gray-line;
                           z-index: 1;
-                  
+
                           .map-marker {
                             position: absolute;
                             font-size: 13px;
@@ -855,17 +922,17 @@
                             left: 16px;
                             color: $gray-text;
                           }
-                  
+
                           .schedule-title {
                             position: relative;
                             width: 100%;
                             padding-left: 22px;
-                  
+
                             span {
                               float: left;
                               width: 27%;
                               color: $gray-text;
-                  
+
                               &:nth-child(1) {
                                 width: 46%;
                                 text-align: left;
@@ -873,11 +940,11 @@
                             }
                           }
                         }
-                  
+
                         .shipment-log-list {
                           float: left;
                           width: 100%;
-                  
+
                           .vessel-accordian {
                             float: left;
                             width: 100%;
@@ -890,31 +957,31 @@
                             border-bottom: 1px solid $gray-line;
                             background: $gray-bg;
                             cursor: pointer;
-                            @include transition(all .3s); 
-                  
+                            @include transition(all 0.3s);
+
                             &:hover {
                               color: #000;
-                              @include transition(all .4s); 
+                              @include transition(all 0.4s);
                             }
-                  
+
                             &.selected {
                               background: $blue;
                               color: #fff;
-                              @include transition(all .3s); 
-                  
+                              @include transition(all 0.3s);
+
                               &:hover {
                                 color: #fff;
                                 transition: none;
                               }
                             }
-                  
+
                             i {
                               &.ion-android-boat {
                                 font-size: 17px;
                                 vertical-align: middle;
-                                margin-right:3px;
+                                margin-right: 3px;
                               }
-                  
+
                               &.ion-android-arrow-dropdown {
                                 position: absolute;
                                 right: 10px;
@@ -924,17 +991,17 @@
                             }
                           }
                         }
-                  
+
                         .port-list {
                           float: left;
                           width: 100%;
                           padding: 0 10px;
                           z-index: 1;
-        
+
                           .port-box {
                             float: left;
                             width: 100%;
-                  
+
                             &:last-child {
                               #timeline {
                                 .timeline-block {
@@ -944,33 +1011,33 @@
                                 }
                               }
                             }
-                        
+
                             #timeline {
                               position: relative;
                               width: 100%;
-                  
+
                               &::before {
-                                content: '';
+                                content: "";
                                 position: absolute;
                                 top: 0;
                                 left: 9px;
                                 height: 100%;
                                 width: 2px;
                               }
-                    
+
                               .timeline-block {
                                 position: relative;
-                  
+
                                 &:after {
                                   content: "";
                                   display: table;
                                   clear: both;
                                 }
-                  
+
                                 &:nth-child(even) .timeline-content {
                                   float: left;
                                 }
-                      
+
                                 .timeline-date {
                                   position: absolute;
                                   top: 21px;
@@ -982,81 +1049,81 @@
                                   text-align: center;
                                   background: #fff;
                                 }
-                            
+
                                 .timeline-content {
                                   position: relative;
                                   display: inline-block;
                                   width: 100%;
                                   padding: 15px 0 0 22px;
-                  
+
                                   .country-title {
                                     float: left;
                                     width: 46%;
                                     color: #000;
                                   }
-                  
+
                                   .time-layer {
                                     float: left;
                                     width: 27%;
-                                    min-height:27px;
-                  
+                                    min-height: 27px;
+
                                     p {
                                       font-size: 11px;
                                     }
                                   }
                                 }
                               }
-                            } 
-                  
+                            }
+
                             .old-schedule {
                               .timeline-block {
                                 .timeline-date {
                                   box-shadow: 0 0 0 2px $gray-text;
                                 }
-                  
+
                                 .timeline-content {
                                   .time-layer {
                                     color: $gray-text;
                                   }
                                 }
                               }
-                  
+
                               &::before {
                                 background: $gray-text;
                               }
                             }
-                  
+
                             .now-schedule {
                               .timeline-block {
                                 .timeline-date {
                                   box-shadow: 0 0 0 2px $blue;
                                 }
-                  
+
                                 .timeline-content {
                                   .time-layer {
                                     color: $blue;
                                   }
                                 }
                               }
-                  
+
                               &::before {
                                 background: $blue;
                               }
                             }
-                  
+
                             .ing-schedule {
                               .timeline-block {
                                 .timeline-date {
                                   box-shadow: 0 0 0 2px $orange;
                                 }
-                  
+
                                 .timeline-content {
                                   .time-layer {
                                     color: $orange;
                                   }
                                 }
                               }
-                  
+
                               &::before {
                                 background: $orange;
                               }
@@ -1078,12 +1145,12 @@
               text-align: center;
               padding: 0 60px;
 
-              @include respond-to (mobileW) {
+              @include respond-to(mobileW) {
                 padding: 0 40px;
               }
 
               img {
-                @include respond-to (sm) {
+                @include respond-to(sm) {
                   width: 100%;
                 }
               }

@@ -56,9 +56,20 @@
   .content {
     #intro {
       position: relative;
+      height: 80vh;
       padding: 140px 0 100px;
       overflow: hidden;
       background: $dark-bg;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+      }
 
       .video-bg {
         position: absolute;
@@ -76,22 +87,22 @@
       .intro-title {
         position: relative;
         margin: 0 0 80px;
-        padding: 0 20px;
+        padding: 0 20px 0 200px;
         color: #fff;
-        text-align: center;
         z-index: 1;
 
         .description {
           font-size: 11px;
 
           hr {
-            margin: 5px auto 0;
+            margin: 5px 0 0;
           }
         }
 
         h1 {
           position: relative;
           height: 40px;
+          text-align: left;
           font-size: 40px;
           margin: 6px 0 20px;
 
@@ -103,10 +114,8 @@
 
           .text {
             display: flex;
-            justify-content: center;
             width: 100%;
             gap: 10px;
-            margin-left: -87px;
 
             @include respond-to(mobileW) {
               margin-left: -57px;

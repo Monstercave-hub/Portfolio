@@ -738,6 +738,18 @@
   </body>
   <? include ("../script.html"); ?>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/guide-slider.js"></script>
+  <script type="text/javascript" src="/js/comparison-slider.js"></script>
+
+  <script>
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.tdnn');
+      if (!btn) return;
+
+      document.querySelector('#mobile-area')?.classList.toggle('dark');
+      document.querySelector('.sun')?.classList.toggle('moon');
+      btn.classList.toggle('day');
+    });
+  </script>
 
 </html>

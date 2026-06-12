@@ -7,7 +7,12 @@
             position: relative;
             width: 100%;
             height: 600px;
-            background: linear-gradient(45deg,  #9876e6 0%,#229af3 50%,#1ee1d1 100%);
+            background: linear-gradient(
+              45deg,
+              #9876e6 0%,
+              #229af3 50%,
+              #1ee1d1 100%
+            );
             overflow: hidden;
 
             .background-img {
@@ -54,7 +59,7 @@
               text-align: center;
               color: #fff;
 
-              @include respond-to (lg) {
+              @include respond-to(lg) {
                 width: 100%;
               }
 
@@ -91,6 +96,10 @@
 
               .tools {
                 justify-content: center;
+
+                img {
+                  filter: brightness(0) invert(1);
+                }
               }
             }
           }
@@ -99,7 +108,7 @@
             padding: 80px 20px 0;
             text-align: center;
 
-            @include respond-to (mobileW) {
+            @include respond-to(mobileW) {
               padding: 40px 10px 0;
             }
 
@@ -108,7 +117,7 @@
               width: 400px;
               margin: auto;
 
-              @include respond-to (mobileM) {
+              @include respond-to(mobileM) {
                 width: 100%;
               }
 
@@ -166,33 +175,34 @@
                   display: flex;
                   width: 1100px;
                   margin: auto;
-    
-                  @include respond-to (md) {
+
+                  @include respond-to(md) {
                     width: 100%;
                   }
-    
-                  .before, .after {
+
+                  .before,
+                  .after {
                     flex: 1;
                     padding: 40px 8px 0;
                     max-height: 800px;
                     text-align: center;
                     overflow: hidden;
-    
+
                     .text {
                       font-size: 15px;
                       font-weight: bold;
                       margin: 0 0 16px;
                     }
-    
+
                     img {
                       max-width: 500px;
-    
-                      @include respond-to (md) {
+
+                      @include respond-to(md) {
                         max-width: 100%;
                       }
                     }
                   }
-      
+
                   .arrow {
                     flex-basis: 20px;
                     margin: 0 10px;
@@ -206,7 +216,7 @@
             padding: 120px 20px;
             background: $gray-bg;
 
-            @include respond-to (mobileW) {
+            @include respond-to(mobileW) {
               padding: 80px 10px;
             }
 
@@ -215,14 +225,14 @@
               width: 1200px;
               margin: auto;
 
-              @include respond-to (lg) {
+              @include respond-to(lg) {
                 width: 100%;
               }
 
               .requirements-detail {
                 display: flex;
 
-                @include respond-to (md) {
+                @include respond-to(md) {
                   flex-wrap: wrap;
                   justify-content: center;
                 }
@@ -231,18 +241,18 @@
                   position: relative;
                   flex-basis: 600px;
 
-                  @include respond-to (lg) {
+                  @include respond-to(lg) {
                     flex-basis: 500px;
                   }
 
-                  @include respond-to (mobileW) {
+                  @include respond-to(mobileW) {
                     flex-basis: 100%;
                   }
 
                   img {
                     width: 100%;
                     border-radius: 10px;
-                    box-shadow: 0 16px 20px 0 rgba(0,0,0,0.2);
+                    box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.2);
 
                     &.detail-bottom-img {
                       position: absolute;
@@ -256,7 +266,7 @@
                     top: 0;
                     left: 0;
 
-                    @include respond-to (mobileW) {
+                    @include respond-to(mobileW) {
                       display: none;
                     }
 
@@ -264,14 +274,15 @@
                       position: absolute;
                       left: 0;
 
-                      &.box-gnb, &.box-footer {
+                      &.box-gnb,
+                      &.box-footer {
                         width: 100%;
                         height: 15px;
                         top: 0;
                         border-radius: 10px 10px 0 0;
                         background: rgba(0, 169, 244, 0.3);
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           height: 11px;
                         }
                       }
@@ -282,7 +293,7 @@
                         bottom: 7px;
                         border-radius: 0 0 10px 10px;
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           height: 141px;
                           bottom: 3px;
                         }
@@ -294,7 +305,7 @@
                         top: 15px;
                         background: rgba(252, 0, 0, 0.2);
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           height: 107px;
                           top: 12px;
                         }
@@ -308,7 +319,7 @@
                         margin: auto;
                         background: rgba(0, 150, 56, 0.2);
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           width: 360px;
                           height: 12px;
                           top: 129px;
@@ -322,7 +333,7 @@
                         left: 86px;
                         background: rgba(123, 0, 150, 0.2);
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           width: 266px;
                           height: 73px;
                           top: 158px;
@@ -338,7 +349,7 @@
                         left: auto;
                         background: rgba(241, 147, 41, 0.2);
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           width: 90px;
                           height: 456px;
                           top: 150px;
@@ -355,14 +366,15 @@
                     top: 0;
                     left: 0;
 
-                    @include respond-to (md) {
+                    @include respond-to(md) {
                       display: none;
                     }
 
                     > div {
                       position: absolute;
 
-                      &:before, &:after {
+                      &:before,
+                      &:after {
                         position: absolute;
                         content: "";
                       }
@@ -385,7 +397,7 @@
                           right: 0;
                           background: #c8e6fc;
 
-                          @include respond-to (lg) {
+                          @include respond-to(lg) {
                             height: 720px;
                           }
                         }
@@ -397,7 +409,7 @@
                           right: 0;
                           background: #c8e6fc;
 
-                          @include respond-to (lg) {
+                          @include respond-to(lg) {
                             top: 720px;
                           }
                         }
@@ -410,7 +422,7 @@
                           background: #c8e6fc;
                         }
                       }
-    
+
                       &.line-top-banner {
                         width: 1px;
                         height: 53px;
@@ -418,7 +430,7 @@
                         right: 20px;
                         background: #fbb9bd;
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           top: 114px;
                         }
 
@@ -430,7 +442,7 @@
                           background: #fbb9bd;
                         }
                       }
-    
+
                       &.line-search {
                         width: 55px;
                         height: 1px;
@@ -438,7 +450,7 @@
                         right: 34px;
                         background: #c2efc8;
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           top: 135px;
                         }
 
@@ -458,7 +470,7 @@
                           background: #c2efc8;
                         }
                       }
-    
+
                       &.line-board {
                         width: 150px;
                         height: 1px;
@@ -466,7 +478,7 @@
                         right: 54px;
                         background: #e2b5ec;
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           top: 202px;
                         }
 
@@ -486,7 +498,7 @@
                           background: #e2b5ec;
                         }
                       }
-    
+
                       &.line-side {
                         width: 150px;
                         height: 1px;
@@ -494,7 +506,7 @@
                         right: -66px;
                         background: #fbdfc6;
 
-                        @include respond-to (lg) {
+                        @include respond-to(lg) {
                           top: 475px;
                         }
                       }
@@ -506,11 +518,11 @@
                   flex: 1;
                   padding: 0 0 0 50px;
 
-                  @include respond-to (md) {
+                  @include respond-to(md) {
                     flex-basis: 100%;
                     padding: 20px 0 0;
                   }
-                  
+
                   h2 {
                     text-align: left;
                   }
@@ -525,7 +537,7 @@
                         margin: 0 0 20px;
                         border-radius: 6px;
                         background: #fff;
-                        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+                        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
                         overflow: hidden;
 
                         &:last-child {
@@ -585,7 +597,7 @@
           &#link-area {
             padding: 120px 20px;
 
-            @include respond-to (md) {
+            @include respond-to(md) {
               padding: 60px 20px;
             }
 
@@ -610,7 +622,7 @@
               width: 840px;
               margin: auto;
 
-              @include respond-to (lg) {
+              @include respond-to(lg) {
                 width: 100%;
               }
 

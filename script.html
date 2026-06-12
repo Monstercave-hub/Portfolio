@@ -18,12 +18,6 @@
   });
 </script>
 
-<script type="text/javascript" src="/js/guide-slider.js"></script>
-<script type="text/javascript" src="/js/comparison-slider.js"></script>
-<script language="javascript" src='/js/make4u/splide.min.js'></script>
-
-<script language="javascript" src='/js/tab.js'></script>
-
 <script>
    (function () {
   const links = Array.from(document.querySelectorAll('[data-spy-link]'));
@@ -123,17 +117,6 @@
   requestAnimationFrame(updateActiveFromScroll);
 })();
 
-</script>
-
-<script>
-  document.addEventListener('click', (e) => {
-    const btn = e.target.closest('.tdnn');
-    if (!btn) return;
-
-    document.querySelector('#mobile-area')?.classList.toggle('dark');
-    document.querySelector('.sun')?.classList.toggle('moon');
-    btn.classList.toggle('day');
-  });
 </script>
 
 <!-- Back to Top -->
