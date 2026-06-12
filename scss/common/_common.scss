@@ -389,7 +389,7 @@ a {
   transform: translateX(-50%);
   z-index: 1;
 
-  @include respond-to(lgs) {
+  @include respond-to(md) {
     display: none;
   }
 
