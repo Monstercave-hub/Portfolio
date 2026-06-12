@@ -264,6 +264,79 @@ a {
   }
 }
 
+// Scroll to Next Section
+.scroll-next-wrap {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  right: 118px;
+  bottom: 119px;
+  border-radius: 50px;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 16px 25px -2px rgba(0, 0, 0, 0.4);
+  transform: translateY(15px);
+  @include transition(all 0.2s);
+  z-index: 98;
+  cursor: pointer;
+
+  @include respond-to(md) {
+    display: none;
+  }
+
+  &.active-scroll-next {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:after {
+    position: absolute;
+    font-family: "remixicon";
+    content: "\ea4e";
+    text-align: center;
+    line-height: 60px;
+    font-size: 24px;
+    color: #333;
+    right: 0;
+    left: 0;
+    top: 0;
+    margin: auto;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 200ms linear;
+  }
+
+  &:hover {
+    box-shadow: 0px 9px 20px -3px rgba(54, 162, 255, 0.7);
+
+    &:after {
+      color: #fff;
+    }
+
+    svg {
+      &.scroll-next-circle {
+        path {
+          fill: $blue;
+          stroke: #86c2ff;
+        }
+      }
+    }
+  }
+
+  svg {
+    border-radius: 50%;
+
+    &.scroll-next-circle {
+      path {
+        fill: #fff;
+        stroke-width: 4;
+        transition: all 200ms linear;
+      }
+    }
+  }
+}
+
 .overflow-hidden {
   overflow: hidden;
 }

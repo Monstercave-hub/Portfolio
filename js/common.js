@@ -68,6 +68,35 @@ $(function () {
   });
 })();
 
+// Scroll to Next Section
+(() => {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-scroll-next]').forEach(section => {
+      const btn = document.createElement('div');
+      btn.className = 'scroll-next-wrap active-scroll-next';
+      btn.innerHTML = '<svg class="scroll-next-circle" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" /></svg>';
+      section.appendChild(btn);
+
+      const update = () => {
+        const bottom = section.offsetTop + section.offsetHeight;
+        if (window.scrollY < bottom) {
+          btn.classList.add('active-scroll-next');
+        } else {
+          btn.classList.remove('active-scroll-next');
+        }
+      };
+
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+
+      btn.addEventListener('click', () => {
+        const next = section.nextElementSibling;
+        if (next) next.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  });
+})();
+
 // FadeIn Scroll Animation
 window.addEventListener('DOMContentLoaded', () => {
   const els = document.querySelectorAll('.wow');

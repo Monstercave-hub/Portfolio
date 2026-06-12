@@ -149,15 +149,15 @@
               }
 
               .wisteria {
-                color: #c53aff;
+                color: #aeff00;
               }
 
               .belize {
-                color: #47b6ff;
+                color: #00ecff;
               }
 
               .pomegranate {
-                color: #ff2d18;
+                color: #ff18bb;
               }
             }
           }
@@ -176,17 +176,12 @@
       }
 
       .ai-info {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        min-width: 240px;
-        right: 0;
-        bottom: 0;
-        border-radius: 16px 0 0 0;
+        position: relative;
+        display: inline-block;
+        border-radius: 12px;
         padding: 20px;
-        background: rgba(0, 0, 0, 0.9);
-        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
+        margin: 20px 0 0;
+        background: rgba(0, 0, 0, 0.4);
 
         @include respond-to(sms) {
           display: none;
@@ -195,7 +190,7 @@
         .info-title {
           color: #fff;
           padding: 0 0 8px;
-          margin: 0 0 3px;
+          margin: 0 0 12px;
           border-bottom: 1px solid #5c5c5c;
 
           p {
@@ -206,17 +201,17 @@
 
         .detail-info {
           display: flex;
-          flex-direction: column;
-          gap: 6px;
+          gap: 20px;
 
           p {
             display: flex;
+            justify-content: space-between;
             color: #fff;
             line-height: 1;
 
             span {
               display: flex;
-              width: 60px;
+              margin: 0 8px 0 0;
               color: $gray-text;
             }
           }
