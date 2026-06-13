@@ -39,7 +39,7 @@
                   <li>
                     <a class="tooltip-area" href="/featured/make4u" data-hover>
                       <div class="tooltip">MAKE4U</div>
-                      <img src="/images/featured/make4u/make4u-thumbnail.png" alt="MAKE4U">
+                      <img src="/images/featured/make4u/make4u-thumbnail.webp" alt="MAKE4U">
                     </a>
                   </li>
                   <li>
@@ -51,13 +51,13 @@
                   <li>
                     <a class="tooltip-area" href="/featured/shipgo" data-hover>
                       <div class="tooltip">ShipGo</div>
-                      <img src="/images/featured/shipgo/shipgo-thumbnail.png" alt="ShipGo">
+                      <img src="/images/featured/shipgo/shipgo-thumbnail.webp" alt="ShipGo">
                     </a>
                   </li>
                   <li>
                     <a class="tooltip-area" href="/featured/tradlinx" data-hover>
                       <div class="tooltip">Tradlinx</div>
-                      <img src="/images/featured/tradlinx/tradlinx-thumbnail.png" alt="Tradlinx">
+                      <img src="/images/featured/tradlinx/tradlinx-thumbnail.webp" alt="Tradlinx">
                     </a>
                   </li>
                   <li>
@@ -69,7 +69,7 @@
                   <li class="on">
                     <a class="tooltip-area" href="/featured/choco" data-hover>
                       <div class="tooltip">choco</div>
-                      <img src="/images/featured/choco/choco-thumbnail.png" alt="choco">
+                      <img src="/images/featured/choco/choco-thumbnail.webp" alt="choco">
                     </a>
                   </li>
                 </ul>
@@ -777,24 +777,21 @@
   </script>
 
   <script src="/js/triangle.js"></script>
-  <script src="/js/banner.js"></script>
+  <script defer src="/js/banner.js"></script>
 
-  <script src="/js/photo.js"></script>
+  <script defer src="/js/photo.js"></script>
   <script type="text/javascript">
-    $(document).ready(function(e) {
-       
-      // live handler
+    document.addEventListener('DOMContentLoaded', function() {
       lc_lightbox('.elem', {
         wrap_class: 'lcl_fade_oc',
-        gallery : true,	
-        thumb_attr: 'data-lcl-thumb', 
-        
+        gallery : true,
+        thumb_attr: 'data-lcl-thumb',
+
         skin: 'minimal',
         radius: 0,
         padding	: 0,
         border_w: 0,
-      });	
-    
+      });
     });
   </script>
 
