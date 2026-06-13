@@ -116,10 +116,10 @@ window.addEventListener('DOMContentLoaded', () => {
   videos.forEach(v => videoIO.observe(v));
 });
 
-// Animation Card - pause when off-screen
+// Animation areas - pause CSS animations when off-screen
 window.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.animation-card');
-  if (!cards.length) return;
+  const els = document.querySelectorAll('.animation-card, .content-animation-area');
+  if (!els.length) return;
 
   const animIO = new IntersectionObserver((entries) => {
     for (const e of entries) {
@@ -127,7 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }, { threshold: 0.1 });
 
-  cards.forEach(el => animIO.observe(el));
+  els.forEach(el => animIO.observe(el));
 });
 
 // FadeIn Scroll Animation
