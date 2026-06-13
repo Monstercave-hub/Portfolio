@@ -1149,18 +1149,143 @@
     <? include ("script.html"); ?>
 
     <script type="text/javascript" src="/js/filter.js"></script>
-    <script type="text/javascript" src="/js/viewer.js"></script>
 
     <script>
-      window.addEventListener('DOMContentLoaded', function () {
-        var galley = document.getElementById('portfolio');
-        var viewer = new Viewer(galley, {
-          url: 'data-original',
-          title: function (image) {
-            return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
-          },
+      (function () {
+        'use strict';
+        var imgs, idx, modal, pvImg, pvTitle, pvPrev, pvNext;
+        var touchStartX, lastTap = 0;
+        var zoomed = false, panX = 0, panY = 0;
+        var dragging = false, dStartX, dStartY, dPanX, dPanY;
+
+        function setTransform(animate) {
+          pvImg.style.transition = animate ? 'transform 0.25s ease' : 'none';
+          pvImg.style.transform = zoomed
+            ? 'translate(' + panX + 'px,' + panY + 'px) scale(1)'
+            : '';
+          pvImg.style.height = zoomed ? 'auto' : '';
+          pvImg.style.maxHeight = zoomed ? 'none' : '';
+          pvImg.style.cursor = zoomed ? (dragging ? 'grabbing' : 'grab') : '';
+        }
+
+        function resetZoom() {
+          zoomed = false; panX = 0; panY = 0;
+          if (pvImg) { pvImg.style.transition = 'none'; pvImg.style.transform = ''; pvImg.style.height = ''; pvImg.style.maxHeight = ''; pvImg.style.cursor = ''; }
+        }
+
+        function build() {
+          modal = document.createElement('div');
+          modal.id = 'pv-modal';
+          modal.innerHTML =
+            '<div id="pv-bd"></div>' +
+            '<button id="pv-close" aria-label="닫기"><i class="ri-close-line"></i></button>' +
+            '<button id="pv-prev" aria-label="이전 이미지"><i class="ri-arrow-left-s-line"></i></button>' +
+            '<button id="pv-next" aria-label="다음 이미지"><i class="ri-arrow-right-s-line"></i></button>' +
+            '<div id="pv-canvas"><img id="pv-img" alt="" /></div>' +
+            '<div id="pv-title"></div>';
+          document.body.appendChild(modal);
+          pvImg   = document.getElementById('pv-img');
+          pvTitle = document.getElementById('pv-title');
+          pvPrev  = document.getElementById('pv-prev');
+          pvNext  = document.getElementById('pv-next');
+
+          document.getElementById('pv-bd').addEventListener('click', close);
+          document.getElementById('pv-close').addEventListener('click', close);
+          pvPrev.addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+          pvNext.addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+
+          // Keyboard
+          document.addEventListener('keydown', function (e) {
+            if (!modal.classList.contains('pv-open')) return;
+            if (e.key === 'Escape') { if (zoomed) resetZoom(); else close(); }
+            if (!zoomed && e.key === 'ArrowLeft')  show(idx - 1);
+            if (!zoomed && e.key === 'ArrowRight') show(idx + 1);
+          });
+
+          // Double-click to zoom
+          pvImg.addEventListener('dblclick', function (e) {
+            e.stopPropagation();
+            zoomed = !zoomed; panX = 0; panY = 0;
+            setTransform(true);
+          });
+
+          // Mouse drag to pan (when zoomed)
+          pvImg.addEventListener('mousedown', function (e) {
+            if (!zoomed) return;
+            dragging = true;
+            dStartX = e.clientX; dStartY = e.clientY;
+            dPanX = panX; dPanY = panY;
+            setTransform(false);
+            e.preventDefault();
+          });
+          document.addEventListener('mousemove', function (e) {
+            if (!dragging) return;
+            panX = dPanX + e.clientX - dStartX;
+            panY = dPanY + e.clientY - dStartY;
+            setTransform(false);
+          });
+          document.addEventListener('mouseup', function () {
+            if (dragging) { dragging = false; setTransform(false); }
+          });
+
+          // Touch: swipe (navigate) or double-tap (zoom)
+          var tX, tY;
+          modal.addEventListener('touchstart', function (e) {
+            tX = e.changedTouches[0].clientX;
+            tY = e.changedTouches[0].clientY;
+          }, { passive: true });
+          modal.addEventListener('touchend', function (e) {
+            var dx = e.changedTouches[0].clientX - tX;
+            var dy = e.changedTouches[0].clientY - tY;
+            if (!zoomed && Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+              show(idx + (dx < 0 ? 1 : -1));
+            }
+          }, { passive: true });
+          pvImg.addEventListener('touchend', function (e) {
+            var now = Date.now();
+            if (now - lastTap < 300) {
+              zoomed = !zoomed; panX = 0; panY = 0;
+              setTransform(true);
+              e.preventDefault();
+            }
+            lastTap = now;
+          }, { passive: false });
+        }
+
+        function show(i) {
+          idx = (i % imgs.length + imgs.length) % imgs.length;
+          resetZoom();
+          pvImg.src = imgs[idx].getAttribute('data-original') || imgs[idx].src;
+          pvImg.alt = imgs[idx].alt || '';
+          pvTitle.textContent = (imgs[idx].alt || '') + ' (' + (idx + 1) + '/' + imgs.length + ')';
+        }
+
+        function open(i) {
+          if (!modal) build();
+          show(i);
+          modal.classList.add('pv-open');
+          document.body.classList.add('pv-lock');
+        }
+
+        function close() {
+          resetZoom();
+          modal.classList.remove('pv-open');
+          document.body.classList.remove('pv-lock');
+          setTimeout(function () { pvImg.src = ''; }, 200);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          var gallery = document.getElementById('portfolio');
+          if (!gallery) return;
+          imgs = Array.from(gallery.querySelectorAll('img[data-original]'));
+          if (!imgs.length) return;
+          imgs.forEach(function (img, i) {
+            var item = img.closest('li') || img.parentElement;
+            item.style.cursor = 'zoom-in';
+            item.addEventListener('click', function (e) { e.preventDefault(); open(i); });
+          });
         });
-      });
+      })();
     </script>
 
   </body>

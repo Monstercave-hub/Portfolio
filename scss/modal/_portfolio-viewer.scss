@@ -1,419 +1,135 @@
-.viewer-zoom-in::before, .viewer-zoom-out::before, .viewer-one-to-one::before, .viewer-reset::before, .viewer-prev::before, .viewer-play::before, .viewer-next::before, .viewer-rotate-left::before, .viewer-rotate-right::before, .viewer-flip-horizontal::before, .viewer-flip-vertical::before, .viewer-fullscreen::before, .viewer-fullscreen-exit::before {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAAUCAYAAABWOyJDAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAQPSURBVHic7Zs/iFxVFMa/0U2UaJGksUgnIVhYxVhpjDbZCBmLdAYECxsRFBTUamcXUiSNncgKQbSxsxH8gzAP3FU2jY0kKKJNiiiIghFlccnP4p3nPCdv3p9778vsLOcHB2bfveeb7955c3jvvNkBIMdxnD64a94GHMfZu3iBcRynN7zAOI7TG15gHCeeNUkr8zaxG2lbYDYsdgMbktBsP03jdQwljSXdtBhLOmtjowC9Mg9L+knSlcD8TNKpSA9lBpK2JF2VdDSR5n5J64m0qli399hNFMUlpshQii5jbXTbHGviB0nLNeNDSd9VO4A2UdB2fp+x0eCnaXxWXGA2X0au/3HgN9P4LFCjIANOJdrLr0zzZ+BEpNYDwKbpnQMeAw4m8HjQtM6Z9qa917zPQwFr3M5KgA6J5rTJCdFZJj9/lyvGhsDvwFNVuV2MhhjrK6b9bFiE+j1r87eBl4HDwCF7/U/k+ofAX5b/EXBv5JoLMuILzf3Ap6Z3EzgdqHMCuF7hcQf4HDgeoHnccncqdK/TvSDWffFXI/exICY/xZyqc6XLWF1UFZna4gJ7q8BsRvgd2/xXpo6P+D9dfT7PpECtA3cnWPM0GXGFZh/wgWltA+cDNC7X+AP4GzjZQe+k5dRxuYPeiuXU7e1qwLpDz7dFjXKRaSwuMLvAlG8zZlG+YmiK1HoFqT7wP2z+4Q45TfEGcMt01xLoNZEBTwRqD4BLpnMLeC1A41UmVxsXgXeBayV/Wx20rpTyrpnWRft7p6O/FdqzGrDukPNtkaMoMo3FBdBSQMOnYBCReyf05s126fU9ytfX98+mY54Kxnp7S9K3kj6U9KYdG0h6UdLbkh7poFXMfUnSOyVvL0h6VtIXHbS6nOP+s/Zm9mvyXW1uuC9ohZ72E9uDmXWLJOB1GxsH+DxPftsB8B6wlGDN02TAkxG6+4D3TWsbeC5CS8CDFce+AW500LhhOW2020TRjK3b21HEmgti9m0RonxbdMZeVzV+/4tF3cBpP7E9mKHNL5q8h5g0eYsCMQz0epq8gQrwMXAgcs0FGXGFRcB9wCemF9PkbYqM/Bas7fxLwNeJPdTdpo4itQti8lPMqTpXuozVRVXPpbHI3KkNTB1NfkL81j2mvhDp91HgV9MKuRIqrykj3WPq4rHyL+axj8/qGPmTqi6F9YDlHOvJU6oYcTsh/TYSzWmTE6JT19CtLTJt32D6CmHe0eQn1O8z5AXgT4sx4Vcu0/EQecMydB8z0hUWkTd2t4CrwNEePqMBcAR4mrBbwyXLPWJa8zrXmmLEhNBmfpkuY2102xxrih+pb+ieAb6vGhuA97UcJ5KR8gZ77K+99xxeYBzH6Q3/Z0fHcXrDC4zjOL3hBcZxnN74F+zlvXFWXF9PAAAAAElFTkSuQmCC');
-  background-repeat: no-repeat;
-  color: transparent;
-  display: block;
-  font-size: 0;
-  height: 20px;
-  line-height: 0;
-  width: 20px;
-}
-
-.viewer-zoom-in::before {
-  background-position: 0 0;
-  content: 'Zoom In';
-}
-
-.viewer-zoom-out::before {
-  background-position: -20px 0;
-  content: 'Zoom Out';
-}
-
-.viewer-one-to-one::before {
-  background-position: -40px 0;
-  content: 'One to One';
-}
-
-.viewer-reset::before {
-  background-position: -60px 0;
-  content: 'Reset';
-}
-
-.viewer-prev::before {
-  background-position: -80px 0;
-  content: 'Previous';
-}
-
-.viewer-play::before {
-  background-position: -100px 0;
-  content: 'Play';
-}
-
-.viewer-next::before {
-  background-position: -120px 0;
-  content: 'Next';
-}
-
-.viewer-rotate-left::before {
-  background-position: -140px 0;
-  content: 'Rotate Left';
-}
-
-.viewer-rotate-right::before {
-  background-position: -160px 0;
-  content: 'Rotate Right';
-}
-
-.viewer-flip-horizontal::before {
-  background-position: -180px 0;
-  content: 'Flip Horizontal';
-}
-
-.viewer-flip-vertical::before {
-  background-position: -200px 0;
-  content: 'Flip Vertical';
-}
-
-.viewer-fullscreen::before {
-  background-position: -220px 0;
-  content: 'Enter Full Screen';
-}
-
-.viewer-fullscreen-exit::before {
-  background-position: -240px 0;
-  content: 'Exit Full Screen';
-}
-
-.viewer-container {
-  bottom: 0;
-  direction: ltr;
-  font-size: 0;
-  left: 0;
-  line-height: 0;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  -webkit-tap-highlight-color: transparent;
-  top: 0;
-  touch-action: none;
-  user-select: none;
-
-  &::selection, *::selection {
-    background-color: transparent;
-  }
-
-  &:before {
-    content: "이미지를 더블 클릭하시면 원본 사이즈로 보실 수 있습니다.";
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 13px;
-    border-radius: 6px;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.7);
-  }
-
-  .viewer-canvas {
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: 0;
-
-    > img {
-      display: block;
-      height: auto;
-      max-height: none !important;
-      max-width: none !important;
-      min-height: 0 !important;
-      min-width: 0 !important;
-      margin: 15px auto;
-    }
-  }
-
-  .viewer-footer {
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    text-align: center;
-
-    .viewer-title {
-      color: #ccc;
-      display: inline-block;
-      font-size: 12px;
-      line-height: 1;
-      margin: 0 5% 5px;
-      max-width: 90%;
-      opacity: 0.8;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-transition: opacity 0.15s;
-      transition: opacity 0.15s;
-      white-space: nowrap;
-      &:hover {
-        opacity: 1;
-      }
-    }
-
-    .viewer-toolbar > ul {
-      display: inline-block;
-      margin: 0 auto 5px;
-      overflow: hidden;
-      padding: 3px 0;
-      > {
-        li {
-          background-color: rgba(0, 0, 0, 1);
-          border-radius: 50%;
-          cursor: pointer;
-          float: left;
-          height: 24px;
-          overflow: hidden;
-          -webkit-transition: background-color 0.15s;
-          transition: background-color 0.15s;
-          width: 24px;
-          &:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-          }
-          &::before {
-            margin: 2px;
-          }
-          + li {
-            margin-left: 1px;
-          }
-        }
-        .viewer-small {
-          height: 18px;
-          margin-bottom: 3px;
-          margin-top: 3px;
-          width: 18px;
-          &::before {
-            margin: -1px;
-          }
-        }
-        .viewer-large {
-          height: 30px;
-          margin-bottom: -3px;
-          margin-top: -3px;
-          width: 30px;
-          &::before {
-            margin: 5px;
-          }
-        }
-      }
-    }
-
-    .viewer-navbar {
-      background-color: rgba(0, 0, 0, 0.7);
-      overflow: hidden;
-
-      .viewer-list {
-        -webkit-box-sizing: content-box;
-        box-sizing: content-box;
-        height: 50px;
-        margin: 0;
-        overflow: hidden;
-        padding: 1px 0;
-        > {
-          li {
-            color: transparent;
-            cursor: pointer;
-            float: left;
-            font-size: 0;
-            height: 50px;
-            line-height: 0;
-            opacity: 0.7;
-            overflow: hidden;
-            -webkit-transition: opacity 0.15s;
-            transition: opacity 0.15s;
-            width: 50px;
-            &:hover {
-              opacity: 1;
-            }
-            + li {
-              margin-left: 1px;
-            }
-          }
-          .viewer-loading {
-            position: relative;
-            &::after {
-              border-width: 2px;
-              height: 20px;
-              margin-left: -10px;
-              margin-top: -10px;
-              width: 20px;
-            }
-          }
-          .viewer-active {
-            opacity: 1;
-            &:hover {
-              opacity: 1;
-            }
-          }
-        }
-      }
-    }    
-  }
-
-  .viewer-tooltip {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    color: #fff;
-    display: none;
-    font-size: 12px;
-    height: 20px;
-    left: 50%;
-    line-height: 20px;
-    margin-left: -25px;
-    margin-top: -10px;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    width: 50px;
-  }
-  
-  .viewer-button {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    overflow: hidden;
-    right: 25px;
-    top: 20px;
-    font-size: 25px;
-    color: #fff;
-    padding: 23px 0 0;
-    text-align: center;
-    background: $blue;
-    border: 1px solid $blue;
-    box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.1);
-    @include transition(all .3s); 
-
-    &:hover {
-      border: 1px solid #ea2a1c;
-      background: #ea2a1c;
-      box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.1);
-      @include transition(all .3s); 
-    }
-
-    &:before {
-      content: "\eb99";
-    }
-  }
-
-  .viewer-player {
-    background-color: #000;
-    bottom: 0;
-    cursor: none;
-    display: none;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    > img {
-      left: 0;
-      position: absolute;
-      top: 0;
-    }
-  }
-}
-
-.viewer-fixed {
-  position: fixed;
-}
-
-.viewer-open {
-  overflow: hidden;
-}
-
-.viewer-show {
-  display: block;
-}
-
-.viewer-hide {
+#pv-modal {
   display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
 }
-
-.viewer-backdrop {
-  background-color: rgba(0, 0, 0, 0.8);
+#pv-modal.pv-open {
+  display: flex;
 }
-
-.viewer-invisible {
-  visibility: hidden;
+#pv-modal.pv-open::before {
+  content: "더블클릭(PC) / 더블탭(모바일)으로 확대할 수 있습니다.";
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 12px 16px;
+  border-radius: 8px;
+  z-index: 3;
+  pointer-events: none;
 }
-
-.viewer-move {
-  cursor: move;
-  cursor: -webkit-grab;
-  cursor: grab;
+body.pv-lock {
+  overflow: hidden;
 }
-
-.viewer-fade {
-  opacity: 0;
-}
-
-.viewer-in {
-  opacity: 1;
-}
-
-.viewer-transition {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-@-webkit-keyframes viewer-spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-
-@keyframes viewer-spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-
-.viewer-loading::after {
-  -webkit-animation: viewer-spinner 1s linear infinite;
-  animation: viewer-spinner 1s linear infinite;
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  border-left-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  content: '';
-  display: inline-block;
-  height: 40px;
-  left: 50%;
-  margin-left: -20px;
-  margin-top: -20px;
+#pv-bd {
   position: absolute;
-  top: 50%;
-  width: 40px;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+}
+#pv-canvas {
+  position: relative;
+  height: 100%;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 80px;
+  overflow: hidden;
 }
-
-@media (max-width: 767px) {
-  .viewer-hide-xs-down {
+#pv-img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  user-select: none;
+}
+#pv-close,
+#pv-prev,
+#pv-next {
+  position: fixed;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #198cff;
+  background: #198cff;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+}
+#pv-close:hover {
+  background: #ea2a1c;
+  border-color: #ea2a1c;
+}
+#pv-prev,
+#pv-next {
+  color: #333;
+  border: 1px solid #fff;
+  background: #fff;
+}
+#pv-prev:hover,
+#pv-next:hover {
+  color: #fff;
+  background: #198cff;
+  border-color: #198cff;
+}
+#pv-close {
+  right: 25px;
+  top: 20px;
+}
+#pv-prev {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#pv-next {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#pv-title {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 18px;
+  border-radius: 20px;
+  white-space: nowrap;
+  max-width: 80vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 600px) {
+  #pv-canvas {
+    padding: 20px 60px;
+  }
+  #pv-prev {
+    left: 8px;
+  }
+  #pv-next {
+    right: 8px;
+  }
+  #pv-close {
+    right: 10px;
+    top: 10px;
+  }
+  #pv-modal.pv-open::before {
     display: none;
   }
 }
-
-@media (max-width: 991px) {
-  .viewer-hide-sm-down {
-    display: none;
-  }
-}
-
-@media (max-width: 1199px) {
-  .viewer-hide-md-down {
-    display: none;
-  }
-}
-
