@@ -912,14 +912,15 @@
   <script type='text/javascript' src='/js/earth/earth.js'></script>
 
   <script>
-    $(function () {
-      $(".cont").each(function () {
-        $(this).find(".progress-bar").animate({
-          width:$(this).attr("data-percent")
-        },6000);
-        $(this).find("span").animate({
-          left:$(this).attr("data-percent")
-        },6000);
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.cont').forEach(function (cont) {
+        var percent = cont.getAttribute('data-percent');
+        var bar = cont.querySelector('.progress-bar');
+        var span = cont.querySelector('span');
+        requestAnimationFrame(function () {
+          if (bar) { bar.style.transition = 'width 6s ease'; bar.style.width = percent; }
+          if (span) { span.style.transition = 'left 6s ease'; span.style.left = percent; }
+        });
       });
     });
   </script>

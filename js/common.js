@@ -97,6 +97,39 @@ $(function () {
   });
 })();
 
+// Video - play only when in viewport
+window.addEventListener('DOMContentLoaded', () => {
+  const videos = document.querySelectorAll('video[data-autoplay-on-view]');
+  if (!videos.length) return;
+
+  const videoIO = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      const v = e.target;
+      if (e.isIntersecting) {
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    }
+  }, { threshold: 0.1 });
+
+  videos.forEach(v => videoIO.observe(v));
+});
+
+// Animation Card - pause when off-screen
+window.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.animation-card');
+  if (!cards.length) return;
+
+  const animIO = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      e.target.classList.toggle('in-view', e.isIntersecting);
+    }
+  }, { threshold: 0.1 });
+
+  cards.forEach(el => animIO.observe(el));
+});
+
 // FadeIn Scroll Animation
 window.addEventListener('DOMContentLoaded', () => {
   const els = document.querySelectorAll('.wow');

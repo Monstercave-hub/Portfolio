@@ -408,6 +408,13 @@
                 background: $gray-bg;
                 overflow: hidden;
 
+                * {
+                  animation-play-state: paused !important;
+                }
+                &.in-view * {
+                  animation-play-state: running !important;
+                }
+
                 &:nth-child(7) {
                   background: #5ecade;
                 }
@@ -3415,7 +3422,7 @@
                           width: 100%;
 
                           img {
-                            min-width: 1100px;
+                            min-width: 1200px;
 
                             @include respond-to(lg) {
                               min-width: 100%;
