@@ -176,12 +176,14 @@
       }
 
       .ai-info {
-        position: relative;
+        position: absolute;
         display: inline-block;
+        right: 20px;
+        bottom: 20px;
         border-radius: 12px;
         padding: 20px;
         margin: 20px 0 0;
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.8);
 
         @include respond-to(sms) {
           display: none;
@@ -201,16 +203,16 @@
 
         .detail-info {
           display: flex;
-          gap: 20px;
+          flex-direction: column;
+          gap: 4px;
 
           p {
             display: flex;
-            justify-content: space-between;
             color: #fff;
-            line-height: 1;
 
             span {
               display: flex;
+              min-width: 60px;
               margin: 0 8px 0 0;
               color: $gray-text;
             }
@@ -218,6 +220,7 @@
         }
       }
     }
+
     #logo-slider-area {
       padding: 80px 0 0;
 
@@ -286,7 +289,7 @@
     #skills {
       display: inline-block;
       width: 100%;
-      padding: 100px 0;
+      padding: 100px 0 140px;
 
       hr {
         margin: 10px auto;
@@ -424,6 +427,10 @@
         }
 
         .tool-area {
+          @include respond-to(md) {
+            display: none;
+          }
+
           .tool-list {
             ul {
               display: flex;
