@@ -34,6 +34,47 @@
 </IfModule>
 # ──────────────────────────────────────────────────────────────
 
+# ─── IP 차단 ───────────────────────────────────────────────────
+<RequireAll>
+  Require all granted
+  Require not ip 34.123.82.129
+  Require not ip 43.131.243.61
+  Require not ip 43.165.67.31
+  Require not ip 45.88.138.45
+  Require not ip 54.164.157.105
+  Require not ip 54.211.150.188
+  Require not ip 64.89.160.19
+  Require not ip 65.21.124.77
+  Require not ip 77.91.96.90
+  Require not ip 84.233.195.151
+  Require not ip 84.233.195.153
+  Require not ip 84.233.195.157
+  Require not ip 91.92.241.197
+
+  Require not ip 104.164.126.143
+  Require not ip 104.252.191.25
+  Require not ip 138.68.86.32
+  Require not ip 142.93.0.66
+  Require not ip 147.182.149.75
+  Require not ip 176.65.139.237
+
+  Require not ip 216.73.216.95
+  Require not ip 216.73.216.124
+
+  Require not ip 222.239.104.23
+  Require not ip 222.239.104.26
+  Require not ip 222.239.104.29
+  Require not ip 222.239.104.34
+  Require not ip 222.239.104.35
+  Require not ip 222.239.104.38
+  Require not ip 222.239.104.39
+  Require not ip 222.239.104.41
+  Require not ip 222.239.104.42
+  Require not ip 222.239.104.47
+  Require not ip 222.239.104.50
+</RequireAll>
+# ──────────────────────────────────────────────────────────────
+
 RewriteEngine On
 
 # 디렉토리처럼 생겼지만 실제 디렉토리는 아님
