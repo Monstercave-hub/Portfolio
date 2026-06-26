@@ -858,8 +858,12 @@
                     overflow: hidden;
                     z-index: 1;
 
-                    * { animation-play-state: paused !important; }
-                    &.in-view * { animation-play-state: running !important; }
+                    * {
+                      animation-play-state: paused !important;
+                    }
+                    &.in-view * {
+                      animation-play-state: running !important;
+                    }
 
                     #user-setting-animation {
                       width: 100%;

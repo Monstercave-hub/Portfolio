@@ -70,6 +70,7 @@
   Require not ip 222.239.104.39
   Require not ip 222.239.104.41
   Require not ip 222.239.104.42
+  Require not ip 222.239.104.46
   Require not ip 222.239.104.47
   Require not ip 222.239.104.50
 </RequireAll>
