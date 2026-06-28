@@ -1,58 +1,4 @@
 #index-wrap {
-  #header {
-    .header-sroll {
-      .inner {
-        .logo {
-          a {
-            img {
-              filter: invert(1);
-            }
-          }
-        }
-
-        .navigation {
-          nav {
-            ul {
-              li {
-                a {
-                  color: #fff;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .small {
-      .inner {
-        .logo {
-          a {
-            img {
-              filter: none;
-            }
-          }
-        }
-
-        .navigation {
-          nav {
-            ul {
-              li {
-                a {
-                  color: #222;
-
-                  @include respond-to(mobileW) {
-                    color: #fff;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
   .content {
     #intro {
       position: relative;
@@ -126,7 +72,6 @@
                 .letter {
                   display: inline-block;
                   position: relative;
-                  float: left;
                   transform: translateZ(25px);
                   transform-origin: 50% 50% 25px;
 
@@ -426,7 +371,13 @@
             }
           }
         }
+      }
+    }
 
+    #tools {
+      padding: 0 0 140px;
+
+      .skill-area {
         .tool-area {
           display: block;
           width: 100%;
@@ -549,10 +500,6 @@
           }
         }
       }
-    }
-
-    #tools {
-      padding: 0 0 140px;
     }
 
     #parallax-area {

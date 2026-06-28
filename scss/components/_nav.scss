@@ -8,9 +8,9 @@
     width: 100%;
     height: 44px;
     padding: 18px 0;
-    left:0;
-    top:0;
-    @include transition(all .3s);
+    left: 0;
+    top: 0;
+    @include transition(all 0.3s);
 
     &.small {
       padding: 10px 0;
@@ -18,11 +18,23 @@
       border-bottom: 1px solid $gray-line;
       background: #fff;
 
-      @include respond-to (mobileW) {
+      @include respond-to(mobileW) {
         height: 44px;
       }
 
       .inner {
+        .logo {
+          a {
+            &.default-logo {
+              display: block;
+            }
+
+            &.white-logo {
+              display: none;
+            }
+          }
+        }
+
         .navigation {
           .navigation-button {
             top: 2px;
@@ -32,6 +44,20 @@
           .navigation-background {
             top: 7px;
           }
+
+          nav {
+            ul {
+              li {
+                a {
+                  color: #333;
+
+                  @include respond-to(mobileW) {
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -40,8 +66,8 @@
       position: relative;
       width: 100%;
       padding: 0 20px;
-    
-      @include respond-to (mobileW) {
+
+      @include respond-to(mobileW) {
         &.open {
           .nav {
             position: fixed;
@@ -51,18 +77,18 @@
             left: 0;
             margin: 0;
             z-index: 999;
-            
+
             &:before {
-              transform:rotate(45deg) translate(0,6px);
-              border-bottom:0
+              transform: rotate(45deg) translate(0, 6px);
+              border-bottom: 0;
             }
             &:after {
-              transform:rotate(-45deg);
+              transform: rotate(-45deg);
             }
             ul {
               width: 100%;
               min-height: 100%;
-              transform:perspective(600) rotate3d(0,0,0,0);
+              transform: perspective(600) rotate3d(0, 0, 0, 0);
 
               li {
                 a {
@@ -79,15 +105,19 @@
         float: left;
         padding: 2px 0 0;
         cursor: pointer;
-        z-index: 301;
-        
+        z-index: 99;
+
         a {
+          &.default-logo {
+            display: none;
+          }
+
+          &.white-logo {
+            display: block;
+          }
+
           img {
             width: 90px;
-
-            @include respond-to (mobileW) {
-              width: 80px;
-            }
           }
         }
       }
@@ -110,7 +140,7 @@
               display: inline-block;
               margin: 0 25px 0 0;
 
-              @include respond-to (mobileW) {
+              @include respond-to(mobileW) {
                 width: 100%;
                 margin: 0;
               }
@@ -124,27 +154,28 @@
                 display: inline-block;
                 font-size: 16px;
                 font-weight: bold;
+                color: #fff;
                 margin: 0 15px;
                 z-index: 999;
 
-                &:before{
-                  content:'';
+                &:before {
+                  content: "";
                   position: absolute;
                   width: 0%;
                   height: 3px;
                   background: #16151b;
                   top: 120%;
-                  @include transition(all .2s); 
-  
-                  @include respond-to (mobileW) {
+                  @include transition(all 0.2s);
+
+                  @include respond-to(mobileW) {
                     top: 80%;
                   }
                 }
-          
+
                 &:hover {
                   &:before {
                     width: 100%;
-                    @include transition(all .2s); 
+                    @include transition(all 0.2s);
                   }
                 }
 
@@ -160,19 +191,19 @@
         }
       }
 
-      @include respond-to (mobileW) {
+      @include respond-to(mobileW) {
         .navigation {
           .navigation-checkbox {
             &:checked {
               + .navigation-button {
                 .navigation-icon {
                   background-color: transparent;
-                
+
                   &::before {
                     top: 0;
                     transform: rotate(135deg);
                   }
-                
+
                   &::after {
                     top: 0;
                     transform: rotate(-135deg);
@@ -184,7 +215,7 @@
                 .navigation-background {
                   transform: scale(80);
                 }
-              
+
                 .nav {
                   width: 100%;
                   visibility: visible;
@@ -214,25 +245,27 @@
               width: 20px;
               height: 2px;
               background-color: #222;
-            
-              &::before, &::after {
+
+              &::before,
+              &::after {
                 display: inline-block;
                 width: 20px;
                 height: 2px;
                 background-color: #222;
               }
-            
-              &::before, &::after {
-                content: '';
+
+              &::before,
+              &::after {
+                content: "";
                 position: absolute;
                 left: 0;
                 transition: all 200ms;
               }
-            
+
               &::before {
                 top: -6px;
               }
-            
+
               &::after {
                 top: 6px;
               }
@@ -278,21 +311,22 @@
               margin: 1rem;
 
               a {
-                &:link, &:visited {
+                &:link,
+                &:visited {
                   display: inline-block;
                   color: #fff;
                   font-size: 30px;
                   padding: 20px 0;
-                  transition: all .2s;
+                  transition: all 0.2s;
                 }
-              
+
                 span {
                   margin-right: 1.5rem;
                   display: inline-block;
                 }
-              
+
                 &:hover {
-                  color: #C1D0D0;
+                  color: #c1d0d0;
                   transform: scale(1.1);
                 }
               }
@@ -301,7 +335,7 @@
         }
       }
     }
-  } 
+  }
 }
 
 .white-nav {
@@ -351,7 +385,7 @@
 .bodyContainer {
   position: relative;
   width: 100%;
-  transition: .2s ease;
+  transition: 0.2s ease;
   background: #fff;
   z-index: 2;
 }
@@ -394,10 +428,10 @@
   z-index: 1000;
   cursor: pointer;
 
-  @include respond-to (mobileW) {
+  @include respond-to(mobileW) {
     display: none;
   }
-  
+
   .ham {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -407,32 +441,34 @@
     -ms-user-select: none;
     user-select: none;
   }
-  
+
   .hamRotate.active {
     transform: rotate(45deg);
   }
-  
+
   .hamRotate180.active {
     transform: rotate(180deg);
   }
-  
+
   .line {
     fill: none;
-    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    transition:
+      stroke-dasharray 400ms,
+      stroke-dashoffset 400ms;
     stroke: #000;
     stroke-width: 5.5;
     stroke-linecap: round;
   }
-  
+
   .ham1 {
     .top {
       stroke-dasharray: 40 139;
     }
-  
+
     .bottom {
       stroke-dasharray: 40 180;
     }
-  
+
     &.active {
       .line {
         stroke: #fff;
@@ -441,7 +477,7 @@
       .top {
         stroke-dashoffset: -98px;
       }
-  
+
       .bottom {
         stroke-dashoffset: -138px;
       }

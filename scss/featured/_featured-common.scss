@@ -7,6 +7,17 @@
       background: #fff;
 
       .inner {
+        .logo {
+          a {
+            &.default-logo {
+              display: block;
+            }
+
+            &.white-logo {
+              display: none;
+            }
+          }
+        }
         .navigation {
           .navigation-button {
             top: 2px;
@@ -15,6 +26,20 @@
           .navigation-background {
             top: 12px;
             right: 20px;
+          }
+
+          .nav {
+            ul {
+              li {
+                a {
+                  color: #333;
+
+                  @include respond-to(mobileW) {
+                    color: #fff;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -662,7 +687,7 @@
 
                 ul {
                   display: grid;
-                  width: 1300px;
+                  width: 1280px;
                   grid-gap: 20px;
                   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
                   margin: auto;
