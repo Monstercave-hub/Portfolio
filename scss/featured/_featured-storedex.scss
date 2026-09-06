@@ -371,6 +371,11 @@
                         li {
                           display: flex;
                           margin: 0 0 15px;
+                          align-items: center;
+
+                          img {
+                            height: 40px;
+                          }
 
                           &:first-child {
                             .tooltip-box {
@@ -395,7 +400,6 @@
                             font-size: 12px;
                             margin: 0 0 0 10px;
                             border-radius: 10px;
-                            text-align: center;
                             padding: 10px;
                             background: #000;
 
